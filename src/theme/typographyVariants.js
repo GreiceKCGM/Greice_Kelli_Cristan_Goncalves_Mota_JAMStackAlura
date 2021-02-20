@@ -2,8 +2,8 @@ const typographyVariants = {
   // [title]
   title: {
     fontSize: '32px',
-    fontWeight: '700',
-    lineHeight: 1.25, // 125%
+    fontWeight: '608',
+    lineHeight: 1.08, // 125%
   },
   titleXS: {
     fontSize: '24px',
@@ -18,9 +18,9 @@ const typographyVariants = {
   },
   // [paragraph1]
   paragraph1: {
-    fontSize: '16px',
-    fontWeight: '400',
-    lineHeight: 1.25, // 125%
+    fontSize: '18px',
+    fontWeight: '300',
+    lineHeight: 0.58, // 125%
   },
   // [paragraph2]
   paragraph2: {

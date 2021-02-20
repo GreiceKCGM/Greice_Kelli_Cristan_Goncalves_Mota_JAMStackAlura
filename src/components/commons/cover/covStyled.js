@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
 const CoverPrincipal = styled.div`
+  width:608px;
+  Height:108px;
+  top:434px;
+  left:416px;
   font-family: Fira Sans Condensed;
   font-style: normal;
   font-weight: normal;
