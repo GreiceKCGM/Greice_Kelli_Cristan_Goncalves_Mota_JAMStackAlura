@@ -11,7 +11,7 @@ function breakpointsMedia(cssByBreakpoints) {
       @media screen and (min-width: ${breakpoints[breakpointsName]}px) {
         ${cssByBreakpoints[breakpointsName]}
       }
-    `
+    `,
   );
 }
 

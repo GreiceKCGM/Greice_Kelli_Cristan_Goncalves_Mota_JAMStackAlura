@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: ${({ theme }) => theme.fontFamily};
+        box-sizing: border-box;
     }
 
     /* Full heigt layout */
