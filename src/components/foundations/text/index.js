@@ -1,5 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import PropTypes from 'prop-types';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../theme/utils/propToStyled';
 
 const paragraph1 = css`
   ${({ theme }) => css`
@@ -25,15 +29,16 @@ export const TextStyleVariants = {
       font-size: ${theme.typographyVariants.titleXS.fontSize};
       font-weight: ${theme.typographyVariants.titleXS.fontWeight};
       line-height: ${theme.typographyVariants.titleXS.lineHeight};
-    `}/* ${breakpointsMedia({
-      md: css`
+    `}
+    ${breakpointsMedia({
+    md: css`
         ${({ theme }) => css`
           font-size: ${theme.typographyVariants.title.fontSize};
           font-weight: ${theme.typographyVariants.title.fontWeight};
           line-height: ${theme.typographyVariants.title.lineHeight};
         `}
       `,
-    })} */
+  })}
   `,
 };
 
@@ -46,6 +51,7 @@ const TextBase = styled.span`
    ${propToStyle('margin')}
 `;
 
+// eslint-disable-next-line object-curly-newline
 export default function Text({ tag, variant, children, ...props }) {
   return (
     <TextBase
