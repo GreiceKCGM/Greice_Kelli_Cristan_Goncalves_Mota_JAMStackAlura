@@ -22,8 +22,8 @@ export default function Home() {
             flexDirection="column"
           >
             <Cover />
-            <Header />
           </Grid.Col>
+          <Header />
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>

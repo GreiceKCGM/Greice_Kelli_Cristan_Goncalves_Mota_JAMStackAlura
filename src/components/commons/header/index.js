@@ -17,9 +17,9 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <HeaderWrapper.LeftSide>
-        imagem
+        Imagem
       </HeaderWrapper.LeftSide>
-      <HeaderWrapper.CentralSide>
+      <HeaderWrapper.RightSide>
         {links.map((link) => (
           <li key={link.url}>
             <Text variant="paragraph1" tag="a" href={link.url}>
@@ -27,7 +27,7 @@ export default function Header() {
             </Text>
           </li>
         ))}
-      </HeaderWrapper.CentralSide>
+      </HeaderWrapper.RightSide>
     </HeaderWrapper>
   );
 }
