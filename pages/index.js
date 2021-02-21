@@ -12,21 +12,9 @@ export default function Home() {
     <Box>
       <Grid.Container>
         <Grid.Row>
-          <Grid.Col
-            offset={{ xs: 0, md: 1 }}
-            // eslint-disable-next-line max-len
-            value={{ xs: 12, md: 5 }}
-            display="flex"
-            alignItems="flex-start"
-            justifyContent="center"
-            flexDirection="column"
-          >
-            <Cover />
-          </Grid.Col>
-          <Header />
-        </Grid.Row>
-        <Grid.Row>
           <Grid.Col>
+            <Cover />
+            <Header />
             <WrapperProjects />
           </Grid.Col>
         </Grid.Row>
