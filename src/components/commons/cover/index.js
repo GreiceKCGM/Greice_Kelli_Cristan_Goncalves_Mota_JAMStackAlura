@@ -8,24 +8,23 @@ export default function Cover() {
       <Text
         variant="title"
         tag="h1"
-        color="tertiary.main"
-        // textAlign={{
-        //   xs: 'center',
-        //   md: 'left',
-        // }}
+        textAlign="center"
+        color="primary.main"
+        marginBottom="0"
       >
-        Greice Kelli C.G.Mota
+        Greice Kelli
+        <Text variant="titleBold" tag="span">
+          C.G.Mota
+        </Text>
       </Text>
       <Text
-        variant="paragraph1"
-        tag="p"
-        color="tertiary.light"
-        // textAlign={{
-        //   xs: 'center',
-        //   md: 'left',
-        // }}
+        variant="titleXS"
+        tag="h2"
+        textAlign="center"
+        color="primary.main"
+        marginTop="0"
       >
-        Portifólio Front End
+        Front-end Developer
       </Text>
     </CoverPrincipal>
   );

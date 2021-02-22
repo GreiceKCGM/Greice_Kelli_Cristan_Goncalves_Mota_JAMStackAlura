@@ -1,18 +1,29 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const CoverPrincipal = styled.div`
+  font-family: 'Open Sans', sans-serif;
+  background-color: #ff7256;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center top;
+  background-size: cover;
   display: flex;
-  width: 100%;
-  font-family: Fira Sans Condensed;
-  background-color: red;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-
-  text-align: center;
-  text-transform: uppercase;
-
-  color: #000000;
+  ${breakpointsMedia({
+    xs: css`
+      padding: 100px 0;
+    `,
+    md: css`
+      padding: 18% 0;
+    `,
+    xl: css`
+      height: 100vh;
+      max-height: 100vh;
+    `,
+  })}
 `;
 
 export default CoverPrincipal;

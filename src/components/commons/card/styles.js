@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 export const SectionTitle = styled.section`
   height: 72px;
@@ -14,6 +15,8 @@ export const SectionTitle = styled.section`
 
 export const CardDefault = styled.div`
   background-color: gray;
+  height: auto;
+  display: flex;
   margin: 18px;
   max-height: 350px;
   border-radius: 5px;
@@ -27,15 +30,17 @@ export const CardDefault = styled.div`
   }
 `;
 
-export const CardTitle = styled.div`
-  font-family: Fira Sans Condensed;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 32px;
-  line-height: 38px;
-  text-align: center;
-  text-transform: capitalize;
-`;
+// export const CardTitle = styled.div`
+//   font-family: Fira Sans Condensed;
+//   font-style: normal;
+//   font-weight: bold;
+//   font-size: 32px;
+//   line-height: 38px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 70px;
+// `;
 
 export const CardImage = styled.div`
   flex-shrink: 1;
@@ -47,14 +52,24 @@ export const CardImage = styled.div`
   }
 `;
 
-export const CardText = styled.div`
-  font-family: Fira Sans Condensed;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 38px;
-  text-align: center;
-  text-transform: capitalize;
+export const CardTextDefault = styled.div`
+  background: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  ${breakpointsMedia({
+    md: css`
+      height: 110px;
+    `,
+  })}
+  h2 {
+    ${breakpointsMedia({
+      md: css`
+        font-size: 24px;
+      `,
+    })}
+  }
 `;
 
 export default CardDefault;
