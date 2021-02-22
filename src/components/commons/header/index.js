@@ -1,6 +1,7 @@
 import React from 'react';
 import Text from '../../foundations/text';
 import HeaderWrapper from './styles/headerWrapper';
+import Logo from './styles/logo';
 
 const links = [
   {
@@ -17,7 +18,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <HeaderWrapper.LeftSide>
-        Imagem
+        <Logo />
       </HeaderWrapper.LeftSide>
       <HeaderWrapper.RightSide>
         {links.map((link) => (
