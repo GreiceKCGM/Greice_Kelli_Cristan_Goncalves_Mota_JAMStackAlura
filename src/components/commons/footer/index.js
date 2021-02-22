@@ -3,11 +3,10 @@ import styled from 'styled-components';
 import FooterIcons from './footerIcons';
 
 const FooterWrapper = styled.footer`
-  position: absolute;
-  width: 100vw;
-  height: 5vh;
-  top: 95vh;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   align-items: center;
   justify-content: center;
   border: 1px solid #e9c46a;

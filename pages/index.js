@@ -9,12 +9,22 @@ import Grid from '../src/components/foundations/layout/grid';
 
 export default function Home() {
   return (
-    <Box>
+    <Box
+      flex={1}
+      display="flex"
+      flexWrap="wrap"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
       <Grid.Container>
         <Grid.Row>
           <Grid.Col>
             <Cover />
             <Header />
+          </Grid.Col>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Col>
             <WrapperProjects />
           </Grid.Col>
         </Grid.Row>

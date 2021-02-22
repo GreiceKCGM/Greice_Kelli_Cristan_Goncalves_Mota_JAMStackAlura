@@ -1,39 +1,66 @@
 import React from 'react';
 import styled from 'styled-components';
-import Card from './card';
+import Card from '../../commons/card';
+import { SectionTitle } from '../../commons/card/styles';
 
 const projects = [
-  { title: 'titulo1', image: 'imagem', text: 'texto' },
-  { title: 'titulo2', image: 'imagem', text: 'texto' },
-  { title: 'titulo3', image: 'imagem', text: 'texto' },
+  {
+    title: 'title',
+    image: '../images/17973919 1.svg',
+    text: 'texto',
+    href: '',
+    alt: 'Placeholder',
+  },
+  {
+    title: 'title',
+    image: '../images/17973919 1.svg',
+    text: 'texto',
+    href: '',
+    alt: '',
+  },
+  {
+    title: 'title',
+    image: '../images/17973919 1.svg',
+    text: 'texto',
+    href: '',
+    alt: '',
+  },
 ];
 
-const SectionTitle = styled.section`
-  background-color: yellow;
-  height: 6rem;
-  & h2 {
+const WrapperProjects = styled.div`
+  ul {
     display: flex;
-    color: ${({ theme }) => theme.colors.primary.main.color};
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
   }
 `;
 
 export default function Wrapper() {
   return (
-    <div>
+    <WrapperProjects>
       <SectionTitle> Meus Projetos </SectionTitle>
       Lista de Projetos:
-      <ul>
-        {projects.map(({ title, image, text }) => (
+      <ul value={{ xs: 12, md: 6, lg: 4 }}>
+        {projects.map(({ title, image, text, href, alt }) => (
           <li>
-            <Card title={title} image={image} text={text} />
+            <Card
+              title={title}
+              image={image}
+              text={text}
+              href={href}
+              alt={alt}
+            />
           </li>
         ))}
         <li>
-          <Card type="destaque" title="DESTAQUES" />
+          <Card
+            type="highlighted"
+            title="DESTAQUES"
+            text="Card em destaque"
+            image="../images/17973919 1.svg"
+          />
         </li>
       </ul>
-    </div>
+    </WrapperProjects>
   );
 }

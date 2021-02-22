@@ -5,7 +5,6 @@ const CoverPrincipal = styled.div`
   width: 100%;
   font-family: Fira Sans Condensed;
   background-color: red;
-  display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
