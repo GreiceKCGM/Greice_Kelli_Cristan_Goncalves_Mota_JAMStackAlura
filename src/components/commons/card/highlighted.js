@@ -9,12 +9,6 @@ const CardHighlighted = styled.div`
   padding: 10px;
   margin-top: 18px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  /* backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 5px;
-  flex: 1 350px;
-  transition: all 200ms linear;
-  cursor: pointer; */
   margin-bottom: 24px;
 
   ${breakpointsMedia({
