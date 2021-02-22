@@ -34,18 +34,18 @@ HeaderWrapper.RightSide = styled.div`
     color: #8b3e2f;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
-      xs: css`
-        ${TextStyleVariants.smallestException}
-      `,
-      md: css`
-        ${TextStyleVariants.paragraph1}
-      `,
-    })}
-    &:hover,
-    &:focus {
-      font-weight: 500;
-      color: #ec5e52;
-    }
+    xs: css`
+      ${TextStyleVariants.smallestException}
+    `,
+    md: css`
+      ${TextStyleVariants.paragraph1}
+    `,
+  })}
+  &:hover,
+  &:focus {
+    font-weight: 500;
+    color: #ec5e52;
+  }
   }
 `;
 

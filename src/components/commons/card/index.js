@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import CardHighlighted, { CardTitle, CardTextHighlighted } from './highlighted';
 // eslint-disable-next-line import/no-named-as-default
 import CardDefault, { CardImage, CardTextDefault } from './styles';
