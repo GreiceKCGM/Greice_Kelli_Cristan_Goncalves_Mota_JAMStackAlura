@@ -5,11 +5,16 @@ import Footer from '../src/components/commons/footer';
 import Header from '../src/components/commons/header';
 import Projects from '../src/components/projects';
 import Box from '../src/components/foundations/layout/box';
-import Grid from '../src/components/foundations/layout/grid';
 
 export default function Home() {
   return (
-    <Box>
+    <Box
+      flex={1}
+      display="flex"
+      flexWrap="wrap"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
       <Cover />
       <Header />
       <Projects />
