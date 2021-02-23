@@ -24,7 +24,7 @@ export default function Projets() {
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Col>
+          <Grid.Col display="flex" justifyContent="center">
             <ul value={{ xs: 12, md: 6, lg: 4 }}>
               {ProjectList.map(({ title, image, text, href, alt }, key) => (
                 <li key={key}>
@@ -41,7 +41,7 @@ export default function Projets() {
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Col>
+          <Grid.Col display="flex" justifyContent="center">
             <ul value={{ xs: 12, md: 6, lg: 4 }}>
               <li>
                 <Card
