@@ -38,7 +38,9 @@ export default function Projets() {
               display="flex"
               justifyContent="center"
             >
-              {ProjectList.map(({ title, image, text, href, alt }, key) => (
+              {ProjectList.map(({
+                title, image, text, href, alt,
+              }, key) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <li key={key}>
                   <Card
