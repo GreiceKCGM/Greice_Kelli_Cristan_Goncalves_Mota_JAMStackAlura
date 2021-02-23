@@ -19,7 +19,7 @@ export default function Projets() {
     <WrapperProjects>
       <Grid.Container>
         <Grid.Row>
-          <Grid.Col>
+          <Grid.Col value={12} display="flex" justifyContent="center">
             <SectionTitle> Meus Projetos </SectionTitle>
           </Grid.Col>
         </Grid.Row>
