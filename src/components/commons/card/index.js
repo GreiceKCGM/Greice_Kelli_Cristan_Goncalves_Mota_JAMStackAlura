@@ -1,22 +1,11 @@
 import React from 'react';
 
-import CardHighlighted, {
-  CardTitleHighlighted,
-  CardTextHighlighted,
-} from './highlighted';
+import CardHighlighted from './highlighted';
 // eslint-disable-next-line import/no-named-as-default
-import CardDefault, {
-  CardImage,
-  CardTextDefault,
-  CardTitleDefault,
-} from './styles';
+import CardDefault, { CardImage, CardText, CardTitle } from './styles';
 
 function Card({ type = 'default', title, image, text, href, alt }) {
   const CardStyle = type === 'highlighted' ? CardHighlighted : CardDefault;
-  const CardText =
-    type === 'highlighted' ? CardTextHighlighted : CardTextDefault;
-  const CardTitle =
-    type === 'highlighted' ? CardTitleHighlighted : CardTitleDefault;
 
   return (
     <CardStyle>

@@ -14,10 +14,15 @@ export const SectionTitle = styled.section`
 
 export const CardDefault = styled.div`
   background-color: gray;
-  height: auto;
+  order: 2;
+  max-width: 288px;
+  height: 510px;
+  /* height: auto; */
   display: flex;
   flex-direction: column;
-  margin: 18px;
+  margin: 32px;
+
+  justify-content: space-between;
   /* max-height: 350px; */
   border-radius: 5px;
   border: 1px solid #c1c1c1;
@@ -30,8 +35,8 @@ export const CardDefault = styled.div`
   }
 `;
 
-export const CardTitleDefault = styled.div`
-  position: absolute;
+export const CardTitle = styled.div`
+  position: relative;
   font-family: Fira Sans Condensed;
   font-weight: bold;
   font-size: 32px;
@@ -59,23 +64,33 @@ export const CardImage = styled.div`
   }
 `;
 
-export const CardTextDefault = styled.div`
+export const CardText = styled.div`
   background: red;
-  display: flex;
+  /* position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center; */
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: 70px; */
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
   ${breakpointsMedia({
     md: css`
-      height: 110px;
+      height: 100px;
     `,
   })}
   h2 {
     ${breakpointsMedia({
-    md: css`
-      font-size: 24px;
-    `,
-  })}
+      md: css`
+        font-size: 20px;
+      `,
+    })}
   }
 `;
 
