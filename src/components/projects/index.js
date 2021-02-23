@@ -6,18 +6,20 @@ import ProjectList from './content';
 import Grid from '../foundations/layout/grid';
 
 const WrapperProjects = styled.div`
-  display: flex;
+  /* display: flex;
   list-style-type: none;
   flex-wrap: wrap;
-  /* flex-direction: column; // caso nao fique em coluna verificar aqui */
+  flex-direction: column; // caso nao fique em coluna verificar aqui
   justify-content: space-between;
-  align-items: center;
-  /* ul {
+  align-items: center; */
+  ul {
     display: flex;
-    flex-wrap: wrap;
     list-style-type: none;
+    flex-wrap: wrap;
+    flex-direction: column; // caso nao fique em coluna verificar aqui
+    justify-content: space-between;
     align-items: center;
-  } */
+  }
 `;
 
 export default function Projets() {
