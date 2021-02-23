@@ -57,7 +57,33 @@ export const CardTitle = styled.div`
 `;
 
 export const CardImage = styled.div`
+width: 100%;
+   height: 100%;
+  border: 2px solid;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+
+
   img {
+    height: 100%;
+    /* width: inherit; */
+    object-fit: cover;
+    border-radius: 5px;
+  /* width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 100%;
+    width: inherit;
+
+    /* max-width: 90%;
+    max-height: 90%; */
+    /* object-fit: cover;
+    border-radius: 5px;
   }
 `;
 

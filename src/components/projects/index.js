@@ -13,7 +13,7 @@ const WrapperProjects = styled.div`
   justify-content: space-between;
   align-items: center; */
   ul {
-    display: flex;
+    /* display:s flex; */
     list-style-type: none;
     flex-wrap: wrap;
     flex-direction: column; // caso nao fique em coluna verificar aqui
@@ -38,9 +38,7 @@ export default function Projets() {
               display="flex"
               justifyContent="center"
             >
-              {ProjectList.map(({
-                title, image, text, href, alt,
-              }, key) => (
+              {ProjectList.map(({ title, image, text, href, alt }, key) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <li key={key}>
                   <Card
