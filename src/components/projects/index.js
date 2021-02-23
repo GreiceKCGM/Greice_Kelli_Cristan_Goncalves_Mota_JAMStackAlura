@@ -7,9 +7,10 @@ import Grid from '../foundations/layout/grid';
 
 const WrapperProjects = styled.div`
   ul {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    align-items: center; */
   }
 `;
 
@@ -47,7 +48,7 @@ export default function Projets() {
                   type="highlighted"
                   title="DESTAQUES"
                   text="Card em destaque"
-                  image="../images/17973919 1.svg"
+                  image="../images/4901374 2.svg"
                 />
               </li>
             </ul>
