@@ -6,15 +6,18 @@ import ProjectList from './content';
 import Grid from '../foundations/layout/grid';
 
 const WrapperProjects = styled.div`
-  flex-direction: column; // caso nao fique em coluna verificar aqui
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  /* flex-direction: column; // caso nao fique em coluna verificar aqui */
   justify-content: space-between;
   align-items: center;
-  ul {
+  /* ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     align-items: center;
-  }
+  } */
 `;
 
 export default function Projets() {
@@ -27,9 +30,14 @@ export default function Projets() {
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Col display="flex" justifyContent="center">
-            <ul value={{ xs: 12, md: 6, lg: 4 }}>
+          <Grid.Col>
+            <ul
+              value={{ xs: 12, md: 6, lg: 4 }}
+              display="flex"
+              justifyContent="center"
+            >
               {ProjectList.map(({ title, image, text, href, alt }, key) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <li key={key}>
                   <Card
                     image={image}
@@ -44,8 +52,12 @@ export default function Projets() {
           </Grid.Col>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Col display="flex" justifyContent="center">
-            <ul value={{ xs: 12, md: 6, lg: 4 }}>
+          <Grid.Col>
+            <ul
+              value={{ xs: 12, md: 6, lg: 4 }}
+              display="flex"
+              justifyContent="center"
+            >
               <li>
                 <Card
                   type="highlighted"
