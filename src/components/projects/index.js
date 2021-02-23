@@ -6,11 +6,14 @@ import ProjectList from './content';
 import Grid from '../foundations/layout/grid';
 
 const WrapperProjects = styled.div`
+  flex-direction: column; // caso nao fique em coluna verificar aqui
+  justify-content: space-between;
+  align-items: center;
   ul {
-    /* display: flex;
+    display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    align-items: center; */
+    align-items: center;
   }
 `;
 
