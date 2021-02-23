@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
@@ -17,8 +16,9 @@ export const CardDefault = styled.div`
   background-color: gray;
   height: auto;
   display: flex;
+  flex-direction: column;
   margin: 18px;
-  max-height: 350px;
+  /* max-height: 350px; */
   border-radius: 5px;
   border: 1px solid #c1c1c1;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
@@ -30,23 +30,30 @@ export const CardDefault = styled.div`
   }
 `;
 
-// export const CardTitle = styled.div`
-//   font-family: Fira Sans Condensed;
-//   font-style: normal;
-//   font-weight: bold;
-//   font-size: 32px;
-//   line-height: 38px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 70px;
-// `;
+export const CardTitleDefault = styled.div`
+  position: absolute;
+  font-family: Fira Sans Condensed;
+  font-weight: bold;
+  font-size: 32px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+`;
 
 export const CardImage = styled.div`
-  flex-shrink: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
-    max-width: 90%;
-    max-height: 90%;
+    height: 100%;
+    width: inherit;
+
+    /* max-width: 90%;
+    max-height: 90%; */
     object-fit: cover;
     border-radius: 5px;
   }
@@ -65,10 +72,10 @@ export const CardTextDefault = styled.div`
   })}
   h2 {
     ${breakpointsMedia({
-      md: css`
-        font-size: 24px;
-      `,
-    })}
+    md: css`
+      font-size: 24px;
+    `,
+  })}
   }
 `;
 

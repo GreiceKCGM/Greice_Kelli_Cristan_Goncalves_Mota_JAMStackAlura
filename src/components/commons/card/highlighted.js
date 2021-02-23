@@ -2,11 +2,16 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
-export const CardTitle = styled.div`
+export const CardTitleHighlighted = styled.div`
+  order: 1;
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 250px;
+  height: 300px;
   ${breakpointsMedia({
-    md: css`
+    sm: css`
       flex: 1;
       padding: 10px;
       align-items: center;
@@ -61,9 +66,6 @@ const CardHighlighted = styled.div`
     object-fit: cover;
     border-radius: 5px;
     height: 250px;
-  }
-
-  CardText {
   }
 `;
 

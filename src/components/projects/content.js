@@ -1,4 +1,4 @@
-export const projectList = [
+const ProjectList = [
   {
     title: 'title',
     image: '../images/17973919 1.svg',
@@ -21,3 +21,5 @@ export const projectList = [
     alt: '',
   },
 ];
+
+export default ProjectList;

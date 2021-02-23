@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from '../commons/card';
 import { SectionTitle } from '../commons/card/styles';
-import { projectList } from './content';
+import ProjectList from './content';
 import Grid from '../foundations/layout/grid';
 
 const WrapperProjects = styled.div`
@@ -25,9 +25,15 @@ export default function Projets() {
         <Grid.Row>
           <Grid.Col>
             <ul value={{ xs: 12, md: 6, lg: 4 }}>
-              {projectList.map(({ title, image, text, href, alt }, key) => (
+              {ProjectList.map(({ title, image, text, href, alt }, key) => (
                 <li key={key}>
-                  <Card image={image} text={text} href={href} alt={alt} />
+                  <Card
+                    image={image}
+                    title={title}
+                    text={text}
+                    href={href}
+                    alt={alt}
+                  />
                 </li>
               ))}
             </ul>

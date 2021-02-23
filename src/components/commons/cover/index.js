@@ -6,19 +6,18 @@ export default function Cover() {
   return (
     <CoverPrincipal>
       <Text
-        variant="title"
+        variant="paragraph1"
         tag="h1"
         textAlign="center"
         color="primary.main"
-        marginBottom="0"
       >
         Greice Kelli
-        <Text variant="titleBold" tag="span">
+        <Text variant="title" tag="span">
           C.G.Mota
         </Text>
       </Text>
       <Text
-        variant="titleXS"
+        variant="title"
         tag="h2"
         textAlign="center"
         color="primary.main"
