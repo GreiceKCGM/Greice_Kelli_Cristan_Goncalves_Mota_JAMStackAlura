@@ -19,10 +19,10 @@ import { CardTitle, CardText, CardImage } from './styles';
 // `;
 
 const CardHighlighted = styled.div`
-  max-width: auto;
+  /* max-width: auto; */
   height: auto;
-  left: 270px;
-  top: 1853px;
+  /* left: 270px;
+  top: 1853px; */
   border-radius: 5px;
   border: 1px solid #c1c1c1;
   margin-top: 18px;
@@ -31,8 +31,10 @@ const CardHighlighted = styled.div`
 
   ${breakpointsMedia({
     md: css`
+      width: 100%;
+      max-width: 1040px;
       display: flex;
-      align-items: center;
+      flex-direction: row;
     `,
   })}
   &:hover {
@@ -40,19 +42,21 @@ const CardHighlighted = styled.div`
     box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
     border-radius: 0;
   }
-  ${CardImage} {
-    width: 100%;
-    height: 100%;
-    border: 1px solid;
-  }
 
-  img {
-    height: 100%;
-    width: inherit;
-    /* max-width: 100%;
+  ${CardImage} {
+    img {
+      border: 1px solid;
+      /* width: 593px;
+      height: 320px;
+      left: 271px;
+      top: 1853px; */
+      height: 100%;
+      width: inherit;
+      /* max-width: 100%;
     object-fit: cover; */
-    border-radius: 5px;
-    /* height: 250px; */
+      border-radius: 5px;
+      /* height: 250px; */
+    }
   }
 
   // eslint-disable-next-line no-undef
@@ -70,16 +74,18 @@ const CardHighlighted = styled.div`
   }
 
   ${CardTitle} {
-    background-color: green;
     position: relative;
     bottom: 0;
     margin-top: 10px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
     ${breakpointsMedia({
       md: css`
         flex: 1;
-        padding: 10px;
-        align-items: center;
-        justify-content: center;
+        /* padding: 10px; */
+        /* align-items: center;
+        justify-content: center; */
       `,
     })}
     h2 {

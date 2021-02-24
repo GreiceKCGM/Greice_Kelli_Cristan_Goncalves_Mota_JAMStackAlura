@@ -14,9 +14,14 @@ export const SectionTitle = styled.section`
 
 export const CardDefault = styled.div`
   background-color: gray;
-  order: 2;
-  max-width: 288px;
+
+  /* order: 2; */
+  width: 288px;
   height: 510px;
+  left: 882px;
+  top: 1313px;
+  /* max-width: 288px;
+  height: 510px; */
   /* height: auto; */
   display: flex;
   flex-direction: column;
@@ -48,14 +53,28 @@ export const CardTitle = styled.div`
 `;
 
 export const CardImage = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
+  /* width: auto;
+  height: auto;
+  border: 1px solid; */
+  /* width: 287px; */
+  /* height: 390px; */
+  /* left: 21px; */
+  /* width: 100%;
+  height: 100%; */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   img {
-    height: 100%;
-    width: inherit;
+    /* height: auto; */
+    width: 287px;
+    height: 390px;
+    left: 271px;
+    top: 1313px;
+    /* width: 287px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
 
     /* max-width: 90%;
     max-height: 90%; */

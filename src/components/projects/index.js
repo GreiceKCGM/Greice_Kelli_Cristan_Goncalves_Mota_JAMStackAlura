@@ -47,7 +47,7 @@ export default function Projets() {
                   type="highlighted"
                   title="DESTAQUES"
                   text="Card em destaque"
-                  image="../images/17973919 1.svg"
+                  image="../images/4901374 2.svg"
                 />
               </li>
             </ul>
