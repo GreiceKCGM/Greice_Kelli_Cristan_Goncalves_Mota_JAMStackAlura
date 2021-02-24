@@ -16,13 +16,13 @@ export const CardDefault = styled.div`
   background-color: gray;
 
   /* order: 2; */
-  width: 288px;
+  /* width: 288px;
   height: 510px;
   left: 882px;
-  top: 1313px;
-  /* max-width: 288px;
-  height: 510px; */
-  /* height: auto; */
+  top: 1313px; */
+  /* max-width: 250px; */
+  height: auto;
+  width: 288px;
   display: flex;
   flex-direction: column;
   margin: 32px;
@@ -33,6 +33,9 @@ export const CardDefault = styled.div`
   border: 1px solid #c1c1c1;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  ${breakpointsMedia({
+    md: css``,
+  })}
   &:hover {
     transform: scale(0.98) translateY(-5px);
     box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);

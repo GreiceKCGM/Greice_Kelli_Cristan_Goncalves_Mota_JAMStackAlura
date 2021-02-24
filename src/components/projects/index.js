@@ -1,15 +1,22 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Card from '../commons/card';
 import { SectionTitle } from '../commons/card/styles';
 import ProjectList from './content';
 import Grid from '../foundations/layout/grid';
+import breakpointsMedia from '../../theme/utils/breakpointsMedia';
 
 const WrapperProjects = styled.div`
   ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
+    padding: 2px 0;
+    ${breakpointsMedia({
+      md: css`
+        padding: 4px 0;
+      `,
+    })}
   }
 `;
 

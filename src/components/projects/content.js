@@ -1,7 +1,7 @@
 const ProjectList = [
   {
     title: 'title',
-    image: '../images/17973919 1.svg',
+    image: '../images/4901374 2.svg',
     text: 'texto',
     href: '',
     alt: 'Placeholder',
