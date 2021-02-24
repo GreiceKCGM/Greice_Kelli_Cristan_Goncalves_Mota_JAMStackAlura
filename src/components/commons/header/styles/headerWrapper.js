@@ -4,6 +4,7 @@ import { TextStyleVariants } from '../../../foundations/text';
 
 const HeaderWrapper = styled.nav`
   font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,18 +35,18 @@ HeaderWrapper.RightSide = styled.div`
     color: #8b3e2f;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
-    xs: css`
-      ${TextStyleVariants.smallestException}
-    `,
-    md: css`
-      ${TextStyleVariants.paragraph1}
-    `,
-  })}
-  &:hover,
+      xs: css`
+        ${TextStyleVariants.smallestException}
+      `,
+      md: css`
+        ${TextStyleVariants.paragraph1}
+      `,
+    })}
+    &:hover,
   &:focus {
-    font-weight: 500;
-    color: #ec5e52;
-  }
+      font-weight: 500;
+      color: #ec5e52;
+    }
   }
 `;
 

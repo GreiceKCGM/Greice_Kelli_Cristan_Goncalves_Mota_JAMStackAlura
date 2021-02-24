@@ -13,11 +13,12 @@ const WrapperProjects = styled.div`
   justify-content: space-between;
   align-items: center; */
   ul {
-    /* display:s flex; */
+    display: flex;
     list-style-type: none;
     flex-wrap: wrap;
-    flex-direction: column; // caso nao fique em coluna verificar aqui
+    /* flex-direction: column; // caso nao fique em coluna verificar aqui */
     justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
 `;
@@ -33,11 +34,7 @@ export default function Projets() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <ul
-              value={{ xs: 12, md: 6, lg: 4 }}
-              display="flex"
-              justifyContent="center"
-            >
+            <ul value={{ xs: 12, md: 6, lg: 4 }} display="flex">
               {ProjectList.map(({ title, image, text, href, alt }, key) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <li key={key}>
@@ -55,11 +52,7 @@ export default function Projets() {
         </Grid.Row>
         <Grid.Row>
           <Grid.Col>
-            <ul
-              value={{ xs: 12, md: 6, lg: 4 }}
-              display="flex"
-              justifyContent="center"
-            >
+            <ul value={{ xs: 12, md: 6, lg: 4 }} display="flex">
               <li>
                 <Card
                   type="highlighted"

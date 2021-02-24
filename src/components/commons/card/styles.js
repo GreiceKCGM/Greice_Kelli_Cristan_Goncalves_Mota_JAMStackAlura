@@ -57,38 +57,45 @@ export const CardTitle = styled.div`
 `;
 
 export const CardImage = styled.div`
-width: 100%;
-   height: 100%;
-  border: 2px solid;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
-
-  img {
-    height: 100%;
-    /* width: inherit; */
-    object-fit: cover;
-    border-radius: 5px;
-  /* width: 100%;
+  width: 100%;
   height: 100%;
-  display: flex;
+  border: 2px solid;
+
   justify-content: center;
   align-items: center;
 
   img {
     height: 100%;
     width: inherit;
-
-    /* max-width: 90%;
-    max-height: 90%; */
-    /* object-fit: cover;
+    object-fit: cover;
     border-radius: 5px;
   }
 `;
 
 export const CardText = styled.div`
   background: red;
+
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+
+  ${breakpointsMedia({
+    md: css`
+      height: 110px;
+    `,
+  })}
+  h2 {
+    ${breakpointsMedia({
+      md: css`
+        font-size: 24px;
+      `,
+    })}
+  }
 `;
 
 export default CardDefault;
