@@ -58,7 +58,7 @@ export default function Projets() {
                   type="highlighted"
                   title="DESTAQUES"
                   text="Card em destaque"
-                  image="../images/4901374 2.svg"
+                  image="https://via.placeholder.com/600x300"
                 />
               </li>
             </ul>
