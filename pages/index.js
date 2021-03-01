@@ -8,7 +8,13 @@ import Box from '../src/components/foundations/layout/box';
 
 export default function Home() {
   return (
-    <Box>
+    <Box
+      flex="1"
+      display="flex"
+      flexWrap="wrap"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
       <Cover />
       <Header />
       <Projects />

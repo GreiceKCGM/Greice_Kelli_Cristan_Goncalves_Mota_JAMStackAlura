@@ -2,22 +2,6 @@ import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import { CardTitle, CardText, CardImage } from './styles';
 
-// export const CardTitleHighlighted = styled.div`
-//   display: flex;
-//   justify-content: center;
-// `;
-// export const CardTextHighlighted = styled.div`
-//   background: yellow;
-//   flex: 2;
-//   padding: 10px;
-//   display: none;
-//   ${breakpointsMedia({
-//     md: css`
-//       display: flex;
-//     `,
-//   })}
-// `;
-
 const CardHighlighted = styled.div`
   /* max-width: auto; */
   height: auto;
@@ -31,9 +15,11 @@ const CardHighlighted = styled.div`
 
   ${breakpointsMedia({
     md: css`
-      width: 100%;
+      /* width: 100%; */
       /* max-width: 1040px; */
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: row;
     `,
   })}
@@ -45,18 +31,32 @@ const CardHighlighted = styled.div`
 
   ${CardImage} {
     img {
+      position : relative;
       border: 1px solid;
-      /* width: 593px;
-      height: 320px;
-      left: 271px;
-      top: 1853px; */
-      height: 100%;
-      width: inherit;
-      /* max-width: 100%;
-    object-fit: cover; */
       border-radius: 5px;
       /* height: 250px; */
     }
+    ${breakpointsMedia({
+    xs: css`
+
+      width: 289px;
+      height: 177px;
+      img {
+        width: 289px;
+        height: 177px;
+      }
+    `,
+    md: css`
+      margin-top: 5px;
+      margin-right: 0;
+      width: 593px;
+      height: 320px;
+      img {
+        width: 593px;
+        height: 320px;
+      }
+    `,
+  })}
   }
 
   // eslint-disable-next-line no-undef
