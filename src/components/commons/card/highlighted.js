@@ -32,7 +32,7 @@ const CardHighlighted = styled.div`
   ${breakpointsMedia({
     md: css`
       width: 100%;
-      max-width: 1040px;
+      /* max-width: 1040px; */
       display: flex;
       flex-direction: row;
     `,

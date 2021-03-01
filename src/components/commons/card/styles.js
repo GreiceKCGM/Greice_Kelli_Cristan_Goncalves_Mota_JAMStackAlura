@@ -22,7 +22,7 @@ export const CardDefault = styled.div`
   top: 1313px; */
   /* max-width: 250px; */
   height: auto;
-  width: 288px;
+  /* width: 288px; */
   display: flex;
   flex-direction: column;
   margin: 32px;
