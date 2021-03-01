@@ -74,27 +74,40 @@ const CardHighlighted = styled.div`
   }
 
   ${CardTitle} {
-    position: relative;
-    bottom: 0;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 147px;
+    height: 31px;
+    position: absolute;
+
+    top: 20px;
+    left: 32px;
+
+    margin-top: 5px;
+    margin-left: 4px;
+
     background: #ffffff;
     border: 1px solid #000000;
     box-sizing: border-box;
-    ${breakpointsMedia({
-      md: css`
-        flex: 1;
-        /* padding: 10px; */
-        /* align-items: center;
-        justify-content: center; */
-      `,
-    })}
-    h2 {
-      ${breakpointsMedia({
-        md: css`
-          font-size: 24px;
-        `,
-      })}
-    }
+     ${breakpointsMedia({
+    md: css`
+      width: 228px;
+      height: 48px;
+
+      margin-top: 12px;
+      margin-left: 12px;
+
+    `,
+      sm: css`
+      font-size: 10px;
+          top: 20px;
+    left: 42px;
+
+  }
+    `,
+  })}
   }
 `;
 
