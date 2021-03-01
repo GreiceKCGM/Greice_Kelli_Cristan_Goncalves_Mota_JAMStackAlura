@@ -9,12 +9,13 @@ function Card({ type = 'default', title, image, text, href, alt }) {
 
   return (
     <CardStyle>
-      <CardTitle>{title}</CardTitle>
+
       <CardImage>
         <a href={href}>
           <img src={image} alt={alt} />
         </a>
       </CardImage>
+      <CardTitle>{title}</CardTitle>
       <CardText>{text}</CardText>
     </CardStyle>
   );

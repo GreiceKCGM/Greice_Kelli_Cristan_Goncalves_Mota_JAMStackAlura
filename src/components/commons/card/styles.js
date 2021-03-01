@@ -13,7 +13,7 @@ export const SectionTitle = styled.section`
 `;
 
 export const CardDefault = styled.div`
-  background-color: gray;
+
 
   /* order: 2; */
   /* width: 288px;
@@ -52,27 +52,18 @@ export const CardTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: 50px;
 `;
 
 export const CardImage = styled.div`
-  /* width: auto;
-  height: auto;
-  border: 1px solid; */
-  /* width: 287px; */
-  /* height: 390px; */
-  /* left: 21px; */
-  /* width: 100%;
-  height: 100%; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+
+
   img {
     /* height: auto; */
-    width: 287px;
-    height: 390px;
-    left: 271px;
-    top: 1313px;
+    width: 289px;
+    height: 177px;
+    /* left: 271px;
+    top: 1313px; */
     /* width: 287px; */
     display: flex;
     justify-content: center;
@@ -83,8 +74,19 @@ export const CardImage = styled.div`
     max-height: 90%; */
     object-fit: cover;
     border-radius: 5px;
-  }
+    ${breakpointsMedia({
+    md: css`
+
+      width: 287px;
+      height: 390px;
+      img {
+        width: 287px;
+        height: 390px;
+      }
+    `,
+  })}
 `;
+
 
 export const CardText = styled.div`
   background: red;

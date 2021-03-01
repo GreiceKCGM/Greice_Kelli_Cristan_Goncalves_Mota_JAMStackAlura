@@ -3,21 +3,17 @@ import styled, { css } from 'styled-components';
 import Card from '../commons/card';
 import { SectionTitle } from '../commons/card/styles';
 import ProjectList from './content';
-import Grid from '../foundations/layout/grid';
 import breakpointsMedia from '../../theme/utils/breakpointsMedia';
 
 const WrapperProjects = styled.div`
     /* Width:800px; */
   ul {
     display: flex;
+    position: relative;
     flex-wrap: wrap;
+    align-items: center;
     list-style-type: none;
-    /* padding: 2px 0; */
-    ${breakpointsMedia({
-      md: css`
-        padding: 4px 0;
-      `,
-    })}
+
   }
 `;
 
