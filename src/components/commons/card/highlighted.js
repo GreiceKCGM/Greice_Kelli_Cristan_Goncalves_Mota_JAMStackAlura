@@ -78,7 +78,7 @@ const CardHighlighted = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 147px;
+    /* width: 147px; */
     height: 31px;
     position: absolute;
 
@@ -101,7 +101,7 @@ const CardHighlighted = styled.div`
 
     `,
       sm: css`
-      font-size: 10px;
+      /* font-size: 20px; */
           top: 20px;
     left: 42px;
 

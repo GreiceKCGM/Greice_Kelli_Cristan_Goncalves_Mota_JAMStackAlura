@@ -47,7 +47,7 @@ export const CardTitle = styled.div`
   position: relative;
   font-family: Fira Sans Condensed;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
   text-align: center;
   display: flex;
   justify-content: center;
