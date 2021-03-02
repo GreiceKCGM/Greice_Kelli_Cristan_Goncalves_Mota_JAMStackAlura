@@ -3,15 +3,15 @@ import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import { CardTitle, CardText, CardImage } from './styles';
 
 const CardHighlighted = styled.div`
-  /* max-width: auto; */
+
   height: auto;
-  /* left: 270px;
-  top: 1853px; */
-  border-radius: 5px;
-  border: 1px solid #c1c1c1;
+
+  /* border-radius: 5px;
+  border: 1px solid #e9c46a; */
   margin-top: 18px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); */
   margin-bottom: 24px;
+  transform: scale(1);
 
   ${breakpointsMedia({
     md: css`
@@ -21,20 +21,24 @@ const CardHighlighted = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: row;
+
     `,
   })}
   &:hover {
-    transform: scale(0.98) translateY(-5px);
+    transform: scale(0.98) translateY(-10px);
     box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
     border-radius: 0;
   }
 
   ${CardImage} {
+    height: auto;
     img {
       position : relative;
-      border: 1px solid;
+      width:auto;
+      border: 1px solid #e9c46a;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
       border-radius: 5px;
-      /* height: 250px; */
+
     }
     ${breakpointsMedia({
     xs: css`
@@ -61,16 +65,48 @@ const CardHighlighted = styled.div`
 
   // eslint-disable-next-line no-undef
   ${CardText} {
-    background: yellow;
+    border: 1px solid #e9c46a;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    /* display: flex; */
     /* flex: 2;
     padding: 10px;
     display: none; */
-    display: block;
+    /* display: block; */
     ${breakpointsMedia({
-      md: css`
-        display: flex;
-      `,
-    })}
+      xs: css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 289px;
+      height: 72px;
+    `,
+    md: css`
+      margin-top: 21px;
+      margin-left: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: column;
+      p {
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 26px;
+        margin-bottom: 82px;
+      }
+      h6 {
+        margin-top: 28px;
+        margin-left: 30px;
+        margin-right: 170px;
+        margin-bottom: 30px;
+
+      }
+      width: 307px;
+      height: 320px;
+    `,
+
+  })}
   }
 
   ${CardTitle} {
@@ -82,8 +118,10 @@ const CardHighlighted = styled.div`
     height: 31px;
     position: absolute;
 
-    top: 20px;
-    left: 32px;
+    top: 1px;
+    left: 1px;
+    transform: translateY(-10px);
+    transform: translateX(-40px);
 
     margin-top: 5px;
     margin-left: 4px;

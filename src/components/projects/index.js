@@ -6,10 +6,12 @@ import ProjectList from './content';
 import breakpointsMedia from '../../theme/utils/breakpointsMedia';
 
 const WrapperProjects = styled.div`
+  align-self: center;
     /* Width:800px; */
   ul {
     display: flex;
     position: relative;
+    justify-content:center;
     flex-wrap: wrap;
     align-items: center;
     list-style-type: none;
@@ -33,16 +35,17 @@ export default function Projets() {
             />
           </li>
         ))}
-      </ul>
-      <ul value={{ xs: 12, md: 6, lg: 4 }}>
+
         <li>
           <Card
             type="highlighted"
             title="DESTAQUES"
-            text="Card em destaque"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec molestie rhoncus vestibulum. Aenean blandit velit."
             image="../images/4901374 2.svg"
           />
         </li>
+
       </ul>
 
     </WrapperProjects>
