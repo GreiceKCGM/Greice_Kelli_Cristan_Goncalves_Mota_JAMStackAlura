@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Text from '../../foundations/text';
 
 import CardHighlighted from './highlighted';
 // eslint-disable-next-line import/no-named-as-default
 import CardDefault, { CardImage, CardText, CardTitle } from './styles';
 
-function Card({ type = 'default', title, image, text, href, alt }) {
+function Card({
+  type = 'default', title, image, text, href, alt,
+}) {
   const CardStyle = type === 'highlighted' ? CardHighlighted : CardDefault;
 
   return (

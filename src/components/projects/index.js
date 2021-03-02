@@ -1,9 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Card from '../commons/card';
 import { SectionTitle } from '../commons/card/styles';
 import ProjectList from './content';
-import breakpointsMedia from '../../theme/utils/breakpointsMedia';
 
 const WrapperProjects = styled.div`
   align-self: center;
@@ -24,7 +23,10 @@ export default function Projets() {
     <WrapperProjects>
       <SectionTitle> Meus Projetos </SectionTitle>
       <ul value={{ xs: 12, md: 6, lg: 4 }}>
-        {ProjectList.map(({ title, image, text, href, alt }, key) => (
+        {ProjectList.map(({
+          title, image, text, href, alt,
+        }, key) => (
+          // eslint-disable-next-line react/no-array-index-key
           <li key={key}>
             <Card
               image={image}

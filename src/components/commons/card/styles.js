@@ -72,7 +72,7 @@ export const CardImage = styled.div`
     object-fit: cover;
     border-radius: 5px;
     ${breakpointsMedia({
-      md: css`
+    md: css`
         width: 287px;
         height: 390px;
         img {
@@ -80,7 +80,7 @@ export const CardImage = styled.div`
           height: 390px;
         }
       `,
-    })}
+  })}
   }
 `;
 
@@ -107,10 +107,10 @@ export const CardText = styled.div`
   })}
   h2 {
     ${breakpointsMedia({
-      md: css`
+    md: css`
         font-size: 20px;
       `,
-    })}
+  })}
   }
 `;
 
