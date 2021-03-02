@@ -18,18 +18,7 @@ function Card({ type = 'default', title, image, text, href, alt }) {
       </CardImage>
       <CardTitle>{title}</CardTitle>
       <CardText>
-        <Text
-          tag="p"
-          variant="cardText"
-          margin="0px"
-          padding="0px"
-          display={{
-            xs: 'none',
-            md: 'block',
-          }}
-        >
-          {text}
-        </Text>
+        {text}
       </CardText>
     </CardStyle>
   );
