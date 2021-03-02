@@ -11,10 +11,7 @@ export default function Cover() {
         textAlign="center"
         color="primary.main"
       >
-        Greice Kelli
-        <Text variant="title" tag="span">
-          C.G.Mota
-        </Text>
+        Greice Kelli C.G.Mota
       </Text>
       <Text
         variant="title"
