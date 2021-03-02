@@ -8,8 +8,11 @@ import Grid from '../src/components/foundations/layout/grid';
 import Contact from '../src/components/commons/cover/contact';
 import Text from '../src/components/foundations/text';
 import Button from '../src/components/commons/button/button';
+import Modal from '../src/components/commons/modal';
 
 export default function Home() {
+  const [isModalOpen, setModalState] = React.useState(false);
+
   return (
     <Box
       flex="1"
@@ -21,6 +24,24 @@ export default function Home() {
       <Cover />
       <Header />
       <Projects />
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setModalState(false);
+        }}
+      >
+        {(propsDoModal) => (
+          <Box
+            backgroundColor="white"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...propsDoModal}
+          >
+            <div>
+              Nosso Conteúdo
+            </div>
+          </Box>
+        )}
+      </Modal>
       <Grid.Container>
         <Grid.Col
           textAlign="center"
@@ -47,6 +68,9 @@ export default function Home() {
                 md: 'initial',
               }}
               display="flex"
+              onClick={() => {
+                setModalState(!isModalOpen);
+              }}
             >
               +
             </Button>
