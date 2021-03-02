@@ -1,101 +1,160 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import { CardTitle, CardText, CardImage } from './styles';
 
-// export const CardTitleHighlighted = styled.div`
-//   display: flex;
-//   justify-content: center;
-// `;
-// export const CardTextHighlighted = styled.div`
-//   background: yellow;
-//   flex: 2;
-//   padding: 10px;
-//   display: none;
-//   ${breakpointsMedia({
-//     md: css`
-//       display: flex;
-//     `,
-//   })}
-// `;
+const CardTitleHighlighted = styled.div`
 
-const CardHighlighted = styled.div`
-  /* max-width: auto; */
-  height: auto;
-  /* left: 270px;
-  top: 1853px; */
-  border-radius: 5px;
-  border: 1px solid #c1c1c1;
-  margin-top: 18px;
+  font-family: Fira Sans Condensed;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #e9c46a;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  flex-direction: column;
+
+  /* width: 147px; */
+  height: 31px;
+  position: absolute;
+
+  top: 15px;
+  left: 10px;
+  /* transform: translateY(-10px);
+  transform: translateX(-40px); */
+  box-sizing: border-box;
+  z-index:1;
+  background: #ffffff;
+  border: 1px solid #000000;
+`;
+
+const CardHighlightedStyle = styled.div`
+
+  height: auto;
+
+  /* border-radius: 5px;
+  border: 1px solid #e9c46a; */
+  margin-top: 18px;
+  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); */
   margin-bottom: 24px;
+  transform: scale(1);
 
   ${breakpointsMedia({
     md: css`
-      width: 100%;
-      max-width: 1040px;
+      /* width: 100%; */
+      /* max-width: 1040px; */
       display: flex;
+      align-items: center;
+      justify-content: center;
       flex-direction: row;
+
     `,
   })}
   &:hover {
-    transform: scale(0.98) translateY(-5px);
+    transform: scale(0.98) translateY(-10px);
     box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
     border-radius: 0;
   }
 
   ${CardImage} {
+    height: auto;
     img {
-      border: 1px solid;
-      /* width: 593px;
-      height: 320px;
-      left: 271px;
-      top: 1853px; */
-      height: 100%;
-      width: inherit;
-      /* max-width: 100%;
-    object-fit: cover; */
+      position : relative;
+      width:auto;
+      border: 1px solid #e9c46a;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
       border-radius: 5px;
-      /* height: 250px; */
+
     }
+    ${breakpointsMedia({
+    xs: css`
+
+      width: 289px;
+      height: 177px;
+      img {
+        width: 289px;
+        height: 177px;
+      }
+    `,
+    md: css`
+      margin-top: 5px;
+      margin-right: 0;
+      width: 593px;
+      height: 320px;
+      img {
+        width: 593px;
+        height: 320px;
+      }
+    `,
+  })}
   }
 
   // eslint-disable-next-line no-undef
   ${CardText} {
-    background: yellow;
+    border: 1px solid #e9c46a;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    justify-content: flex-start;
+    /* display: flex; */
     /* flex: 2;
     padding: 10px;
     display: none; */
-    display: block;
+    /* display: block; */
     ${breakpointsMedia({
-      md: css`
-        display: flex;
-      `,
-    })}
+    xs: css`
+      display: flex;
+      align-items: center;
+
+      width: 289px;
+      height: 72px;
+    `,
+    sm: css`
+      display:none;
+    `,
+    md: css`
+      margin-top: 21px;
+      margin-left: 0;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      p {
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 26px;
+        margin-bottom: 82px;
+      }
+      h6 {
+        margin-top: 28px;
+        margin-left: 30px;
+        margin-right: 170px;
+        margin-bottom: 30px;
+
+      }
+      width: 307px;
+      height: 310px;
+    `,
+
+  })}
   }
 
   ${CardTitle} {
-    position: relative;
-    bottom: 0;
-    margin-top: 10px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    ${breakpointsMedia({
-      md: css`
-        flex: 1;
-        /* padding: 10px; */
-        /* align-items: center;
-        justify-content: center; */
-      `,
-    })}
-    h2 {
-      ${breakpointsMedia({
-        md: css`
-          font-size: 24px;
-        `,
-      })}
-    }
+    flex-direction: column;
+    margin-bottom: 2vh;
   }
 `;
+
+// eslint-disable-next-line react/prop-types
+function CardHighlighted({ children }) {
+  return (
+    <CardHighlightedStyle>
+      <CardTitleHighlighted>DESTAQUES</CardTitleHighlighted>
+      {children}
+    </CardHighlightedStyle>
+  );
+}
 
 export default CardHighlighted;

@@ -13,19 +13,12 @@ export const SectionTitle = styled.section`
 `;
 
 export const CardDefault = styled.div`
-  background-color: gray;
 
-  /* order: 2; */
-  /* width: 288px;
-  height: 510px;
-  left: 882px;
-  top: 1313px; */
-  /* max-width: 250px; */
   height: auto;
-  width: 288px;
+  /* width: 288px; */
   display: flex;
   flex-direction: column;
-  margin: 32px;
+  margin: 18px;
 
   justify-content: space-between;
   /* max-height: 350px; */
@@ -47,47 +40,52 @@ export const CardTitle = styled.div`
   position: relative;
   font-family: Fira Sans Condensed;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 24px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: 50px;
+  border: 1px solid #e9c46a;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
 `;
 
 export const CardImage = styled.div`
-  /* width: auto;
-  height: auto;
-  border: 1px solid; */
-  /* width: 287px; */
-  /* height: 390px; */
-  /* left: 21px; */
-  /* width: 100%;
-  height: 100%; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+
   img {
     /* height: auto; */
-    width: 287px;
-    height: 390px;
-    left: 271px;
-    top: 1313px;
+    width: 289px;
+    height: 177px;
+    /* left: 271px;
+    top: 1313px; */
     /* width: 287px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid;
+    border: 1px solid #e9c46a;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
 
     /* max-width: 90%;
     max-height: 90%; */
     object-fit: cover;
     border-radius: 5px;
+    ${breakpointsMedia({
+    md: css`
+        width: 287px;
+        height: 390px;
+        img {
+          width: 287px;
+          height: 390px;
+        }
+      `,
+  })}
   }
 `;
 
 export const CardText = styled.div`
-  background: red;
+  /* background: red; */
   /* position: absolute;
   top: 0;
   width: 100%;
@@ -98,7 +96,7 @@ export const CardText = styled.div`
   align-items: center;
   height: 70px; */
   top: 0;
-  width: 100%;
+  /* width: 100%; */
   padding: 10px;
   justify-content: center;
   text-align: center;
@@ -109,10 +107,10 @@ export const CardText = styled.div`
   })}
   h2 {
     ${breakpointsMedia({
-      md: css`
+    md: css`
         font-size: 20px;
       `,
-    })}
+  })}
   }
 `;
 
