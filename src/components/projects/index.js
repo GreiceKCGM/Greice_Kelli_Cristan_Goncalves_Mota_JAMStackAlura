@@ -44,6 +44,7 @@ export default function Projets() {
                   Donec molestie rhoncus vestibulum. Aenean blandit velit."
             image="../images/4901374 2.svg"
           />
+
         </li>
 
       </ul>

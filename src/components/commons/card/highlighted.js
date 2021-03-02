@@ -147,6 +147,7 @@ const CardHighlighted = styled.div`
     `,
   })}
   }
+
 `;
 
 export default CardHighlighted;
