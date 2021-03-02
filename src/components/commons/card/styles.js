@@ -53,7 +53,6 @@ export const CardTitle = styled.div`
 
 export const CardImage = styled.div`
 
-
   img {
     /* height: auto; */
     width: 289px;
@@ -73,18 +72,17 @@ export const CardImage = styled.div`
     object-fit: cover;
     border-radius: 5px;
     ${breakpointsMedia({
-    md: css`
-
-      width: 287px;
-      height: 390px;
-      img {
+      md: css`
         width: 287px;
         height: 390px;
-      }
-    `,
-  })}
+        img {
+          width: 287px;
+          height: 390px;
+        }
+      `,
+    })}
+  }
 `;
-
 
 export const CardText = styled.div`
   /* background: red; */

@@ -16,10 +16,12 @@ function Card({ type = 'default', title, image, text, href, alt }) {
           <img src={image} alt={alt} />
         </a>
       </CardImage>
-      <CardTitle>{title}</CardTitle>
-      <CardText>
-        {text}
-      </CardText>
+      {text ? (
+        <CardText>
+          <CardTitle>{title}</CardTitle>
+          {text}
+        </CardText>
+      ) : <CardTitle>{title}</CardTitle> }
     </CardStyle>
   );
 }

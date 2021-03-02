@@ -1,8 +1,53 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import Text from '../../foundations/text';
 import { CardTitle, CardText, CardImage } from './styles';
 
-const CardHighlighted = styled.div`
+const CardTitleHighlighted = styled.div`
+
+  font-family: Fira Sans Condensed;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #e9c46a;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  flex-direction: column;
+
+  /* width: 147px; */
+  height: 31px;
+  position: absolute;
+
+  top: 15px;
+  left: 10px;
+  /* transform: translateY(-10px);
+  transform: translateX(-40px); */
+  box-sizing: border-box;
+  z-index:1;
+  background: #ffffff;
+  border: 1px solid #000000;
+`;
+/*
+  ${CardHighlightedStyle}+${CardTitle} {
+
+
+
+    margin-top: 5px;
+    margin-left: 4px;
+
+
+
+  }
+    `,
+  })}
+  }
+*/
+
+const CardHighlightedStyle = styled.div`
 
   height: auto;
 
@@ -68,6 +113,7 @@ const CardHighlighted = styled.div`
     border: 1px solid #e9c46a;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
+    justify-content: flex-start;
     /* display: flex; */
     /* flex: 2;
     padding: 10px;
@@ -76,17 +122,18 @@ const CardHighlighted = styled.div`
     ${breakpointsMedia({
       xs: css`
       display: flex;
-      justify-content: center;
       align-items: center;
 
       width: 289px;
       height: 72px;
     `,
+    sm: css`
+      display:none;
+    `,
     md: css`
       margin-top: 21px;
       margin-left: 0;
       display: flex;
-      justify-content: space-between;
       align-items: flex-start;
       flex-direction: column;
       p {
@@ -103,51 +150,27 @@ const CardHighlighted = styled.div`
 
       }
       width: 307px;
-      height: 320px;
+      height: 310px;
     `,
 
   })}
   }
 
   ${CardTitle} {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    /* width: 147px; */
-    height: 31px;
-    position: absolute;
-
-    top: 1px;
-    left: 1px;
-    transform: translateY(-10px);
-    transform: translateX(-40px);
-
-    margin-top: 5px;
-    margin-left: 4px;
-
-    background: #ffffff;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-     ${breakpointsMedia({
-    md: css`
-      width: 228px;
-      height: 48px;
-
-      margin-top: 12px;
-      margin-left: 12px;
-
-    `,
-      sm: css`
-      /* font-size: 20px; */
-          top: 20px;
-    left: 42px;
-
+    margin-bottom: 2vh;
   }
-    `,
-  })}
-  }
-
 `;
+
+// eslint-disable-next-line react/prop-types
+function CardHighlighted({ children }) {
+  return (
+    <CardHighlightedStyle>
+      <CardTitleHighlighted>DESTAQUES</CardTitleHighlighted>
+      {children}
+    </CardHighlightedStyle>
+  );
+}
+
 
 export default CardHighlighted;
