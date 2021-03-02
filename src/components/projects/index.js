@@ -42,9 +42,11 @@ export default function Projets() {
           <Card
             type="highlighted"
             title="Projeto"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec molestie rhoncus vestibulum. Aenean blandit velit."
-            image="../images/4901374 2.svg"
+            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            image="https://placehold.it/250x150"
+            href="https://placeholder.com"
+            alt="Placeholder"
+
           />
 
         </li>

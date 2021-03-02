@@ -114,6 +114,7 @@ const CardHighlightedStyle = styled.div`
     `,
     sm: css`
       display:none;
+
     `,
     md: css`
       margin-top: 21px;

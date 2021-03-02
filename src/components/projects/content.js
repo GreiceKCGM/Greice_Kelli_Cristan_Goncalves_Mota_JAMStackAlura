@@ -1,21 +1,21 @@
 const ProjectList = [
   {
     title: 'Projeto',
-    image: '../images/4901374 2.svg',
+    image: 'https://placehold.it/250x150',
     href: '',
     alt: 'Placeholder',
   },
   {
     title: 'Projeto1',
-    image: '../images/17973919 1.svg',
+    image: 'https://placehold.it/250x150',
     href: '',
     alt: '',
   },
   {
     title: 'Projeto2',
-    image: '../images/17973919 1.svg',
-    href: '',
-    alt: '',
+    image: 'https://placehold.it/250x150',
+    href: 'Placeholder',
+    alt: 'Placeholder',
   },
 ];
 
