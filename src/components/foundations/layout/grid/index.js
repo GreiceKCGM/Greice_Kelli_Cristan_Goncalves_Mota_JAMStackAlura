@@ -133,6 +133,7 @@ ${({ offset }) => {
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
+    ${propToStyle('textAlign')}
   `,
 };
 export default Grid;
