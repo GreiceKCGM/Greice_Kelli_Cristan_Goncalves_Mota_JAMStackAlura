@@ -1,6 +1,6 @@
+import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
-import Text from '../../foundations/text';
 import { CardTitle, CardText, CardImage } from './styles';
 
 const CardTitleHighlighted = styled.div`
@@ -31,21 +31,6 @@ const CardTitleHighlighted = styled.div`
   background: #ffffff;
   border: 1px solid #000000;
 `;
-/*
-  ${CardHighlightedStyle}+${CardTitle} {
-
-
-
-    margin-top: 5px;
-    margin-left: 4px;
-
-
-
-  }
-    `,
-  })}
-  }
-*/
 
 const CardHighlightedStyle = styled.div`
 
@@ -120,7 +105,7 @@ const CardHighlightedStyle = styled.div`
     display: none; */
     /* display: block; */
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
       display: flex;
       align-items: center;
 
@@ -171,6 +156,5 @@ function CardHighlighted({ children }) {
     </CardHighlightedStyle>
   );
 }
-
 
 export default CardHighlighted;

@@ -39,7 +39,7 @@ export default function Projets() {
         <li>
           <Card
             type="highlighted"
-            title="Titulo "
+            title="Projeto"
             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Donec molestie rhoncus vestibulum. Aenean blandit velit."
             image="../images/4901374 2.svg"

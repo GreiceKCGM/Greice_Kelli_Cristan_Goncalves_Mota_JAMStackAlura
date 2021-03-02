@@ -1,18 +1,18 @@
 const ProjectList = [
   {
-    title: 'title',
+    title: 'Projeto',
     image: '../images/4901374 2.svg',
     href: '',
     alt: 'Placeholder',
   },
   {
-    title: 'title1',
+    title: 'Projeto1',
     image: '../images/17973919 1.svg',
     href: '',
     alt: '',
   },
   {
-    title: 'title2',
+    title: 'Projeto2',
     image: '../images/17973919 1.svg',
     href: '',
     alt: '',
