@@ -62,10 +62,12 @@ function FormContent() {
 export default function FormCadastro({ propsDoModal }) {
   return (
     <Grid.Row
-      marginLeft={0}
-      marginRight={0}
+      height={675}
+      width={900}
+      top="auto"
+      marginTop="auto"
       flex={1}
-      justifyContent="flex-end"
+      justifyContent="center"
     >
       <Grid.Col
         display="flex"
@@ -74,11 +76,13 @@ export default function FormCadastro({ propsDoModal }) {
         value={{ xs: 12, md: 5, lg: 4 }}
       >
         <Box
-          boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
+          boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
+          borderRadius="10px 10px 0px 0px"
           display="flex"
           flexDirection="column"
           justifyContent="center"
           flex={1}
+          height={675}
           padding={{
             xs: '16px',
             md: '85px',

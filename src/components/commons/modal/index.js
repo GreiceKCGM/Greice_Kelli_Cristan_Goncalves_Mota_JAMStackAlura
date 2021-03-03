@@ -48,7 +48,7 @@ function Modal({ isOpen, onClose, children }) {
             y: 0,
           },
           closed: {
-            y: '-100%', // quanto maior para sair da tela
+            y: '100%', // quanto maior para sair da tela
           },
         }}
         animate={isOpen ? 'open' : 'closed'}

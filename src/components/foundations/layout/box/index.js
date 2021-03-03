@@ -11,6 +11,10 @@ const Box = styled.div`
     ${propToStyle('backgroundImage')}
     ${propToStyle('backgroundRepeat')}
     ${propToStyle('backgroundPosition')}
+    ${propToStyle('borderRadius')}
+    ${propToStyle('height')}
+    ${propToStyle('boxShadow')}
+    ${propToStyle('padding')}
 `;
 
 export default Box;
