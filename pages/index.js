@@ -9,6 +9,7 @@ import Contact from '../src/components/commons/cover/contact';
 import Text from '../src/components/foundations/text';
 import Button from '../src/components/commons/button/button';
 import Modal from '../src/components/commons/modal';
+import FormCadastro from '../src/components/patterns/formCadastro';
 
 export default function Home() {
   const [isModalOpen, setModalState] = React.useState(false);
@@ -31,15 +32,7 @@ export default function Home() {
         }}
       >
         {(propsDoModal) => (
-          <Box
-            backgroundColor="white"
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...propsDoModal}
-          >
-            <div>
-              Nosso Conteúdo
-            </div>
-          </Box>
+          <FormCadastro propsDoModal={propsDoModal} />
         )}
       </Modal>
       <Grid.Container>

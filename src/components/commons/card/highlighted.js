@@ -52,6 +52,7 @@ const CardHighlightedStyle = styled.div`
       justify-content: center;
       flex-direction: row;
 
+
     `,
   })}
   &:hover {
@@ -113,7 +114,9 @@ const CardHighlightedStyle = styled.div`
       height: 72px;
     `,
     sm: css`
-      display:none;
+      /* display:none; */
+      /* order: 1; */
+
 
     `,
     md: css`
@@ -122,19 +125,7 @@ const CardHighlightedStyle = styled.div`
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      p {
-        margin-top: 30px;
-        margin-left: 30px;
-        margin-right: 26px;
-        margin-bottom: 82px;
-      }
-      h6 {
-        margin-top: 28px;
-        margin-left: 30px;
-        margin-right: 170px;
-        margin-bottom: 30px;
-
-      }
+      /*  */
       width: 307px;
       height: 310px;
     `,
