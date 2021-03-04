@@ -4,7 +4,7 @@ import Grid from '../../foundations/layout/grid';
 
 function FormContent() {
   const [userInfo, setUserInfo] = React.useState({
-    name: 'Greice',
+    nome: 'Greice',
     email: 'greicekellybc@gmail.com',
     mensagem: '',
   });
@@ -18,7 +18,7 @@ function FormContent() {
   }
 
   // eslint-disable-next-line max-len
-  const isFormInvalid = userInfo.name.length === 0 || userInfo.email.length === 0 || userInfo.mensagem.length === 0;
+  const isFormInvalid = userInfo.email.length === 0 || userInfo.nome.length === 0 || userInfo.mensagem.length === 0;
   return (
     <form onSubmit={(event) => {
       event.preventDefault();
@@ -26,9 +26,9 @@ function FormContent() {
     >
       <div>
         <input
-          placeholder="Name"
-          name="name"
-          value={userInfo.name}
+          placeholder="Nome"
+          name="nome"
+          value={userInfo.nome}
           onChange={handleChange}
         />
       </div>
@@ -48,12 +48,9 @@ function FormContent() {
           onChange={handleChange}
         />
       </div>
-      <div>
+      <button type="submit" disabled={isFormInvalid}>
         Enviar
-        <button type="submit" disable={isFormInvalid}>
-          {'>'}
-        </button>
-      </div>
+      </button>
     </form>
   );
 }
@@ -62,10 +59,10 @@ function FormContent() {
 export default function FormCadastro({ propsDoModal }) {
   return (
     <Grid.Row
-      height={675}
+      height="50px"
       width={900}
-      top="auto"
-      marginTop="auto"
+    //   top="auto"
+      marginTop={20}
       flex={1}
       justifyContent="center"
     >
