@@ -7,7 +7,7 @@ const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   left: 0;
@@ -45,10 +45,10 @@ function Modal({ isOpen, onClose, children }) {
       <motion.div
         variants={{
           open: {
-            y: 0,
+            x: 0,
           },
           closed: {
-            y: '100%', // quanto maior para sair da tela
+            x: '100%', // quanto maior para sair da tela
           },
         }}
         animate={isOpen ? 'open' : 'closed'}

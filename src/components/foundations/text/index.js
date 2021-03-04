@@ -1,9 +1,10 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-unresolved
 import PropTypes from 'prop-types';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import get from 'lodash/get';
+import styled, { css } from 'styled-components';
 import propToStyle from '../../../theme/utils/propToStyled';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const paragraph1 = css`
   ${({ theme }) => css`
@@ -44,7 +45,8 @@ export const TextStyleVariants = {
 
 // eslint-disable-next-line no-undef
 const TextBase = styled.span`
-  ${(props) => TextStyleVariants[props.variants]}
+   ${(props) => TextStyleVariants[props.variants]}
+   color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
 
   ${propToStyle('textAlign')}
    ${propToStyle('marginBottom')}

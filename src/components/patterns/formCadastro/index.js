@@ -1,6 +1,7 @@
 import React from 'react';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
+import Text from '../../foundations/text';
 
 function FormContent() {
   const [userInfo, setUserInfo] = React.useState({
@@ -24,6 +25,13 @@ function FormContent() {
       event.preventDefault();
     }}
     >
+      <Text
+        variant="titleXS"
+        tag="h1"
+        color="tertiary.main"
+      >
+        ENVIEI SUA MENSAGEM
+      </Text>
       <div>
         <input
           placeholder="Nome"
@@ -59,12 +67,10 @@ function FormContent() {
 export default function FormCadastro({ propsDoModal }) {
   return (
     <Grid.Row
-      height="50px"
-      width={900}
-    //   top="auto"
-      marginTop={20}
+      marginLeft={0}
+      marginRight={0}
       flex={1}
-      justifyContent="center"
+      justifyContent="flex-end"
     >
       <Grid.Col
         display="flex"
@@ -79,7 +85,6 @@ export default function FormCadastro({ propsDoModal }) {
           flexDirection="column"
           justifyContent="center"
           flex={1}
-          height={675}
           padding={{
             xs: '16px',
             md: '85px',
