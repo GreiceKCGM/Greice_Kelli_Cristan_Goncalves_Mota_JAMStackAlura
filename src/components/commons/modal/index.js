@@ -45,10 +45,10 @@ function Modal({ isOpen, onClose, children }) {
       <motion.div
         variants={{
           open: {
-            x: 0,
+            y: 0,
           },
           closed: {
-            x: '100%', // quanto maior para sair da tela
+            y: '100%', // quanto maior para sair da tela
           },
         }}
         animate={isOpen ? 'open' : 'closed'}

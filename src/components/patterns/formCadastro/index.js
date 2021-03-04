@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../commons/button/button';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
@@ -26,7 +27,7 @@ function FormContent() {
     }}
     >
       <Text
-        variant="titleXS"
+        variant="paragraph1"
         tag="h1"
         color="tertiary.main"
       >
@@ -56,9 +57,33 @@ function FormContent() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit" disabled={isFormInvalid}>
-        Enviar
-      </button>
+
+      <div>
+        <Text
+          variant="titleXS"
+          tag="p"
+          color="primary.main"
+          textAlign={{
+            xs: 'center',
+            md: 'left',
+          }}
+        >
+          ENVIAR
+        </Text>
+        <Button
+          type="submit"
+          disabled={isFormInvalid}
+          variant="tertiary.light"
+        >
+          <Text
+            color="background.main"
+          >
+            {'>'}
+          </Text>
+        </Button>
+      </div>
+
+
     </form>
   );
 }
@@ -81,7 +106,6 @@ export default function FormCadastro({ propsDoModal }) {
         <Box
           boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
           borderRadius="10px 10px 0px 0px"
-          display="flex"
           flexDirection="column"
           justifyContent="center"
           flex={1}
