@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-unresolved
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import styled, { css } from 'styled-components';
