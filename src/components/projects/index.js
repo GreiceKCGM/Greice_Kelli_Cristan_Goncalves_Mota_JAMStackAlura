@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Card from '../commons/card';
 import { SectionTitle } from '../commons/card/styles';
 import ProjectList from './content';

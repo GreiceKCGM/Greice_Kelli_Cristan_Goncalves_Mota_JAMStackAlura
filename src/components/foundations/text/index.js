@@ -1,9 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import get from 'lodash/get';
+import styled, { css } from 'styled-components';
 import propToStyle from '../../../theme/utils/propToStyled';
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const paragraph1 = css`
   ${({ theme }) => css`
@@ -20,10 +20,18 @@ const smallestException = css`
     line-height: ${theme.typographyVariants.smallestException.lineHeight};
   `}
 `;
+const titleXS = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.smallestException.fontSize};
+    font-weight: ${theme.typographyVariants.smallestException.fontWeight};
+    line-height: ${theme.typographyVariants.smallestException.lineHeight};
+  `}
+`;
 
 export const TextStyleVariants = {
   smallestException,
   paragraph1,
+  titleXS,
   title: css`
     ${({ theme }) => css`
       font-size: ${theme.typographyVariants.titleXS.fontSize};
@@ -44,7 +52,8 @@ export const TextStyleVariants = {
 
 // eslint-disable-next-line no-undef
 const TextBase = styled.span`
-  ${(props) => TextStyleVariants[props.variants]}
+   ${(props) => TextStyleVariants[props.variants]}
+   color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
 
   ${propToStyle('textAlign')}
    ${propToStyle('marginBottom')}
@@ -66,7 +75,7 @@ export default function Text({ tag, variant, children, ...props }) {
 }
 
 Text.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   tag: PropTypes.oneOf([
     'h1',
     'h2',
@@ -78,11 +87,13 @@ Text.propTypes = {
     'li',
     'a',
     'span',
+    'input',
   ]),
-  variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title']),
+  variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title', 'titleXS']),
 };
 
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
+  children: null,
 };

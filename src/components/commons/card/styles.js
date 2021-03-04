@@ -10,6 +10,8 @@ export const SectionTitle = styled.section`
   justify-content: center;
   text-align: center;
   text-transform: uppercase;
+  color: #8b3e2f;
+  transition: 200ms ease-in-out;
 `;
 
 export const CardDefault = styled.div`

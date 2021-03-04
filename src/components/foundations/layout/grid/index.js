@@ -35,6 +35,18 @@ const Grid = {
     flex-wrap: wrap;
     margin-right: -16px;
     margin-left: -16px;
+    ${propToStyle('flex')}
+    ${propToStyle('height')}
+    ${propToStyle('marginLeft')}
+    ${propToStyle('marginRigth')}
+    ${propToStyle('justifyContent')}
+    ${propToStyle('marginTop')}
+    ${propToStyle('top')}
+    ${propToStyle('maxWidth')}
+    ${propToStyle('flexDirection')}
+    ${propToStyle('alignContent')}
+    ${propToStyle('paddingLeft')}
+    ${propToStyle('paddingRight')}
   `,
   Col: styled.div`
     padding-right: 16px;
@@ -134,6 +146,7 @@ ${({ offset }) => {
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
     ${propToStyle('textAlign')}
+    ${propToStyle('paddingRight')}
   `,
 };
 export default Grid;

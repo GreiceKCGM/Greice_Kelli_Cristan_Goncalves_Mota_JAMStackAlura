@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import CardHighlighted from './highlighted';
 // eslint-disable-next-line import/no-named-as-default
 import CardDefault, { CardImage, CardText, CardTitle } from './styles';
+import Text from '../../foundations/text';
 
 function Card({
   type = 'default', title, image, text, href, alt,
@@ -19,10 +20,34 @@ function Card({
       </CardImage>
       {text ? (
         <CardText>
-          <CardTitle>{title}</CardTitle>
+          <CardTitle>
+            <Text
+              // variant="titleXS"
+              // tag="h2"
+              textAlign="center"
+              color="primary.main"
+              marginTop="0"
+            >
+              {title}
+            </Text>
+          </CardTitle>
           {text}
+
         </CardText>
-      ) : <CardTitle>{title}</CardTitle> }
+      )
+        : (
+          <CardTitle>
+            <Text
+              variant="titleXS"
+              tag="h2"
+              textAlign="center"
+              color="primary.main"
+              marginTop="0"
+            >
+              {title}
+            </Text>
+          </CardTitle>
+        ) }
     </CardStyle>
   );
 }

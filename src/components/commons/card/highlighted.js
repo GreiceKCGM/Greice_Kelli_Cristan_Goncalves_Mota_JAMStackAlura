@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import Text from '../../foundations/text';
 import { CardTitle, CardText, CardImage } from './styles';
 
 const CardTitleHighlighted = styled.div`
@@ -51,6 +52,7 @@ const CardHighlightedStyle = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: row;
+
 
     `,
   })}
@@ -113,7 +115,9 @@ const CardHighlightedStyle = styled.div`
       height: 72px;
     `,
     sm: css`
-      display:none;
+      /* display:none; */
+      /* order: 1; */
+
 
     `,
     md: css`
@@ -122,19 +126,7 @@ const CardHighlightedStyle = styled.div`
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      p {
-        margin-top: 30px;
-        margin-left: 30px;
-        margin-right: 26px;
-        margin-bottom: 82px;
-      }
-      h6 {
-        margin-top: 28px;
-        margin-left: 30px;
-        margin-right: 170px;
-        margin-bottom: 30px;
-
-      }
+      /*  */
       width: 307px;
       height: 310px;
     `,
@@ -152,7 +144,15 @@ const CardHighlightedStyle = styled.div`
 function CardHighlighted({ children }) {
   return (
     <CardHighlightedStyle>
-      <CardTitleHighlighted>DESTAQUES</CardTitleHighlighted>
+      <CardTitleHighlighted>
+        <Text
+          textAlign="center"
+          color="primary.main"
+          marginTop="0"
+        >
+          DESTAQUES
+        </Text>
+      </CardTitleHighlighted>
       {children}
     </CardHighlightedStyle>
   );
