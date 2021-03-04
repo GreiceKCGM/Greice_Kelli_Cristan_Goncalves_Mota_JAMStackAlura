@@ -20,10 +20,18 @@ const smallestException = css`
     line-height: ${theme.typographyVariants.smallestException.lineHeight};
   `}
 `;
+const titleXS = css`
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.smallestException.fontSize};
+    font-weight: ${theme.typographyVariants.smallestException.fontWeight};
+    line-height: ${theme.typographyVariants.smallestException.lineHeight};
+  `}
+`;
 
 export const TextStyleVariants = {
   smallestException,
   paragraph1,
+  titleXS,
   title: css`
     ${({ theme }) => css`
       font-size: ${theme.typographyVariants.titleXS.fontSize};
@@ -80,7 +88,7 @@ Text.propTypes = {
     'a',
     'span',
   ]),
-  variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title']),
+  variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title', 'titleXS']),
 };
 
 Text.defaultProps = {
