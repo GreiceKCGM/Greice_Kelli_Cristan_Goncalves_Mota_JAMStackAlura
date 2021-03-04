@@ -42,7 +42,11 @@ const Grid = {
     ${propToStyle('justifyContent')}
     ${propToStyle('marginTop')}
     ${propToStyle('top')}
-    ${propToStyle('width')}
+    ${propToStyle('maxWidth')}
+    ${propToStyle('flexDirection')}
+    ${propToStyle('alignContent')}
+    ${propToStyle('paddingLeft')}
+    ${propToStyle('paddingRight')}
   `,
   Col: styled.div`
     padding-right: 16px;

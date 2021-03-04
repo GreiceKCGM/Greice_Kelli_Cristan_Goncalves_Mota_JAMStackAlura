@@ -75,7 +75,7 @@ export default function Text({ tag, variant, children, ...props }) {
 }
 
 Text.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   tag: PropTypes.oneOf([
     'h1',
     'h2',
@@ -87,6 +87,7 @@ Text.propTypes = {
     'li',
     'a',
     'span',
+    'input',
   ]),
   variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title', 'titleXS']),
 };
@@ -94,4 +95,5 @@ Text.propTypes = {
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
+  children: null,
 };

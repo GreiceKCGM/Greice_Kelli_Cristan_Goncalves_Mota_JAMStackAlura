@@ -1,13 +1,14 @@
 import React from 'react';
 import Button from '../../commons/button/button';
+import TextField from '../../forms/textField';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
 
 function FormContent() {
   const [userInfo, setUserInfo] = React.useState({
-    nome: 'Greice',
-    email: 'greicekellybc@gmail.com',
+    nome: '',
+    email: '',
     mensagem: '',
   });
 
@@ -27,14 +28,22 @@ function FormContent() {
     }}
     >
       <Text
-        variant="paragraph1"
+        variant="title"
         tag="h1"
         color="tertiary.main"
       >
-        ENVIEI SUA MENSAGEM
+        ENVIE SUA MENSAGEM
       </Text>
+
       <div>
-        <input
+        <Text
+          variant="titleXS"
+          tag="p"
+          color="tertiary.main"
+        >
+          Seu nome
+        </Text>
+        <TextField
           placeholder="Nome"
           name="nome"
           value={userInfo.nome}
@@ -42,48 +51,57 @@ function FormContent() {
         />
       </div>
       <div>
-        <input
-          placeholder="Email"
+        <Text
+          variant="titleXS"
+          tag="p"
+          color="tertiary.main"
+        >
+          Seu email
+        </Text>
+        <TextField
+          placeholder="caio@example.com"
           name="email"
           value={userInfo.email}
           onChange={handleChange}
         />
       </div>
       <div>
-        <input
+        <Text
+          variant="titleXS"
+          tag="p"
+          color="tertiary.main"
+        >
+          Sua mensagem
+        </Text>
+        <TextField
           placeholder="Mensagem"
           name="mensagem"
           value={userInfo.mensagem}
           onChange={handleChange}
         />
       </div>
-
-      <div>
-        <Text
-          variant="titleXS"
-          tag="p"
-          color="primary.main"
-          textAlign={{
-            xs: 'center',
-            md: 'left',
-          }}
-        >
-          ENVIAR
-        </Text>
+      <Text
+        variant="titleXS"
+        tag="p"
+        color="primary.main"
+        textAlign={{
+          xs: 'center',
+          md: 'left',
+        }}
+      >
+        ENVIAR
         <Button
           type="submit"
           disabled={isFormInvalid}
           variant="tertiary.light"
         >
           <Text
-            color="background.main"
+            color="tertiary.main"
           >
             {'>'}
           </Text>
         </Button>
-      </div>
-
-
+      </Text>
     </form>
   );
 }
@@ -95,12 +113,16 @@ export default function FormCadastro({ propsDoModal }) {
       marginLeft={0}
       marginRight={0}
       flex={1}
-      justifyContent="flex-end"
+      maxWidth="auto"
+      justifyContent="center"
+      paddingLeft="24px"
+      paddingRight="24px"
+      alignContent="flex-end"
     >
       <Grid.Col
         display="flex"
-        paddingRight={{ md: '0' }}
-        flex={1}
+        paddingRight="16px 16px 48px"
+        flexDirection="column"
         value={{ xs: 12, md: 5, lg: 4 }}
       >
         <Box
