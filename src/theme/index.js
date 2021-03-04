@@ -6,7 +6,7 @@ export const colors = {
       color: '#FFFFFF',
     },
     main: {
-      color: '#F2F2F2',
+      color: '#8B3E2F',
       contrastText: '#fff',
     },
   },
