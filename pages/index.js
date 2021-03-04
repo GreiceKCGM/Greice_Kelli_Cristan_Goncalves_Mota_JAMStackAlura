@@ -44,7 +44,7 @@ export default function Home() {
               <Text
                 variant="title"
                 tag="p"
-                color="tertiary.light"
+                color="primary.main"
                 textAlign={{
                   xs: 'center',
                   md: 'left',
@@ -55,7 +55,7 @@ export default function Home() {
             </Contact>
 
             <Button
-              variant="primary.main"
+              variant="tertiary.light"
               margin={{
                 xs: 'auto',
                 md: 'initial',

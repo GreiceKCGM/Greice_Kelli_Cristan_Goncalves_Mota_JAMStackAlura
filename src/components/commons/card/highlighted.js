@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import Text from '../../foundations/text';
 import { CardTitle, CardText, CardImage } from './styles';
 
 const CardTitleHighlighted = styled.div`
@@ -143,7 +144,15 @@ const CardHighlightedStyle = styled.div`
 function CardHighlighted({ children }) {
   return (
     <CardHighlightedStyle>
-      <CardTitleHighlighted>DESTAQUES</CardTitleHighlighted>
+      <CardTitleHighlighted>
+        <Text
+          textAlign="center"
+          color="primary.main"
+          marginTop="0"
+        >
+          DESTAQUES
+        </Text>
+      </CardTitleHighlighted>
       {children}
     </CardHighlightedStyle>
   );

@@ -7,6 +7,7 @@ export const colors = {
     },
     main: {
       color: '#F2F2F2',
+      contrastText: '#fff',
     },
   },
   borders: {

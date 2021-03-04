@@ -6,10 +6,10 @@ export default function Cover() {
   return (
     <CoverPrincipal>
       <Text
-        variant="paragraph1"
+        variant="title"
         tag="h1"
         textAlign="center"
-        color="primary.main"
+        color="background.main"
       >
         Greice Kelli C.G.Mota
       </Text>
@@ -17,7 +17,7 @@ export default function Cover() {
         variant="title"
         tag="h2"
         textAlign="center"
-        color="primary.main"
+        color="background.main"
         marginTop="0"
       >
         Front-end Developer
