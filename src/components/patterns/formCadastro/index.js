@@ -165,7 +165,7 @@ function FormContent() {
           <Lottie
             width="150px"
             height="150px"
-            config={{ animationData: successAnimation, loop: true, autoplay: true }}
+            config={{ animationData: successAnimation, loop: false, autoplay: true }}
           />
         </Box>
       )}
