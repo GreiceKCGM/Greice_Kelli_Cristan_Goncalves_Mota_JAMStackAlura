@@ -226,7 +226,13 @@ export default function FormCadastro({ propsDoModal }) {
             flexDirection="row-reverse"
             marginRight="12px"
           >
-            <Button>X</Button>
+
+            <Button
+              // eslint-disable-next-line no-undef
+              onClick={() => onClose()}
+            >
+              X
+            </Button>
           </Grid.Row>
 
           <FormContent />
