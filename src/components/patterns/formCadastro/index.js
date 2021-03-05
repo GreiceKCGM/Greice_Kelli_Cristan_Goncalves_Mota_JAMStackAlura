@@ -1,4 +1,6 @@
 import React from 'react';
+import { Lottie } from '@crello/react-lottie';
+import successAnimation from './animations/success.json';
 import Button from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Box from '../../foundations/layout/box';
@@ -156,9 +158,16 @@ function FormContent() {
         </Button>
       </Text>
       {isFormSubmited && submissionStatus === formStates.DONE && (
-        <p>
-          Deu tudo Certo!
-        </p>
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{ animationData: successAnimation, loop: true, autoplay: true }}
+          />
+        </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.ERROR && (
         <p>
