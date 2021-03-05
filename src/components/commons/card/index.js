@@ -22,11 +22,11 @@ function Card({
         <CardText>
           <CardTitle>
             <Text
-              // variant="titleXS"
-              // tag="h2"
+              variant="title"
+              tag="p"
               textAlign="center"
               color="primary.main"
-              marginTop="0"
+              // marginTop="0"
             >
               {title}
             </Text>
@@ -39,10 +39,9 @@ function Card({
           <CardTitle>
             <Text
               variant="titleXS"
-              tag="h2"
+              tag="h3"
               textAlign="center"
               color="primary.main"
-              marginTop="0"
             >
               {title}
             </Text>

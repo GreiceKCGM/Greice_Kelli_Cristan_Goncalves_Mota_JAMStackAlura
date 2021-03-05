@@ -147,13 +147,16 @@ export default function FormCadastro({ propsDoModal }) {
           flex={1}
           padding={{
             xs: '16px',
-            md: '85px',
+            md: '21px',
           }}
           backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsDoModal}
         >
-          <Button>X</Button>
+          <Box>
+            <Button>X</Button>
+          </Box>
+
           <FormContent />
         </Box>
       </Grid.Col>
