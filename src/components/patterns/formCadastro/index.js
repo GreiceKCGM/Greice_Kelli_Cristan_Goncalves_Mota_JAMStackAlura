@@ -1,6 +1,7 @@
 import React from 'react';
 import { Lottie } from '@crello/react-lottie';
 import successAnimation from './animations/success.json';
+import errorAnimation from './animations/error.json';
 import Button from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Box from '../../foundations/layout/box';
@@ -170,9 +171,16 @@ function FormContent() {
         </Box>
       )}
       {isFormSubmited && submissionStatus === formStates.ERROR && (
-        <p>
-          Deu tudo errado!
-        </p>
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
+          />
+        </Box>
       )}
     </form>
   );
