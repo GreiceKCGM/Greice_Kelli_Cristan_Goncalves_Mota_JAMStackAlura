@@ -4,15 +4,21 @@ import { TextStyleVariants } from '../../foundations/text';
 
 const Button = styled.button`
     ${TextStyleVariants.title}
-    margin-bottom: 10px;
+    margin-bottom:10px;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    font-size: 1em;
     background-color:white;
+    color: black;
     border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
     position:relative;
     cursor: pointer;
-    padding: 4px 10px;
+    /* padding: 6px 6px 6px 6px; */
     box-sizing: border-box;
     font-weight: bold;
-    border-radius: 100%;
+    border-radius: 50%;
+    text-align: center;
     transition: opacity ${({ theme }) => theme.transition};
     &:hover,
     &:focus {

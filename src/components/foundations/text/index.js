@@ -58,6 +58,9 @@ const TextBase = styled.span`
   ${propToStyle('textAlign')}
    ${propToStyle('marginBottom')}
    ${propToStyle('margin')}
+   ${propToStyle('marginTop')}
+   ${propToStyle('paddingBottom')}
+   ${propToStyle('paddingRight')}
 `;
 
 // eslint-disable-next-line object-curly-newline

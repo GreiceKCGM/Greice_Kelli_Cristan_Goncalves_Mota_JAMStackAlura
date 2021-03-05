@@ -13,6 +13,7 @@ const Input = styled(Text)`
   padding: 12px 16px;
   margin: 2px 0;
 
+
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
 `;

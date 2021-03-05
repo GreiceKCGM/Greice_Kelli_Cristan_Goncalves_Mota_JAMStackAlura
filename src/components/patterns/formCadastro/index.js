@@ -31,6 +31,9 @@ function FormContent() {
         variant="title"
         tag="h1"
         color="tertiary.main"
+        textAlign="center"
+        marginBottom="51px"
+
       >
         ENVIE SUA MENSAGEM
       </Text>
@@ -40,8 +43,10 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
+          marginTop="20px"
+          marginBottom="5px"
         >
-          Seu nome
+          Seu Nome
         </Text>
         <TextField
           placeholder="Nome"
@@ -55,6 +60,8 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
+          marginTop="20px"
+          marginBottom="5px"
         >
           Seu email
         </Text>
@@ -70,6 +77,8 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
+          marginTop="20px"
+          marginBottom="5px"
         >
           Sua mensagem
         </Text>
@@ -78,18 +87,20 @@ function FormContent() {
           name="mensagem"
           value={userInfo.mensagem}
           onChange={handleChange}
+          paddingBottom="60px"
         />
       </div>
       <Text
         variant="titleXS"
-        tag="p"
+        tag="h1"
         color="primary.main"
         textAlign={{
           xs: 'center',
-          md: 'left',
+          md: 'center',
         }}
       >
         ENVIAR
+
         <Button
           type="submit"
           disabled={isFormInvalid}
