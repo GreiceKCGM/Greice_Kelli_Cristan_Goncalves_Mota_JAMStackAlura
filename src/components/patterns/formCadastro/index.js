@@ -98,6 +98,7 @@ function FormContent() {
           name="nome"
           value={userInfo.nome}
           onChange={handleChange}
+          paddingBottom="20px"
         />
       </div>
       <div>
@@ -115,6 +116,7 @@ function FormContent() {
           name="email"
           value={userInfo.email}
           onChange={handleChange}
+          paddingBottom="20px"
         />
       </div>
       <div>
@@ -132,7 +134,7 @@ function FormContent() {
           name="mensagem"
           value={userInfo.mensagem}
           onChange={handleChange}
-          paddingBottom="60px"
+          paddingBottom="100px"
         />
       </div>
       <Text

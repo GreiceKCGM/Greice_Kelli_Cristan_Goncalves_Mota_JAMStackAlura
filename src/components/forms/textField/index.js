@@ -2,16 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../foundations/text';
+import propToStyle from '../../../theme/utils/propToStyled';
 
 const InputWrapper = styled.div`
  margin: 4px 0;
+
 `;
 
 const Input = styled(Text)`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.primary.main.color};
   padding: 12px 16px;
-  margin: 2px 0;
+  margin: 4px 0;
+  ${propToStyle('paddingBottom')}
 
 
   outline: 0;
@@ -21,6 +24,7 @@ const Input = styled(Text)`
 Input.defaultProps = {
   tag: 'input',
   variant: 'paragraph1',
+  paddingBottom: 'inherit',
 };
 
 export default function TextField({
@@ -28,6 +32,7 @@ export default function TextField({
   name,
   onChange,
   value,
+  paddingBottom,
 }) {
   return (
     <InputWrapper>
@@ -37,6 +42,7 @@ export default function TextField({
         name={name}
         onChange={onChange}
         value={value}
+        paddingBottom={paddingBottom}
       />
     </InputWrapper>
   );
@@ -47,4 +53,9 @@ TextField.propTypes = {
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  paddingBottom: PropTypes.string,
+};
+
+TextField.defaultProps = {
+  paddingBottom: 'inherit',
 };
