@@ -69,6 +69,7 @@ function Modal({ isOpen, onClose, children }) {
       >
         {children({
           'data-modal-safe-area': 'true',
+          // ButtonClose: <ButtonClose onClose={onClose} />,
         })}
 
       </motion.div>
