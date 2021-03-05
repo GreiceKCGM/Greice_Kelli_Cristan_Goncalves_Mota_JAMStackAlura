@@ -153,9 +153,12 @@ export default function FormCadastro({ propsDoModal }) {
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...propsDoModal}
         >
-          <Box>
+          <Grid.Row
+            flexDirection="row-reverse"
+            marginRight="12px"
+          >
             <Button>X</Button>
-          </Box>
+          </Grid.Row>
 
           <FormContent />
         </Box>
