@@ -124,6 +124,7 @@ export default function FormCadastro({ propsDoModal }) {
         paddingRight="16px 16px 48px"
         flexDirection="column"
         value={{ xs: 12, md: 8, lg: 6 }}
+
       >
         <Box
           boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
