@@ -77,7 +77,7 @@ function FormContent() {
         tag="h1"
         color="tertiary.main"
         textAlign="center"
-        marginBottom="51px"
+        marginBottom="20px"
 
       >
         ENVIE SUA MENSAGEM
@@ -88,7 +88,6 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginTop="20px"
           marginBottom="5px"
         >
           Seu Nome
@@ -98,7 +97,7 @@ function FormContent() {
           name="nome"
           value={userInfo.nome}
           onChange={handleChange}
-          paddingBottom="20px"
+          paddingBottom="5px"
         />
       </div>
       <div>
@@ -106,17 +105,16 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginTop="20px"
           marginBottom="5px"
         >
-          Seu email
+          Seu E-mail
         </Text>
         <TextField
           placeholder="caio@example.com"
           name="email"
           value={userInfo.email}
           onChange={handleChange}
-          paddingBottom="20px"
+          paddingBottom="5px"
         />
       </div>
       <div>
@@ -124,17 +122,16 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginTop="20px"
           marginBottom="5px"
         >
-          Sua mensagem
+          Sua Mensagem
         </Text>
         <TextField
           placeholder="Mensagem"
           name="mensagem"
           value={userInfo.mensagem}
           onChange={handleChange}
-          paddingBottom="100px"
+          paddingBottom="50px"
         />
       </div>
       <Text
@@ -197,8 +194,8 @@ export default function FormCadastro({ propsDoModal }) {
       flex={1}
       maxWidth="auto"
       justifyContent="center"
-      paddingLeft="24px"
-      paddingRight="24px"
+      paddingLeft="50px"
+      paddingRight="50px"
       alignContent="flex-end"
     >
 
