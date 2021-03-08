@@ -126,7 +126,7 @@ function FormContent() {
           color="primary.main"
           marginBottom="24px"
         >
-          Email inválido!
+          E-mail inválido!
         </Text>
         ) }
       </div>
