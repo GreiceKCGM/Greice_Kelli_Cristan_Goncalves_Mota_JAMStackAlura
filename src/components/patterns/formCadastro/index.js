@@ -5,7 +5,6 @@ import errorAnimation from './animations/error.json';
 import Button from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Box from '../../foundations/layout/box';
-import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
 
 const formStates = {
@@ -188,44 +187,26 @@ function FormContent() {
 // eslint-disable-next-line react/prop-types
 export default function FormCadastro({ propsDoModal }) {
   return (
-    <Grid.Row
-      marginLeft={0}
-      marginRight={0}
-      flex={1}
-      maxWidth="auto"
+
+    <Box
+      boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
+      borderRadius="10px 10px 0px 0px"
+      flexDirection="column"
       justifyContent="center"
-      paddingLeft="50px"
-      paddingRight="50px"
-      alignContent="flex-end"
-    >
-
-      <Grid.Col
-        display="flex"
-        paddingRight="16px 16px 48px"
-        flexDirection="column"
-        value={{ xs: 12, md: 8, lg: 6 }}
-
-      >
-
-        <Box
-          boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
-          borderRadius="10px 10px 0px 0px"
-          flexDirection="column"
-          justifyContent="center"
-          flex={1}
-          padding={{
-            xs: '16px',
-            md: '21px',
-          }}
-          backgroundColor="white"
+      flex={1}
+      padding={{
+        xs: '16px',
+        md: '21px',
+      }}
+      backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
-          {...propsDoModal}
-        >
-          {/* <Box textAlign="right">{modalPropsButtonClose}</Box> */}
-          <FormContent />
-        </Box>
-      </Grid.Col>
-    </Grid.Row>
+      {...propsDoModal}
+    >
+      {/* <Box textAlign="right">{modalPropsButtonClose}</Box> */}
+      <FormContent />
+    </Box>
+    //   </Grid.Col>
+    // </Grid.Row>
 
   );
 }

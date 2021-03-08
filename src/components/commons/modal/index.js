@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { motion } from 'framer-motion';
+import Button from '../button/button';
+import Box from '../../foundations/layout/box';
+import Grid from '../../foundations/layout/grid';
 
 const ModalWrapper = styled.div`
   display: flex;
@@ -37,26 +40,13 @@ body {
 
 `;
 
-const CloseButton = () => (
-    <Box
-      position="absolute"
-      top={{
-        xs: '20px',
-        md: '10px',
-      }}
-      right={{
-        xs: '20px',
-        md: '10px',
-      }}
-      onClick={() => onClose()}
-      cursor="pointer"
-    >
-
-    </Box>
-  );
-
-
 function Modal({ isOpen, onClose, children }) {
+  const buttonClose = (event) => {
+    const isSafeArea = event.target.closest('[data-modal-safe-area="true"]');
+    if (!isSafeArea) {
+      onClose();
+    }
+  };
   return (
     <ModalWrapper
       isOpen={isOpen}
@@ -86,10 +76,48 @@ function Modal({ isOpen, onClose, children }) {
           flex: 1,
         }}
       >
-        {children({
-          'data-modal-safe-area': 'true',
-          CloseButton,
-        })}
+        <Grid.Row
+          marginLeft={0}
+          marginRight={0}
+          flex={1}
+          maxWidth="auto"
+          justifyContent="center"
+          paddingLeft="50px"
+          paddingRight="50px"
+          alignContent="flex-end"
+        >
+          <Grid.Col
+            display="flex"
+            paddingRight="16px 16px 48px"
+            flexDirection="column"
+            value={{ xs: 12, md: 8, lg: 6 }}
+          >
+            <Box
+              height="10px"
+              paddingRight="10px"
+              alignSelf="flex-end"
+            >
+
+              <Button
+                style={{
+                  width: 50,
+                  height: 50,
+                  color: 'black',
+                  borderRadius: 50,
+                  marginTop: 15,
+                }}
+                cursor="pointer"
+                onClick={(event) => {
+                  buttonClose(event);
+                }}
+              >
+                X
+              </Button>
+            </Box>
+            { children({ 'data-modal-safe-area': 'true' }) }
+
+          </Grid.Col>
+        </Grid.Row>
 
       </motion.div>
 
@@ -101,7 +129,5 @@ Modal.propTypes = {
   children: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
 };
-
-
 
 export default Modal;

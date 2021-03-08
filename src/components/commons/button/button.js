@@ -5,9 +5,9 @@ import { TextStyleVariants } from '../../foundations/text';
 const Button = styled.button`
     ${TextStyleVariants.title}
     margin-bottom:10px;
-    height: 40px;
-    line-height: 40px;
-    width: 40px;
+    height: 50px;
+    /* line-height: 40px; */
+    width: 50px;
     font-size: 1em;
     background-color:white;
     color: black;
@@ -20,6 +20,7 @@ const Button = styled.button`
     border-radius: 50%;
     text-align: center;
     transition: opacity ${({ theme }) => theme.transition};
+
     &:hover,
     &:focus {
       opacity: .5;
