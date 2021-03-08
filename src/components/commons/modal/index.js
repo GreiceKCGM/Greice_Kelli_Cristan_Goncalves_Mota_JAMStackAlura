@@ -94,16 +94,16 @@ function Modal({ isOpen, onClose, children }) {
           >
             <Box
               height="10px"
-              paddingRight="10px"
+              paddingRight="5px"
               alignSelf="flex-end"
             >
 
               <Button
                 style={{
-                  width: 50,
-                  height: 50,
+                  width: 40,
+                  height: 40,
                   color: 'black',
-                  borderRadius: 50,
+                  borderRadius: 40,
                   marginTop: 15,
                 }}
                 cursor="pointer"
