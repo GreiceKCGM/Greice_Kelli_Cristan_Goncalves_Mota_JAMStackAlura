@@ -5,7 +5,6 @@ import errorAnimation from './animations/error.json';
 import Button from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Box from '../../foundations/layout/box';
-import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
 
 const formStates = {
@@ -24,6 +23,10 @@ function FormContent() {
     email: '',
     mensagem: '',
   });
+
+  function emailIsInvalid() {
+    return userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInfo.email);
+  }
 
   function handleChange(event) {
     const fieldName = event.target.getAttribute('name');
@@ -77,7 +80,7 @@ function FormContent() {
         tag="h1"
         color="tertiary.main"
         textAlign="center"
-        marginBottom="51px"
+        marginBottom="20px"
 
       >
         ENVIE SUA MENSAGEM
@@ -88,8 +91,7 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginTop="20px"
-          marginBottom="5px"
+          marginBottom="6px"
         >
           Seu Nome
         </Text>
@@ -98,7 +100,7 @@ function FormContent() {
           name="nome"
           value={userInfo.nome}
           onChange={handleChange}
-          paddingBottom="20px"
+          paddingBottom="5px"
         />
       </div>
       <div>
@@ -106,35 +108,43 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginTop="20px"
-          marginBottom="5px"
+          marginBottom="6px"
         >
-          Seu email
+          Seu E-mail
         </Text>
         <TextField
           placeholder="caio@example.com"
           name="email"
           value={userInfo.email}
           onChange={handleChange}
-          paddingBottom="20px"
+          paddingBottom="5px"
         />
+        { emailIsInvalid() && (
+        <Text
+          variant="smallestException"
+          tag="p"
+          color="primary.main"
+          marginBottom="24px"
+        >
+          Email inválido!
+        </Text>
+        ) }
       </div>
       <div>
         <Text
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginTop="20px"
-          marginBottom="5px"
+          marginBottom="6px"
         >
-          Sua mensagem
+          Sua Mensagem
         </Text>
         <TextField
           placeholder="Mensagem"
           name="mensagem"
           value={userInfo.mensagem}
           onChange={handleChange}
-          paddingBottom="100px"
+          paddingBottom="50px"
         />
       </div>
       <Text
@@ -191,56 +201,26 @@ function FormContent() {
 // eslint-disable-next-line react/prop-types
 export default function FormCadastro({ propsDoModal }) {
   return (
-    <Grid.Row
-      marginLeft={0}
-      marginRight={0}
-      flex={1}
-      maxWidth="auto"
+
+    <Box
+      boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
+      borderRadius="10px 10px 0px 0px"
+      flexDirection="column"
       justifyContent="center"
-      paddingLeft="24px"
-      paddingRight="24px"
-      alignContent="flex-end"
-    >
-
-      <Grid.Col
-        display="flex"
-        paddingRight="16px 16px 48px"
-        flexDirection="column"
-        value={{ xs: 12, md: 8, lg: 6 }}
-
-      >
-
-        <Box
-          boxShadow="0px 1px 25px 5px rgba(0, 0, 0, 0.1)"
-          borderRadius="10px 10px 0px 0px"
-          flexDirection="column"
-          justifyContent="center"
-          flex={1}
-          padding={{
-            xs: '16px',
-            md: '21px',
-          }}
-          backgroundColor="white"
+      flex={1}
+      padding={{
+        xs: '16px',
+        md: '21px',
+      }}
+      backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
-          {...propsDoModal}
-        >
-          <Grid.Row
-            flexDirection="row-reverse"
-            marginRight="12px"
-          >
-
-            <Button
-              // eslint-disable-next-line no-undef
-              onClick={() => onClose()}
-            >
-              X
-            </Button>
-          </Grid.Row>
-
-          <FormContent />
-        </Box>
-      </Grid.Col>
-    </Grid.Row>
+      {...propsDoModal}
+    >
+      {/* <Box textAlign="right">{modalPropsButtonClose}</Box> */}
+      <FormContent />
+    </Box>
+    //   </Grid.Col>
+    // </Grid.Row>
 
   );
 }
