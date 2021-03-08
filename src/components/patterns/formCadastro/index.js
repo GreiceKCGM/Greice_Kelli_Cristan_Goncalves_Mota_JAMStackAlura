@@ -24,6 +24,10 @@ function FormContent() {
     mensagem: '',
   });
 
+  function emailIsInvalid() {
+    return userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInfo.email);
+  }
+
   function handleChange(event) {
     const fieldName = event.target.getAttribute('name');
     setUserInfo({
@@ -87,7 +91,7 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginBottom="5px"
+          marginBottom="6px"
         >
           Seu Nome
         </Text>
@@ -104,7 +108,7 @@ function FormContent() {
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginBottom="5px"
+          marginBottom="6px"
         >
           Seu E-mail
         </Text>
@@ -115,13 +119,23 @@ function FormContent() {
           onChange={handleChange}
           paddingBottom="5px"
         />
+        { emailIsInvalid() && (
+        <Text
+          variant="smallestException"
+          tag="p"
+          color="primary.main"
+          marginBottom="24px"
+        >
+          Email inválido!
+        </Text>
+        ) }
       </div>
       <div>
         <Text
           variant="titleXS"
           tag="p"
           color="tertiary.main"
-          marginBottom="5px"
+          marginBottom="6px"
         >
           Sua Mensagem
         </Text>
