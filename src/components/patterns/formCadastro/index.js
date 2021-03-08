@@ -219,8 +219,5 @@ export default function FormCadastro({ propsDoModal }) {
       {/* <Box textAlign="right">{modalPropsButtonClose}</Box> */}
       <FormContent />
     </Box>
-    //   </Grid.Col>
-    // </Grid.Row>
-
   );
 }
