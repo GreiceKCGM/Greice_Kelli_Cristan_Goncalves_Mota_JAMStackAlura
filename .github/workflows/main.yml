@@ -32,6 +32,5 @@ jobs:
       - name: Roda o Linter!
         run: yarn lint
       
-        run: yarn lint
 
      
