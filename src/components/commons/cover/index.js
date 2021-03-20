@@ -20,7 +20,7 @@ export default function Cover() {
         color="background.main"
         marginTop="0"
       >
-        Front-end Developer
+        Portifólio
       </Text>
     </CoverPrincipal>
   );
