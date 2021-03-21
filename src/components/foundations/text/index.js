@@ -4,6 +4,7 @@ import get from 'lodash/get';
 import styled, { css } from 'styled-components';
 import propToStyle from '../../../theme/utils/propToStyled';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import Link from '../../commons/link';
 
 const paragraph1 = css`
   ${({ theme }) => css`
@@ -64,13 +65,13 @@ const TextBase = styled.span`
 `;
 
 // eslint-disable-next-line object-curly-newline
-export default function Text({ tag, variant, children, ...props }) {
+export default function Text({ tag, variant, children, href, ...props }) {
   return (
     <TextBase
-      as={tag}
+      as={href ? Link : tag}
       variant={variant}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
+    // eslint-disable-next-line react/jsx-props-no-spreading
+      {...{ ...props, href }}
     >
       {children}
     </TextBase>
@@ -79,6 +80,7 @@ export default function Text({ tag, variant, children, ...props }) {
 
 Text.propTypes = {
   children: PropTypes.node,
+  href: PropTypes.string,
   tag: PropTypes.oneOf([
     'h1',
     'h2',
@@ -99,4 +101,5 @@ Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
   children: null,
+  href: '',
 };
