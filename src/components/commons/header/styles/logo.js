@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const LogoName = styled.a`
   font-family: Fira Sans Condensed;
   font-size: 20px;
-  background-color: #ff7256;
-  color: #8b3e2f;
+  background: ${({ theme }) => theme.colors.primary.main.color};
+  color: ${({ theme }) => theme.colors.tertiary.main.color};;
   cursor: pointer;
   text-decoration: none;
   text-align: center;

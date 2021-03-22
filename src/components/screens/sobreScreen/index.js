@@ -1,57 +1,37 @@
+/* eslint-disable max-len */
 import React from 'react';
 import Button from '../../commons/button/button';
-import Cover from '../../commons/cover';
-import Contact from '../../commons/cover/contact';
 import Footer from '../../commons/footer';
 import Header from '../../commons/header';
-import Modal from '../../commons/modal';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
-import FormCadastro from '../../patterns/formCadastro';
 
 export default function SobreScreen() {
-  const [isModalOpen, setModalState] = React.useState(false);
-
   return (
     <Box
       flex="1"
       display="flex"
-      flexWrap="wrap"
       flexDirection="column"
-      justifyContent="space-between"
     >
-      <Cover />
       <Header />
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setModalState(false);
-        }}
+      <Text
+        variant="title"
+        tag="h2"
+        color="tertiary.main"
+        textAlign="center"
       >
-        {(propsDoModal) => (
-          <FormCadastro propsDoModal={propsDoModal} />
-        )}
-      </Modal>
+        SOBRE MIM
+      </Text>
       <Grid.Container>
         <Grid.Col
           textAlign="center"
         >
           <div>
-            <Contact>
-              <Text
-                variant="title"
-                tag="p"
-                color="primary.main"
-                textAlign={{
-                  xs: 'center',
-                  md: 'left',
-                }}
-              >
-                Entre em Contato
-              </Text>
-            </Contact>
+            Imagem
 
+          </div>
+          <div>
             <Button
               variant="tertiary.light"
               margin={{
@@ -60,12 +40,70 @@ export default function SobreScreen() {
               }}
               display="flex"
               onClick={() => {
-                setModalState(!isModalOpen);
               }}
             >
               +
             </Button>
           </div>
+          <Grid.Row justifyContent="center">
+
+            <Grid.Col
+              value={{ xs: 8, md: 4 }}
+              size={{ xs: 12, md: 4, lg: 2 }}
+              marginTop="16px"
+              textAlign="left"
+            >
+              <Text
+                variant="paragraph1"
+                tag="p"
+                color="tertiary.main"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at imperdiet urna. Nunc lacinia justo sed augue rutrum cursus. Sed venenatis sem in felis efficitur imperdiet. Etiam dignissim neque vel facilisis facilisis. Morbi vel ligula eros. Nulla dictum porta ante, in luctus nulla dapibus quis. Mauris ipsum arcu, dignissim a felis non, eleifend congue ante.
+              </Text>
+            </Grid.Col>
+            <Grid.Col
+              marginTop="16px"
+              size={{ xs: 12, md: 4, lg: 2 }}
+              value={{ xs: 8, md: 4 }}
+              textAlign="right"
+              display="flex"
+            >
+              <Text
+                variant="paragraph1"
+                tag="p"
+                color="tertiary.main"
+                textAlign={{
+                  xs: 'left',
+                  sm: 'left',
+                  md: 'right',
+                }}
+              >
+                Fusce vitae ante ut sapien posuere elementum non sit amet purus. Integer vulputate pharetra tincidunt. Maecenas quis rutrum urna. Sed egestas tortor risus, vitae pretium diam varius eu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi eu arcu augue.
+              </Text>
+            </Grid.Col>
+          </Grid.Row>
+          <Text
+            variant="title"
+            tag="h2"
+            color="tertiary.main"
+            textAlign="center"
+          >
+            MEUS REPOSITÓRIOS
+          </Text>
+          <ul>
+            <li>
+              <Text>Projeto Report</Text>
+              <Text>Link</Text>
+            </li>
+            <li>
+              <Text>Projeto Report</Text>
+              <Text>Link</Text>
+            </li>
+            <li>
+              <Text>Projeto Report</Text>
+              <Text>Link</Text>
+            </li>
+          </ul>
         </Grid.Col>
 
       </Grid.Container>

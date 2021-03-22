@@ -11,7 +11,7 @@ const InputWrapper = styled.div`
 
 const Input = styled(Text)`
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.primary.main.color};
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
   padding: 12px 16px;
   margin: 4px 0;
   ${propToStyle('paddingBottom')}

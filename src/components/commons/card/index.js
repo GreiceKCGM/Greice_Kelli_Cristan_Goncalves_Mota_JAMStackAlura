@@ -25,7 +25,7 @@ function Card({
               variant="title"
               tag="p"
               textAlign="center"
-              color="primary.main"
+              color="tertiary.main"
               // marginTop="0"
             >
               {title}
@@ -41,7 +41,7 @@ function Card({
               variant="titleXS"
               tag="h3"
               textAlign="center"
-              color="primary.main"
+              color="tertiary.main"
             >
               {title}
             </Text>

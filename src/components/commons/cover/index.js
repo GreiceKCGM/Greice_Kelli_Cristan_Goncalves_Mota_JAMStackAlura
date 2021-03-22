@@ -9,7 +9,7 @@ export default function Cover() {
         variant="title"
         tag="h1"
         textAlign="center"
-        color="background.main"
+        color="tertiary.main"
       >
         Greice Kelli C.G.Mota
       </Text>
@@ -17,7 +17,7 @@ export default function Cover() {
         variant="title"
         tag="h2"
         textAlign="center"
-        color="background.main"
+        color="tertiary.main"
         marginTop="0"
       >
         Portifólio

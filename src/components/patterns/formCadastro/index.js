@@ -123,7 +123,7 @@ function FormContent() {
         <Text
           variant="smallestException"
           tag="p"
-          color="primary.main"
+          color="tertiary.main"
           marginBottom="24px"
         >
           E-mail inválido!
@@ -150,7 +150,7 @@ function FormContent() {
       <Text
         variant="titleXS"
         tag="h1"
-        color="primary.main"
+        color="tertiary.main"
         textAlign={{
           xs: 'center',
           md: 'center',

@@ -3,7 +3,7 @@ import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 
 const CoverPrincipal = styled.div`
   font-family: 'Open Sans', sans-serif;
-  background-color: #ff7256;
+  background-color: #ffd5ce;
   background-position: center top;
   background-size: cover;
   display: flex;

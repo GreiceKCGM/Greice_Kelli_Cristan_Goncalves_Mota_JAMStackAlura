@@ -9,10 +9,11 @@ const FooterWrapper = styled.footer`
   align-items: center;
   align-items: center;
   justify-content: center;
-  border: 1px solid #e9c46a;
-  color: ${({ theme }) => theme.colors.primary.main.color};
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
+  background: ${({ theme }) => theme.colors.secondary.main.color};
 
-  background: #fff8e6;
+  /* background: #fff8e6; */
+  /* bbcbce */
 `;
 
 export default function Footer(props) {

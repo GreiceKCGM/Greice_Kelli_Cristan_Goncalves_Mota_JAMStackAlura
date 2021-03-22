@@ -5,13 +5,13 @@ import { TextStyleVariants } from '../../foundations/text';
 const Button = styled.button`
     ${TextStyleVariants.title}
     margin-bottom:10px;
-    height: 50px;
+    height: 40PX;
     /* line-height: 40px; */
-    width: 50px;
+    width: 40PX;
     font-size: 1em;
     background-color:white;
     color: black;
-    border: 1px solid ${({ theme }) => theme.colors.secondary.main.color};
+    border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
     position:relative;
     cursor: pointer;
     /* padding: 6px 6px 6px 6px; */

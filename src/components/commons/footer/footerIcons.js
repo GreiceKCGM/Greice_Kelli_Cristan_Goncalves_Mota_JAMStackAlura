@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const FooterIcons = styled.div`
   display: flex;
   justify-content: space-between;
-  background: #ff7256;
+  background: ${({ theme }) => theme.colors.primary.main.color};
 
   img {
     /* margin-right: 26px; */

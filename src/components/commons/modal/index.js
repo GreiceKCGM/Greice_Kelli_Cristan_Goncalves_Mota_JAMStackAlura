@@ -111,7 +111,7 @@ function Modal({ isOpen, onClose, children }) {
                   buttonClose(event);
                 }}
               >
-                X
+                x
               </Button>
             </Box>
             { children({ 'data-modal-safe-area': 'true' }) }
