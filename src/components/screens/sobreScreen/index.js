@@ -24,27 +24,35 @@ export default function SobreScreen() {
         SOBRE MIM
       </Text>
       <Grid.Container>
+        <Grid.Row>
+          <Grid.Col
+            textAlign="center"
+            justifyContent="center"
+            flexDirection="column"
+          >
+            <img
+              alt="Imagem avatar GitHub"
+              src="https://avatars.githubusercontent.com/u/51801614"
+              loading="lazy"
+              style={{ maxWidth: '200px', borderRadius: '100%' }}
+            />
+          </Grid.Col>
+        </Grid.Row>
         <Grid.Col
           textAlign="center"
         >
-          <div>
-            Imagem
-
-          </div>
-          <div>
-            <Button
-              variant="tertiary.light"
-              margin={{
-                xs: 'auto',
-                md: 'initial',
-              }}
-              display="flex"
-              onClick={() => {
-              }}
-            >
-              +
-            </Button>
-          </div>
+          <Button
+            variant="tertiary.light"
+            margin={{
+              xs: 'auto',
+              md: 'initial',
+            }}
+            display="flex"
+            onClick={() => {
+            }}
+          >
+            +
+          </Button>
           <Grid.Row justifyContent="center">
 
             <Grid.Col
