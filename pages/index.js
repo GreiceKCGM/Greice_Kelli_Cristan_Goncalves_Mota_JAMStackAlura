@@ -44,7 +44,7 @@ export default function Home() {
               <Text
                 variant="title"
                 tag="p"
-                color="primary.main"
+                color="tertiary.main"
                 textAlign={{
                   xs: 'center',
                   md: 'left',

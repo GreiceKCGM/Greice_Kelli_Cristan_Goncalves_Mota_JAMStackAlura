@@ -6,30 +6,30 @@ export const colors = {
       color: '#FFFFFF',
     },
     main: {
-      color: '#8B3E2F',
+      color: '#ffd5ce',
       contrastText: '#fff',
     },
   },
   borders: {
     main: {
-      color: '#F1F1F1',
+      color: '#b6b6b6',
     },
   },
   primary: {
     main: {
-      color: '#D7385E',
+      color: '#ffd5ce',
       contrastText: '#fff',
     },
   },
   secondary: {
     main: {
-      color: '#FB7B6B',
+      color: '#d2a69f',
       contrastText: '#fff',
     },
   },
   tertiary: {
     main: {
-      color: '#070C0E',
+      color: '#8B3E2F',
       contrastText: '#fff',
     },
     light: {

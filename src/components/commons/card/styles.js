@@ -25,7 +25,7 @@ export const CardDefault = styled.div`
   justify-content: space-between;
   /* max-height: 350px; */
   border-radius: 5px;
-  border: 1px solid #c1c1c1;
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   ${breakpointsMedia({
@@ -48,7 +48,7 @@ export const CardTitle = styled.div`
   justify-content: center;
   align-items: center;
   height: 50px;
-  border: 1px solid #e9c46a;
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
 `;
@@ -56,16 +56,12 @@ export const CardTitle = styled.div`
 export const CardImage = styled.div`
 
   img {
-    /* height: auto; */
     width: 289px;
     height: 177px;
-    /* left: 271px;
-    top: 1313px; */
-    /* width: 287px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #e9c46a;
+    border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
 
@@ -87,18 +83,7 @@ export const CardImage = styled.div`
 `;
 
 export const CardText = styled.div`
-  /* background: red; */
-  /* position: absolute;
   top: 0;
-  width: 100%;
-  padding: 10px;
-  text-align: center; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px; */
-  top: 0;
-  /* width: 100%; */
   padding: 10px;
   justify-content: center;
   text-align: center;

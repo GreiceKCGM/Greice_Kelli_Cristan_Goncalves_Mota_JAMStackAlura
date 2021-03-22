@@ -14,7 +14,7 @@ const CardTitleHighlighted = styled.div`
   justify-content: center;
   align-items: center;
   height: 50px;
-  border: 1px solid #e9c46a;
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
   border-radius: 5px;
   flex-direction: column;
@@ -30,7 +30,7 @@ const CardTitleHighlighted = styled.div`
   box-sizing: border-box;
   z-index:1;
   background: #ffffff;
-  border: 1px solid #000000;
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
 `;
 
 const CardHighlightedStyle = styled.div`
@@ -67,7 +67,7 @@ const CardHighlightedStyle = styled.div`
     img {
       position : relative;
       width:auto;
-      border: 1px solid #e9c46a;
+      border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
       border-radius: 5px;
 
@@ -97,15 +97,10 @@ const CardHighlightedStyle = styled.div`
 
   // eslint-disable-next-line no-undef
   ${CardText} {
-    border: 1px solid #e9c46a;
+    border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     border-radius: 5px;
     justify-content: flex-start;
-    /* display: flex; */
-    /* flex: 2;
-    padding: 10px;
-    display: none; */
-    /* display: block; */
     ${breakpointsMedia({
     xs: css`
       display: flex;
@@ -147,7 +142,7 @@ function CardHighlighted({ children }) {
       <CardTitleHighlighted>
         <Text
           textAlign="center"
-          color="primary.main"
+          color="tertiary.main"
           marginTop="0"
         >
           DESTAQUES

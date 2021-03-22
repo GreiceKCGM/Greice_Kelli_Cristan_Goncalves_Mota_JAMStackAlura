@@ -10,9 +10,9 @@ const HeaderWrapper = styled.nav`
   flex-wrap: wrap;
   padding-left: 28px;
   padding-right: 28px;
-  background-color: #fff8e6;
+  background-color:${({ theme }) => theme.colors.secondary.main.color};
   height: 50px;
-  border: 1px solid #e9c46a;
+  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
 `;
 
 HeaderWrapper.LeftSide = styled.div``;

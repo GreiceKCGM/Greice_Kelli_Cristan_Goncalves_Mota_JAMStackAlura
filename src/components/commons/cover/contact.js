@@ -17,7 +17,6 @@ const Contact = styled.div`
   font-size: 36px;
   line-height: 43px;
 
-  color: #000000;
   ${breakpointsMedia({
     xs: css`
         font-size:${({ theme }) => theme.typographyVariants.titleXS.fontSize}
@@ -29,7 +28,7 @@ const Contact = styled.div`
     &:hover,
     &:focus {
 
-      color: #ec5e52;
+      color: ${({ theme }) => theme.colors.primary.main.color};
     }
   `;
 export default Contact;

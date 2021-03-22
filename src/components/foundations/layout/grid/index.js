@@ -47,6 +47,7 @@ const Grid = {
     ${propToStyle('alignContent')}
     ${propToStyle('paddingLeft')}
     ${propToStyle('paddingRight')}
+    ${propToStyle('marginBottom')}
   `,
   Col: styled.div`
     padding-right: 16px;
@@ -147,6 +148,9 @@ ${({ offset }) => {
     ${propToStyle('flexDirection')}
     ${propToStyle('textAlign')}
     ${propToStyle('paddingRight')}
+    ${propToStyle('order')}
+    ${propToStyle('textAlignLeft')}
+    ${propToStyle('textAlignRight')}
   `,
 };
 export default Grid;

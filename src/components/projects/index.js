@@ -15,6 +15,8 @@ const WrapperProjects = styled.div`
     flex-wrap: wrap;
     align-items: center;
     list-style-type: none;
+    padding-left:21px;
+    padding-right:21px
 
   }
 `;
