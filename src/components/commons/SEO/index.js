@@ -10,7 +10,7 @@ export default function SEO({ headTitle }) {
     : (baseTitle);
   const description = 'Portifólio desenvolvido durante Bootcamp Alura JAM Stack';
   const urlBase = 'https://portifolio-greicekelli.vercel.app';
-  const image = 'images/banner-topo-programação.png';
+  const image = 'https://agenciaplatz.com.br/wp-content/uploads/2019/04/banner-topo-programa%C3%A7%C3%A3o.png';
 
   return (
     <Head>
