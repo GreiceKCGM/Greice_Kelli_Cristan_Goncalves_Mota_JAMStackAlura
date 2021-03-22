@@ -10,6 +10,7 @@ export default function SEO({ headTitle }) {
     : (baseTitle);
   const description = 'Portifólio desenvolvido durante Bootcamp Alura JAM Stack';
   const urlBase = 'https://portifolio-greicekelli.vercel.app';
+  const image = 'images/banner-topo-programação.png';
 
   return (
     <Head>
@@ -22,14 +23,14 @@ export default function SEO({ headTitle }) {
       <meta property="og:url" content={urlBase} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="https://www.alura.com.br/assets/img/alura-share.1571848411.png" />
+      <meta property="og:image" content={image} />
 
       {/* <!-- Twitter --> */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={urlBase} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content="https://www.alura.com.br/assets/img/alura-share.1571848411.png" />
+      <meta property="twitter:image" content={image} />
     </Head>
   );
 }
