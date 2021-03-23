@@ -12,14 +12,11 @@ SobrePage.propTypes = SobreScreen.propTypes;
 export async function getStaticProps() {
   const gitHubRepository = await fetch('https://api.github.com/users/GreiceKCGM/repos')
     .then((res) => res.json())
-    .then((responseAsObject) => responseAsObject.map((teste) => {
-      const { name } = teste;
-      const url = teste.html_url;
-      return {
-        name,
-        url,
-      };
-    }));
+    // eslint-disable-next-line camelcase
+    .then((responseAsObject) => responseAsObject.map(({ name, html_url }) => ({
+      name,
+      url: html_url,
+    })));
   return {
     props: {
       gitHubRepository,

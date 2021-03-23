@@ -17,6 +17,8 @@ const Box = styled.div`
     ${propToStyle('padding')}
     ${propToStyle('paddingRight')}
     ${propToStyle('alignSelf')}
+    ${propToStyle('marginBottom')}
+    ${propToStyle('listStyle')}
 `;
 
 export default Box;
