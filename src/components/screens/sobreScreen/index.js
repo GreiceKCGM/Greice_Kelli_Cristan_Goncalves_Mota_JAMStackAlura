@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../../commons/button/button';
 import Footer from '../../commons/footer';
 import Header from '../../commons/header';
@@ -7,7 +8,7 @@ import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
 
-export default function SobreScreen() {
+export default function SobreScreen({ gitHubRepository }) {
   return (
     <Box
       flex="1"
@@ -98,19 +99,74 @@ export default function SobreScreen() {
           >
             MEUS REPOSITÓRIOS
           </Text>
-          <ul>
-            <li>
-              <Text>Projeto Report</Text>
-              <Text>Link</Text>
-            </li>
-            <li>
-              <Text>Projeto Report</Text>
-              <Text>Link</Text>
-            </li>
-            <li>
-              <Text>Projeto Report</Text>
-              <Text>Link</Text>
-            </li>
+          <Grid.Row
+            as="ul"
+            padding="0"
+            listStyle="none"
+          >
+            <Grid.Col
+              flexDirection="column"
+              size={{ xs: 12, md: 6, lg: 4 }}
+            >
+                {gitHubRepository.map((repository) => (
+                  <Box
+                    key={repository.nome}
+                    tag="li"
+                    listStyle="none"
+                    marginBottom="32px"
+                  >
+                    <Text
+                      as="p"
+                      margin="0"
+                      variant="paragraph1"
+                      fontWeight="700"
+                      color="tertiary.main"
+                    >
+                      {repository.nome}
+
+                    </Text>
+
+                    <Box
+                      tag="a"
+                      href={repository.url}
+                      textDecoration="none"
+                    >
+                      <Text>
+                        {repository.url}
+                      </Text>
+
+                    </Box>
+                  </Box>
+                ))}
+
+            </Grid.Col>
+          </Grid.Row>
+
+        </Grid.Col>
+
+      </Grid.Container>
+      <Footer />
+    </Box>
+  );
+}
+SobreScreen.propTypes = {
+  gitHubRepository: PropTypes.arrayOf(PropTypes.shape({
+    nome: PropTypes.string,
+    url: PropTypes.string,
+  })).isRequired,
+
+};
+
+// eslint-disable-next-line no-lone-blocks
+{ /* <ul>
+            { gitHubData.map( ({title, url}) => (
+              <li>
+                <Repositorio key={url}
+                  title={title}
+                  url={url}
+                ></Repositorio>
+              </li>
+            )) }
           </ul>
         </Grid.Col>
 
@@ -119,3 +175,18 @@ export default function SobreScreen() {
     </Box>
   );
 }
+
+function Repositorio({title,url}) {
+  return(
+    <li>
+      <Text>{title}</Text>
+      <Text>{url}</Text>
+    </li>
+  );
+}
+
+const gitHubData = [
+  { title: 'Projeto Report', url: 'Link'},
+  { title: 'Projeto Report', url: 'Link'},
+  { title: 'Projeto Report', url: 'Link'},
+]; */ }
