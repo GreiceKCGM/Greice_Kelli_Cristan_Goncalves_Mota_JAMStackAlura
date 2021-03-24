@@ -2,11 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../commons/button/button';
-import Footer from '../../commons/footer';
-import Header from '../../commons/header';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
+import Header from '../../commons/header';
 
 export default function SobreScreen({ gitHubRepository }) {
   return (
@@ -148,8 +147,6 @@ export default function SobreScreen({ gitHubRepository }) {
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
-      <Footer />
-
     </Box>
   );
 }
