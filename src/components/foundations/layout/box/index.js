@@ -19,6 +19,7 @@ const Box = styled.div`
     ${propToStyle('alignSelf')}
     ${propToStyle('marginBottom')}
     ${propToStyle('listStyle')}
+    ${propToStyle('fontSize')}
 `;
 
 export default Box;
