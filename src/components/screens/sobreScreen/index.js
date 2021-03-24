@@ -2,13 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../../commons/button/button';
-import Footer from '../../commons/footer';
-import Header from '../../commons/header';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
+import Header from '../../commons/header';
+import { WebsitePageContext } from '../../wrappers/WebsitePage';
 
 export default function SobreScreen({ gitHubRepository }) {
+  const websitePageContext = React.useContext(WebsitePageContext);
   return (
     <Box
       flex="1"
@@ -52,6 +53,7 @@ export default function SobreScreen({ gitHubRepository }) {
               }}
               display="flex"
               onClick={() => {
+                websitePageContext.toggleModalCadastro();
               }}
             >
               +
@@ -62,7 +64,6 @@ export default function SobreScreen({ gitHubRepository }) {
           <Grid.Col
             value={{ xs: 8, md: 4 }}
             offset={{ xs: 0, md: 0, lg: 1 }}
-            size={{ xs: 12, md: 4, lg: 2 }}
             marginTop="16px"
             textAlign="left"
           >
@@ -76,7 +77,6 @@ export default function SobreScreen({ gitHubRepository }) {
           </Grid.Col>
           <Grid.Col
             marginTop="16px"
-            size={{ xs: 12, md: 4, lg: 2 }}
             value={{ xs: 8, md: 4 }}
             textAlign="right"
             display="flex"
@@ -85,7 +85,6 @@ export default function SobreScreen({ gitHubRepository }) {
               variant="paragraph1"
               tag="p"
               color="tertiary.main"
-              size={{ xs: 12, md: 4, lg: 2 }}
               textAlign={{
                 xs: 'left',
                 sm: 'left',
@@ -104,12 +103,14 @@ export default function SobreScreen({ gitHubRepository }) {
         >
           MEUS REPOSITÓRIOS
         </Text>
-        <Grid.Row justifyContent={{ sm: 'center' }}>
+        <Grid.Row
+          justifyContent="left"
+
+        >
           <Grid.Col
             as="ul"
             flexDirection="column"
-            offset={{ xs: 0, md: 0, lg: 0 }}
-            size={{ xs: 12, md: 6, lg: 4 }}
+            offset={{ xs: 1, md: 2, lg: 3 }}
             value={{ xs: 8, md: 4 }}
             display="flex"
             listStyle="none"
@@ -121,7 +122,6 @@ export default function SobreScreen({ gitHubRepository }) {
                 as="li"
                 listStyle="none"
                 marginBottom="18px"
-                justifyContent="center"
               >
                 <Box
                   marginBottom="4px"
@@ -131,24 +131,25 @@ export default function SobreScreen({ gitHubRepository }) {
                     margin="0"
                     variant="paragraph1"
                     color="tertiary.main"
+                    href={repository.url}
                   >
                     {repository.name}
                   </Text>
                 </Box>
-                <Box>
+                {/* <Box
+                  // value={{ xs: 8, md: 4 }}
+                >
                   <Text
                     href={repository.url}
                   >
                     {repository.url}
                   </Text>
-                </Box>
+                </Box> */}
               </Box>
             ))}
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
-      <Footer />
-
     </Box>
   );
 }

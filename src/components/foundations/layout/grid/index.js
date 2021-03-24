@@ -151,6 +151,7 @@ ${({ offset }) => {
     ${propToStyle('order')}
     ${propToStyle('textAlignLeft')}
     ${propToStyle('textAlignRight')}
+    ${propToStyle('fontSize')}
   `,
 };
 export default Grid;

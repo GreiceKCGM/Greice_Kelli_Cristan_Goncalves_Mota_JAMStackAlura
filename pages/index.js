@@ -1,18 +1,17 @@
 import React from 'react';
-import Cover from '../src/components/commons/cover';
-import Footer from '../src/components/commons/footer';
-import Header from '../src/components/commons/header';
-import Projects from '../src/components/projects';
 import Box from '../src/components/foundations/layout/box';
 import Grid from '../src/components/foundations/layout/grid';
 import Contact from '../src/components/commons/cover/contact';
 import Text from '../src/components/foundations/text';
 import Button from '../src/components/commons/button/button';
-import Modal from '../src/components/commons/modal';
-import FormCadastro from '../src/components/patterns/formCadastro';
+import websitePageHOC from '../src/components/wrappers/hoc';
+import { WebsitePageContext } from '../src/components/wrappers/WebsitePage';
+import Cover from '../src/components/commons/cover';
+import Projects from '../src/components/projects';
+import Header from '../src/components/commons/header';
 
-export default function Home() {
-  const [isModalOpen, setModalState] = React.useState(false);
+function HomeScreen() {
+  const websitePageContext = React.useContext(WebsitePageContext);
 
   return (
     <Box
@@ -25,16 +24,6 @@ export default function Home() {
       <Cover />
       <Header />
       <Projects />
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => {
-          setModalState(false);
-        }}
-      >
-        {(propsDoModal) => (
-          <FormCadastro propsDoModal={propsDoModal} />
-        )}
-      </Modal>
       <Grid.Container>
         <Grid.Col
           textAlign="center"
@@ -62,7 +51,7 @@ export default function Home() {
               }}
               display="flex"
               onClick={() => {
-                setModalState(!isModalOpen);
+                websitePageContext.toggleModalCadastro();
               }}
             >
               +
@@ -71,7 +60,13 @@ export default function Home() {
         </Grid.Col>
 
       </Grid.Container>
-      <Footer />
     </Box>
   );
 }
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headTitle: 'Home',
+    },
+  },
+});
