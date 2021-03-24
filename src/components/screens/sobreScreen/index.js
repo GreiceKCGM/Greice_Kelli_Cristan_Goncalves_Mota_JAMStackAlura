@@ -6,8 +6,10 @@ import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 import Text from '../../foundations/text';
 import Header from '../../commons/header';
+import { WebsitePageContext } from '../../wrappers/WebsitePage';
 
 export default function SobreScreen({ gitHubRepository }) {
+  const websitePageContext = React.useContext(WebsitePageContext);
   return (
     <Box
       flex="1"
@@ -51,6 +53,7 @@ export default function SobreScreen({ gitHubRepository }) {
               }}
               display="flex"
               onClick={() => {
+                websitePageContext.toggleModalCadastro();
               }}
             >
               +

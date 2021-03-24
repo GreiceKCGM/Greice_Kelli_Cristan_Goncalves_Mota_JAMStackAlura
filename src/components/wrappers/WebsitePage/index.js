@@ -8,6 +8,7 @@ import SEO from '../../commons/SEO';
 import Box from '../../foundations/layout/box';
 import Modal from '../../commons/modal';
 import FormCadastro from '../../patterns/formCadastro';
+import Header from '../../commons/header';
 
 export const WebsitePageContext = React.createContext({
   toggleModalCadastro: () => {},
@@ -16,6 +17,7 @@ export const WebsitePageContext = React.createContext({
 export default function WebsitePageWrapper({
   children,
   seoProps,
+  headerProps,
 }) {
   const [isModalOpen, setModalState] = React.useState(false);
   return (
@@ -37,6 +39,9 @@ export default function WebsitePageWrapper({
         flexDirection="column"
         justifyContent="space-between"
       >
+        {headerProps.display && (
+        <Header />
+        )}
         <Modal
           isOpen={isModalOpen}
           onClose={() => {
@@ -53,6 +58,7 @@ export default function WebsitePageWrapper({
     </WebsitePageContext.Provider>
   );
 }
+
 WebsitePageWrapper.propTypes = {
   children: PropTypes.node.isRequired,
 
@@ -60,11 +66,17 @@ WebsitePageWrapper.propTypes = {
 
 WebsitePageWrapper.defaultProps = {
   seoProps: {},
+  headerProps: {
+    display: false,
+  },
 };
 
 WebsitePageWrapper.propTypes = {
   seoProps: PropTypes.shape({
     headTitle: PropTypes.string,
+  }),
+  headerProps: PropTypes.shape({
+    display: PropTypes.bool,
   }),
   children: PropTypes.node.isRequired,
 };

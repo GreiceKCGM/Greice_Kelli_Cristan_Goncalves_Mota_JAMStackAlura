@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Box from '../src/components/foundations/layout/box';
 import Grid from '../src/components/foundations/layout/grid';
 import Contact from '../src/components/commons/cover/contact';
@@ -11,7 +10,7 @@ import Cover from '../src/components/commons/cover';
 import Projects from '../src/components/projects';
 import Header from '../src/components/commons/header';
 
-function HomeScreen({ headerProps }) {
+function HomeScreen() {
   const websitePageContext = React.useContext(WebsitePageContext);
 
   return (
@@ -23,9 +22,7 @@ function HomeScreen({ headerProps }) {
       justifyContent="space-between"
     >
       <Cover />
-      {headerProps.display && (
-        <Header />
-      )}
+      <Header />
       <Projects />
       <Grid.Container>
         <Grid.Col
@@ -73,14 +70,3 @@ export default websitePageHOC(HomeScreen, {
     },
   },
 });
-HomeScreen.defaultProps = {
-  headerProps: {
-    display: true,
-  },
-};
-
-HomeScreen.propTypes = {
-  headerProps: PropTypes.shape({
-    display: PropTypes.bool,
-  }),
-};
