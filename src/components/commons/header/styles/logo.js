@@ -18,5 +18,10 @@ const LogoName = styled.a`
 `;
 
 export default function Logo() {
-  return <LogoName>{'<GKM/>'}</LogoName>;
+  return (
+
+    <LogoName href="/">
+      {'<GKM/>'}
+    </LogoName>
+  );
 }

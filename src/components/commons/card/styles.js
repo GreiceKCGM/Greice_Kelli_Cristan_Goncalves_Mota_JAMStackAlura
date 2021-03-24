@@ -73,10 +73,6 @@ export const CardImage = styled.div`
     md: css`
         width: 287px;
         height: 390px;
-        img {
-          width: 287px;
-          height: 390px;
-        }
       `,
   })}
   }

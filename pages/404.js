@@ -1,11 +1,10 @@
 import React from 'react';
+import ErrorScreen from '../src/components/screens/errorScreen';
 import websitePageHOC from '../src/components/wrappers/hoc';
 
 function ErrorPage() {
   return (
-    <div>
-      Página 404
-    </div>
+    <ErrorScreen />
   );
 }
 export default websitePageHOC(ErrorPage, {
