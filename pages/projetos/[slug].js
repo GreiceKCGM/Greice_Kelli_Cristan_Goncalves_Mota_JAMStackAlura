@@ -2,17 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProjectsScreen from '../../src/components/screens/projects/projectsScreen';
 import websitePageHOC from '../../src/components/wrappers/hoc';
-import db from '../../src/db.json';
+import ProjectList from '../../src/components/projects/content';
 
 function PageProjects({
-  image, title, description, link,
+  image, title, description, href,
 }) {
   return (
     <ProjectsScreen
       image={image}
       title={title}
       description={description}
-      link={link}
+      href={href}
     />
   );
 }
@@ -31,12 +31,12 @@ PageProjects.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
 };
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const { projects } = db;
+  const { projects } = ProjectList;
   const projectInfo = projects.find((project) => (
     project.title.toLowerCase() === slug
   ));
@@ -46,13 +46,13 @@ export async function getStaticProps({ params }) {
       image: projectInfo.image,
       title: projectInfo.title,
       description: projectInfo.description,
-      link: projectInfo.link,
+      slug: projectInfo.link,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const { projects } = db;
+  const { projects } = ProjectList;
   const paths = projects.map((project) => (
     { params: { slug: project.title.toLowerCase() } }
   ));
