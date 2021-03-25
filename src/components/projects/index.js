@@ -22,20 +22,22 @@ const WrapperProjects = styled.div`
 `;
 
 export default function Projets() {
+  const projects = ProjectList.slice(0, -1);
+  const highlightedProject = ProjectList.slice(-1)[0];
+
   return (
     <WrapperProjects>
       <SectionTitle> Meus Projetos </SectionTitle>
       <ul value={{ xs: 12, md: 6, lg: 4 }}>
-        {ProjectList.map(({
-          title, image, text, href, alt,
+        {projects.map(({
+          title, image, slug, alt,
         }, key) => (
           // eslint-disable-next-line react/no-array-index-key
           <li key={key}>
             <Card
               image={image}
               title={title}
-              text={text}
-              href={href}
+              href={`/projetos/${slug}`}
               alt={alt}
             />
           </li>
@@ -44,12 +46,12 @@ export default function Projets() {
         <li>
           <Card
             type="highlighted"
-            title="Projeto"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-            image="https://placehold.it/250x150"
-            href="https://placeholder.com"
-            alt="Placeholder"
-
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            image={highlightedProject.image}
+            title={highlightedProject.title}
+            text={highlightedProject.description}
+            href={`/projetos/${highlightedProject.slug}`}
+            alt={highlightedProject.alt}
           />
 
         </li>
