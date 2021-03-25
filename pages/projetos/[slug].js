@@ -5,14 +5,14 @@ import websitePageHOC from '../../src/components/wrappers/hoc';
 import ProjectList from '../../src/components/projects/content';
 
 function PageProjects({
-  image, title, description, href,
+  image, title, description, slug,
 }) {
   return (
     <ProjectsScreen
       image={image}
       title={title}
       description={description}
-      href={href}
+      href={slug}
     />
   );
 }
@@ -31,12 +31,12 @@ PageProjects.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const { projects } = ProjectList;
+  const projects = ProjectList;
   const projectInfo = projects.find((project) => (
     project.title.toLowerCase() === slug
   ));
@@ -46,13 +46,13 @@ export async function getStaticProps({ params }) {
       image: projectInfo.image,
       title: projectInfo.title,
       description: projectInfo.description,
-      slug: projectInfo.link,
+      slug: projectInfo.href,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const { projects } = ProjectList;
+  const projects = ProjectList;
   const paths = projects.map((project) => (
     { params: { slug: project.title.toLowerCase() } }
   ));
