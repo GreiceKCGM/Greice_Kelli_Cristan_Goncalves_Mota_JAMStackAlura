@@ -94,7 +94,7 @@ Text.propTypes = {
     'span',
     'input',
   ]),
-  variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title', 'titleXS']),
+  variant: PropTypes.oneOf(['paragraph1', 'smallestException', 'title', 'titleXS', 'paragraph2']),
 };
 
 Text.defaultProps = {
