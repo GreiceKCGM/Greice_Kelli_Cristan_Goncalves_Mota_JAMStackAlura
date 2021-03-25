@@ -36,9 +36,8 @@ PageProjects.propTypes = {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const projects = ProjectList;
-  const projectInfo = projects.find((project) => (
-    project.title.toLowerCase() === slug
+  const projectInfo = ProjectList.find(({ slug: projectSlug }) => (
+    projectSlug === slug
   ));
 
   return {
@@ -52,9 +51,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const projects = ProjectList;
-  const paths = projects.map((project) => (
-    { params: { slug: project.title.toLowerCase() } }
+  const paths = ProjectList.map(({ slug }) => (
+    { params: { slug } }
   ));
 
   return {
