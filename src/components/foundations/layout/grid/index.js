@@ -152,6 +152,7 @@ ${({ offset }) => {
     ${propToStyle('textAlignLeft')}
     ${propToStyle('textAlignRight')}
     ${propToStyle('fontSize')}
+    ${propToStyle('paddingLeft')}
   `,
 };
 export default Grid;

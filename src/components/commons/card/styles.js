@@ -17,6 +17,7 @@ export const SectionTitle = styled.section`
 export const CardDefault = styled.div`
 
   height: auto;
+  position: relative;
   /* width: 288px; */
   display: flex;
   flex-direction: column;
