@@ -20,6 +20,7 @@ const Box = styled.div`
     ${propToStyle('marginBottom')}
     ${propToStyle('listStyle')}
     ${propToStyle('fontSize')}
+    ${propToStyle('position')}
 `;
 
 export default Box;
