@@ -77,7 +77,7 @@ function FormContent() {
     >
       <Text
         variant="title"
-        tag="h1"
+        tag="h3"
         color="tertiary.main"
         textAlign="center"
         marginBottom="20px"
@@ -149,7 +149,7 @@ function FormContent() {
       </div>
       <Text
         variant="titleXS"
-        tag="h1"
+        tag="h4"
         color="tertiary.main"
         textAlign={{
           xs: 'center',
