@@ -22,10 +22,10 @@ export default function Footer(props) {
     <FooterWrapper {...props}>
       <FooterIcons>
         <a href="https://github.com/GreiceKCGM">
-          <img src="../images/github.svg" alt="Github" />
+          <img src="/images/github.svg" alt="Github" />
         </a>
         <a href="https://www.linkedin.com/in/greicekellicgm/">
-          <img src="../images/linkedin.svg" alt="Linkedin" />
+          <img src="/images/linkedin.svg" alt="Linkedin" />
         </a>
       </FooterIcons>
     </FooterWrapper>
