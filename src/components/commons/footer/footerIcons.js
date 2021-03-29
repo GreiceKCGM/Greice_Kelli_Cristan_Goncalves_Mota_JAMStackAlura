@@ -9,6 +9,8 @@ const FooterIcons = styled.div`
     /* margin-right: 26px; */
     background: #000000;
     border-radius: 0px;
+    height: 19.75px;
+    width: 20.26px;
   }
   a {
     /* background: red; */

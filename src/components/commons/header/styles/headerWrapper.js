@@ -31,7 +31,7 @@ HeaderWrapper.RightSide = styled.div`
     text-align: center;
     display: block;
     text-decoration: none;
-    color: #8b3e2f;
+    color: black;
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
