@@ -51,7 +51,6 @@ export const TextStyleVariants = {
   `,
 };
 
-// eslint-disable-next-line no-undef
 const TextBase = styled.span`
    ${(props) => TextStyleVariants[props.variants]}
    color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
@@ -62,6 +61,7 @@ const TextBase = styled.span`
    ${propToStyle('marginTop')}
    ${propToStyle('paddingBottom')}
    ${propToStyle('paddingRight')}
+   ${propToStyle('position')}
 `;
 
 // eslint-disable-next-line object-curly-newline

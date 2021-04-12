@@ -19,7 +19,7 @@ HeaderWrapper.LeftSide = styled.div``;
 
 HeaderWrapper.RightSide = styled.div`
   list-style: none;
-  display: inherit;
+  display: flex;
   li {
     &:first-child {
       margin-right: 20px;
@@ -35,7 +35,7 @@ HeaderWrapper.RightSide = styled.div`
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
-      font-size: 16px;
+      font-size: 14px;
     `,
     md: css`
       ${TextStyleVariants.paragraph1}

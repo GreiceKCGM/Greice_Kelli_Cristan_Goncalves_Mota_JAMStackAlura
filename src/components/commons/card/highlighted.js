@@ -10,8 +10,8 @@ const CardTitleHighlighted = styled.div`
   font-weight: bold;
   font-size: 24px;
   text-align: center;
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   align-items: center;
   height: 50px;
   border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
@@ -30,23 +30,30 @@ const CardTitleHighlighted = styled.div`
   box-sizing: border-box;
   z-index:1;
   background: #ffffff;
-  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
+
 `;
 
 const CardHighlightedStyle = styled.div`
 
+  /* width: auto; */
   height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  /* border-radius: 5px;
-  border: 1px solid #e9c46a; */
+
+   border-radius: 5px;
+  /* border: 1px solid #e9c46a; */
   margin-top: 18px;
   /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); */
   margin-bottom: 24px;
   transform: scale(1);
+  /* border: 1px solid ${({ theme }) => theme.colors.borders.main.color}; */
 
   ${breakpointsMedia({
     md: css`
-      /* width: 100%; */
+      width: 90%;
       /* max-width: 1040px; */
       display: flex;
       align-items: center;
@@ -97,8 +104,11 @@ const CardHighlightedStyle = styled.div`
 
   // eslint-disable-next-line no-undef
   ${CardText} {
+    width:100%;
     border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    padding:1px;
+    margin-top: 1px;
     border-radius: 5px;
     justify-content: flex-start;
     ${breakpointsMedia({
@@ -116,7 +126,7 @@ const CardHighlightedStyle = styled.div`
 
     `,
     md: css`
-      margin-top: 21px;
+      margin-top: 1px;
       margin-left: 0;
       display: flex;
       align-items: flex-start;
