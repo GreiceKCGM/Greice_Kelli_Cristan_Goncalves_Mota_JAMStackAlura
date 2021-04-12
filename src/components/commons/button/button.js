@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
-import { TextStyleVariants } from '../../foundations/text';
+import { TextStyleVariantsMap } from '../../foundations/text';
 
 const Button = styled.button`
-    ${TextStyleVariants.title}
+    ${TextStyleVariantsMap.title}
     margin-bottom:10px;
     height: 40PX;
     /* line-height: 40px; */
@@ -29,11 +29,11 @@ const Button = styled.button`
     ${breakpointsMedia({
     xs: css`
         /*All devices*/
-        ${TextStyleVariants.title}
+        ${TextStyleVariantsMap.title}
     `,
     md: css`
         /* From md breakpoint*/
-        /* ${TextStyleVariants.paragraph1} */
+        /* ${TextStyleVariantsMap.paragraph1} */
     `,
   })}
 
