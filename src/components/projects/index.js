@@ -79,7 +79,7 @@ export default function Projets() {
         >
           <Grid.Row
             justifyContent="center"
-            marginLeft="0"
+            // marginLeft="0"
             marginRigth="10px"
           >
 

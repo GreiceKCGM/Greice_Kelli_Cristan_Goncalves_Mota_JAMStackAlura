@@ -82,6 +82,7 @@ export const CardImage = styled.div`
 export const CardText = styled.div`
   top: 0;
   padding: 10px;
+  margin-top:1px;
   justify-content: center;
   text-align: center;
   ${breakpointsMedia({

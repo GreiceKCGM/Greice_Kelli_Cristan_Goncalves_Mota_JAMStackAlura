@@ -15,8 +15,6 @@ const Container = styled.div`
     `,
     md: css`
       max-width: 768px;
-      padding-right: 16px;
-      padding-left: 16px;
     `,
     lg: css`
       max-width: 1160px;
