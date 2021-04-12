@@ -20,7 +20,9 @@ export default function Header() {
       <HeaderWrapper.LeftSide>
         <Logo />
       </HeaderWrapper.LeftSide>
-      <HeaderWrapper.RightSide>
+      <HeaderWrapper.RightSide
+        as="ul"
+      >
         {links.map((link) => (
           <li key={link.url}>
             <Text variant="paragraph1" tag="a" href={link.url}>

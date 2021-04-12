@@ -59,6 +59,7 @@ function ProjectsScreen({
               <Text
                 variant="paragraph1"
                 tag="p"
+                fontSize="16px"
                 color="tertiary.main"
                 textAlign="left"
                 marginBottom="8px"
