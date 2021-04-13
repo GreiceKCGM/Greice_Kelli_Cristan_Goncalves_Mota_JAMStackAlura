@@ -39,41 +39,43 @@ function FormContent() {
   // eslint-disable-next-line max-len
   const isFormInvalid = userInfo.email.length === 0 || userInfo.nome.length === 0 || userInfo.mensagem.length === 0;
   return (
-    <form onSubmit={(event) => {
-      event.preventDefault();
-      setIsFormSubmited(true);
+    <form
+      id="formCadastro"
+      onSubmit={(event) => {
+        event.preventDefault();
+        setIsFormSubmited(true);
 
-      // Data transfer object
-      const userDTO = {
-        name: userInfo.nome,
-        email: userInfo.email,
-        message: userInfo.mensagem,
-      };
-      fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(userDTO),
-      })
-        .then((respostaDoServidor) => {
-          if (respostaDoServidor.ok) {
-            return respostaDoServidor.json();
-          }
-          throw new Error('Não foi possivel cadastrar o usuário agora ');
+        // Data transfer object
+        const userDTO = {
+          name: userInfo.nome,
+          email: userInfo.email,
+          message: userInfo.mensagem,
+        };
+        fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userDTO),
         })
-        .then((respostaConvertidaEmObjeto) => {
-          setSubmissionStatus(formStates.DONE);
-          setUserInfo({ nome: '', email: '', mensagem: '' });
-          // eslint-disable-next-line no-console
-          console.log(respostaConvertidaEmObjeto);
-        })
-        .catch((error) => {
-          setSubmissionStatus(formStates.ERROR);
-          // eslint-disable-next-line no-console
-          console.error(error);
-        });
-    }}
+          .then((respostaDoServidor) => {
+            if (respostaDoServidor.ok) {
+              return respostaDoServidor.json();
+            }
+            throw new Error('Não foi possivel cadastrar o usuário agora ');
+          })
+          .then((respostaConvertidaEmObjeto) => {
+            setSubmissionStatus(formStates.DONE);
+            setUserInfo({ nome: '', email: '', mensagem: '' });
+            // eslint-disable-next-line no-console
+            console.log(respostaConvertidaEmObjeto);
+          })
+          .catch((error) => {
+            setSubmissionStatus(formStates.ERROR);
+            // eslint-disable-next-line no-console
+            console.error(error);
+          });
+      }}
     >
       <Text
         variant="title"

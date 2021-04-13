@@ -44,6 +44,7 @@ function HomeScreen() {
             </Contact>
 
             <Button
+              type="submit"
               variant="tertiary.light"
               margin={{
                 xs: 'auto',

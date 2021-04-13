@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../../theme/utils/breakpointsMedia';
-import { TextStyleVariants } from '../../../foundations/text';
+import { TextStyleVariantsMap } from '../../../foundations/text';
 
 const HeaderWrapper = styled.nav`
   font-family: 'Open Sans', sans-serif;
@@ -38,7 +38,7 @@ HeaderWrapper.RightSide = styled.div`
       font-size: 14px;
     `,
     md: css`
-      ${TextStyleVariants.paragraph1}
+      ${TextStyleVariantsMap.paragraph1}
     `,
   })}
   &:hover,
