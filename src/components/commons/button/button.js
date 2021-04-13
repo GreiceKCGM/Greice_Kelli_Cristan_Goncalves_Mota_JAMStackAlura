@@ -28,11 +28,11 @@ const Button = styled.button`
 
     ${breakpointsMedia({
     xs: css`
-        /*All devices*/
+
         ${TextStyleVariantsMap.title}
     `,
     md: css`
-        /* From md breakpoint*/
+
         /* ${TextStyleVariantsMap.paragraph1} */
     `,
   })}
