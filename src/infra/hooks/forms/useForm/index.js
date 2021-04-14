@@ -1,18 +1,21 @@
 import React from 'react';
 
-export function useform({initialValues}) {
-    const [userInfo, setUserInfo] = React.useState(initialValues);
-
-return{
+export default function useform({ initialValues, onSubmit }) {
+  const [userInfo, setUserInfo] = React.useState(initialValues);
+  return {
     userInfo,
+    handleSubmit(event) {
+      event.preventDefault();
+      onSubmit(userInfo);
+    },
+    handleChange(event) {
+      const fieldName = event.target.getAttribute('name');
+      const { value } = event.target;
 
-     handleChange(event) {
-    const fieldName = event.target.getAttribute('name');
-    const {value} = event.target;
-
-    setUserInfo({
-      ...userInfo,
-      [fieldName]: value,
-    });
-}
+      setUserInfo((currentValues) => ({
+        ...currentValues,
+        [fieldName]: value,
+      }));
+    },
+  };
 }
