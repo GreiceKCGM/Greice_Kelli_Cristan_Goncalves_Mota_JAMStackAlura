@@ -6,6 +6,8 @@ import Button from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Box from '../../foundations/layout/box';
 import Text from '../../foundations/text';
+import useform from '../../../infra/hooks/forms/useForm';
+import { contactService } from '../../../services/contact/contactService';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
@@ -18,64 +20,87 @@ export default function FormContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
 
-  const [userInfo, setUserInfo] = React.useState({
-    nome: '',
+  const initialValues = {
+    name: '',
     email: '',
     mensagem: '',
+  };
+
+  // const userDTO = {
+  //   name: userInfo.nome,
+  //   email: userInfo.email,
+  //   message: userInfo.mensagem,
+  // };
+
+  const form = useform({
+    initialValues,
+    onSubmit: (userInfo) => {
+      setIsFormSubmited(true);
+      contactService.contact({
+        name: userInfo.nome,
+        email: userInfo.email,
+        message: userInfo.mensagem,
+      })
+        .then(() => {
+          setSubmissionStatus(formStates.DONE);
+          // setUserInfo({ nome: '', email: '', mensagem: '' });
+        })
+        .catch(() => {
+          setSubmissionStatus(formStates.ERROR);
+        });
+    },
+
   });
-
   function emailIsInvalid() {
-    return userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInfo.email);
+    return form.userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.userInfo.email);
   }
 
-  function handleChange(event) {
-    const fieldName = event.target.getAttribute('name');
-    setUserInfo({
-      ...userInfo,
-      [fieldName]: event.target.value,
-    });
-  }
+  // function handleChange(event) {
+  //   const fieldName = event.target.getAttribute('name');
+  //   setUserInfo({
+  //     ...userInfo,
+  //     [fieldName]: event.target.value,
+  //   });
+  // }
 
   // eslint-disable-next-line max-len
-  const isFormInvalid = userInfo.email.length === 0 || userInfo.nome.length === 0 || userInfo.mensagem.length === 0;
+  const isFormInvalid = form.userInfo.email.length === 0 || form.userInfo.nome.length === 0 || form.userInfo.mensagem.length === 0;
   return (
     <form
       id="formCadastro"
-      onSubmit={(event) => {
-        event.preventDefault();
-        setIsFormSubmited(true);
+      onSubmit={form.handleSubmit}
 
         // Data transfer object
-        const userDTO = {
-          name: userInfo.nome,
-          email: userInfo.email,
-          message: userInfo.mensagem,
-        };
-        fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(userDTO),
-        })
-          .then((respostaDoServidor) => {
-            if (respostaDoServidor.ok) {
-              return respostaDoServidor.json();
-            }
-            throw new Error('Não foi possivel cadastrar o usuário agora ');
-          })
-          .then((respostaConvertidaEmObjeto) => {
-            setSubmissionStatus(formStates.DONE);
-            setUserInfo({ nome: '', email: '', mensagem: '' });
-            // eslint-disable-next-line no-console
-            console.log(respostaConvertidaEmObjeto);
-          })
-          .catch((error) => {
-            setSubmissionStatus(formStates.ERROR);
-            // eslint-disable-next-line no-console
-            console.error(error);
-          });
-      }}
+      //   const userDTO = {
+      //     name: userInfo.nome,
+      //     email: userInfo.email,
+      //     message: userInfo.mensagem,
+      //   };
+      //   fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(userDTO),
+      //   })
+      //     .then((respostaDoServidor) => {
+      //       if (respostaDoServidor.ok) {
+      //         return respostaDoServidor.json();
+      //       }
+      //       throw new Error('Não foi possivel cadastrar o usuário agora ');
+      //     })
+      //     .then((respostaConvertidaEmObjeto) => {
+      //       setSubmissionStatus(formStates.DONE);
+      //       setUserInfo({ nome: '', email: '', mensagem: '' });
+      //       // eslint-disable-next-line no-console
+      //       console.log(respostaConvertidaEmObjeto);
+      //     })
+      //     .catch((error) => {
+      //       setSubmissionStatus(formStates.ERROR);
+      //       // eslint-disable-next-line no-console
+      //       console.error(error);
+      //     });
+      // }}
     >
       <Text
         variant="title"
@@ -100,8 +125,8 @@ export default function FormContent() {
         <TextField
           placeholder="Nome"
           name="nome"
-          value={userInfo.nome}
-          onChange={handleChange}
+          value={form.userInfo.nome}
+          onChange={form.handleChange}
           paddingBottom="5px"
         />
       </div>
@@ -117,8 +142,8 @@ export default function FormContent() {
         <TextField
           placeholder="caio@example.com"
           name="email"
-          value={userInfo.email}
-          onChange={handleChange}
+          value={form.userInfo.email}
+          onChange={form.handleChange}
           paddingBottom="5px"
         />
         { emailIsInvalid() && (
@@ -144,8 +169,8 @@ export default function FormContent() {
         <TextField
           placeholder="Mensagem"
           name="mensagem"
-          value={userInfo.mensagem}
-          onChange={handleChange}
+          value={form.userInfo.mensagem}
+          onChange={form.handleChange}
           paddingBottom="50px"
         />
       </div>
