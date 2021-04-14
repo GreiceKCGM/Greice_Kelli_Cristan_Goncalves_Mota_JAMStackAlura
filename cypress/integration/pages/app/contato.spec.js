@@ -5,13 +5,14 @@ describe('/pages/app/contato/', () => {
     cy.visit('http://localhost:3000');
 
     // // clicar no botão de entre em contato
-    // // cy.get('Button[type="submit"]').click();
+    cy.contains('+').click();
     // // preencher campo do nome
-    // cy.get('#formCadastro input[name="nome"]').type('greice');
+    cy.get('input[name="nome"]').type('greice');
     // // preencher campo do email
-    // cy.get('#formCadastro input[name="email"]').type('greice@gmail.com');
+    cy.get('input[name="email"]').type('greice@gmail.com');
     // // preencher campo da mensagem
-    // cy.get('#formCadastro input[name="mensagem"]').type('Estou entrando em contato');
+    cy.get('input[name="mensagem"]').type('Estou entrando em contato');
     // // clicar no botão de enviar
+    cy.contains('>').click();
   });
 });
