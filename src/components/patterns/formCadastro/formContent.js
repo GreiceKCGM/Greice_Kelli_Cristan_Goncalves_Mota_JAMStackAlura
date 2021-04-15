@@ -165,6 +165,7 @@ export default function FormContent() {
           <Lottie
             width="150px"
             height="150px"
+            className="lottie"
             config={{ animationData: successAnimation, loop: false, autoplay: true }}
           />
         </Box>
@@ -177,6 +178,7 @@ export default function FormContent() {
           <Lottie
             width="150px"
             height="150px"
+            className="lottie"
             config={{ animationData: errorAnimation, loop: false, autoplay: true }}
           />
         </Box>
