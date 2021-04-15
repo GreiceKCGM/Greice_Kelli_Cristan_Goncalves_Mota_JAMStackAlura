@@ -55,52 +55,12 @@ export default function FormContent() {
     return form.userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.userInfo.email);
   }
 
-  // function handleChange(event) {
-  //   const fieldName = event.target.getAttribute('name');
-  //   setUserInfo({
-  //     ...userInfo,
-  //     [fieldName]: event.target.value,
-  //   });
-  // }
-
   // eslint-disable-next-line max-len
   const isFormInvalid = form.userInfo.email.length === 0 || form.userInfo.nome.length === 0 || form.userInfo.mensagem.length === 0;
   return (
     <form
       id="formCadastro"
       onSubmit={form.handleSubmit}
-
-        // Data transfer object
-      //   const userDTO = {
-      //     name: userInfo.nome,
-      //     email: userInfo.email,
-      //     message: userInfo.mensagem,
-      //   };
-      //   fetch('https://contact-form-api-jamstack.herokuapp.com/message', {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify(userDTO),
-      //   })
-      //     .then((respostaDoServidor) => {
-      //       if (respostaDoServidor.ok) {
-      //         return respostaDoServidor.json();
-      //       }
-      //       throw new Error('Não foi possivel cadastrar o usuário agora ');
-      //     })
-      //     .then((respostaConvertidaEmObjeto) => {
-      //       setSubmissionStatus(formStates.DONE);
-      //       setUserInfo({ nome: '', email: '', mensagem: '' });
-      //       // eslint-disable-next-line no-console
-      //       console.log(respostaConvertidaEmObjeto);
-      //     })
-      //     .catch((error) => {
-      //       setSubmissionStatus(formStates.ERROR);
-      //       // eslint-disable-next-line no-console
-      //       console.error(error);
-      //     });
-      // }}
     >
       <Text
         variant="title"
@@ -187,7 +147,7 @@ export default function FormContent() {
 
         <Button
           type="submit"
-          disabled={isFormInvalid}
+          disabled={isFormInvalid || emailIsInvalid()}
           variant="tertiary.light"
         >
           <Text

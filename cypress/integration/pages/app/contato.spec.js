@@ -2,6 +2,8 @@
 
 describe('/pages/app/contato/', () => {
   it('preencha os campos do formulário entre em contato', () => {
+    cy.intercept('https://contact-form-api-jamstack.herokuapp.com/message')
+      .as('contact');
     cy.visit('http://localhost:3000');
 
     // // clicar no botão de entre em contato
@@ -14,5 +16,10 @@ describe('/pages/app/contato/', () => {
     cy.get('input[name="mensagem"]').type('Estou entrando em contato');
     // // clicar no botão de enviar
     cy.contains('>').click();
+
+    cy.wait('@contact')
+      .then(() => {
+
+      });
   });
 });
