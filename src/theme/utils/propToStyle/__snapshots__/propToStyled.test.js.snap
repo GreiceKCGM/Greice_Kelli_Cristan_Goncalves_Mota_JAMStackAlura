@@ -9,30 +9,6 @@ Array [
     "display: flex;",
     "}",
   ],
-  Array [
-    "@media screen and (min-width:",
-    "480",
-    "px){",
-    "}",
-  ],
-  Array [
-    "@media screen and (min-width:",
-    "768",
-    "px){",
-    "}",
-  ],
-  Array [
-    "@media screen and (min-width:",
-    "992",
-    "px){",
-    "}",
-  ],
-  Array [
-    "@media screen and (min-width:",
-    "1200",
-    "px){",
-    "}",
-  ],
 ]
 `;
 
@@ -47,27 +23,9 @@ Array [
   ],
   Array [
     "@media screen and (min-width:",
-    "480",
-    "px){",
-    "}",
-  ],
-  Array [
-    "@media screen and (min-width:",
     "768",
     "px){",
     "text-align: right;",
-    "}",
-  ],
-  Array [
-    "@media screen and (min-width:",
-    "992",
-    "px){",
-    "}",
-  ],
-  Array [
-    "@media screen and (min-width:",
-    "1200",
-    "px){",
     "}",
   ],
 ]
