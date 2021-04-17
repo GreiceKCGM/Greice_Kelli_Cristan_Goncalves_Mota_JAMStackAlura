@@ -1,4 +1,4 @@
-import breakpointsMedia from './breakpointsMedia';
+import breakpointsMedia from '../breakpointsMedia';
 
 function propToStyle(propName) {
   return function PropToStyle(props) {
