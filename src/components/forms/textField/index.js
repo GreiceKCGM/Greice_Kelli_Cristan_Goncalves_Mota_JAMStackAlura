@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../foundations/text';
-import propToStyle from '../../../theme/utils/propToStyled';
+import propToStyle from '../../../theme/utils/propToStyle/propToStyled';
 
 const InputWrapper = styled.div`
  margin: 4px 0;
