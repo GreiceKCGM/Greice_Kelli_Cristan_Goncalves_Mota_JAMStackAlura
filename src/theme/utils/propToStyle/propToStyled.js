@@ -9,7 +9,26 @@ function propToStyle(propName) {
         [propName]: propValue,
       };
     }
+
     if (typeof propValue === 'object') {
+    //    return breakpointsMedia({
+    //     xs: {
+    //       [propName]: propValue.xs,
+    //     },
+    //     sm: {
+    //       [propName]: propValue.sm,
+    //     },
+    //     md: {
+    //       [propName]: propValue.md,
+    //     },
+    //     lg: {
+    //       [propName]: propValue.lg,
+    //     },
+    //     xl: {
+    //       [propName]: propValue.xl,
+    //     },
+    //   });
+    // }
       const breakpoints = {};
 
       if (propValue.xs) breakpoints.xs = { [propName]: propValue.xs };

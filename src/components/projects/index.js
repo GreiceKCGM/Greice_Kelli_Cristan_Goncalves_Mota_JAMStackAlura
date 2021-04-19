@@ -75,7 +75,7 @@ export default function Projets() {
           listStyle="none"
           paddingLeft="3px"
           paddingRight="3px"
-          order={1}
+          order={{ xs: 1, md: 2 }}
         >
           <Grid.Row
             justifyContent="center"
