@@ -9,7 +9,6 @@ function propToStyle(propName) {
         [propName]: propValue,
       };
     }
-
     if (typeof propValue === 'object') {
     //    return breakpointsMedia({
     //     xs: {
