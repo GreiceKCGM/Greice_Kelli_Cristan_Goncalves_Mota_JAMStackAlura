@@ -26,12 +26,6 @@ export default function FormContent() {
     mensagem: '',
   };
 
-  // const userDTO = {
-  //   name: userInfo.nome,
-  //   email: userInfo.email,
-  //   message: userInfo.mensagem,
-  // };
-
   const form = useform({
     initialValues,
     onSubmit: (userInfo) => {

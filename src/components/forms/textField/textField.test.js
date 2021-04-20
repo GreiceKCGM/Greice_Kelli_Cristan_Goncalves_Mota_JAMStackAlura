@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '../../../infra/test/testUtils';
 import TextField from './index';
 
-describe('<textField />', () => {
+describe('<TextField />', () => {
   test('renders component', () => {
     render(
       <TextField
