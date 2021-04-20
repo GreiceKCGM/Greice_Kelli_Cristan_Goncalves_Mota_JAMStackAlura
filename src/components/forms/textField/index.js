@@ -33,7 +33,13 @@ export default function TextField({
   onChange,
   value,
   paddingBottom,
+  error,
+  isTouched,
+  ...props
 }) {
+  const harErrors = Boolean(error);
+  const isFieldInvalid = harErrors && isTouched;
+
   return (
     <InputWrapper>
       <Input
@@ -43,7 +49,18 @@ export default function TextField({
         onChange={onChange}
         value={value}
         paddingBottom={paddingBottom}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
       />
+      {isFieldInvalid && (
+        <Text
+          variant="smallestException"
+          color="error.main"
+          role="alert"
+        >
+          {error}
+        </Text>
+      )}
     </InputWrapper>
   );
 }
@@ -51,6 +68,8 @@ export default function TextField({
 TextField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  isTouched: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   paddingBottom: PropTypes.string,
@@ -58,4 +77,6 @@ TextField.propTypes = {
 
 TextField.defaultProps = {
   paddingBottom: 'inherit',
+  error: '',
+  isTouched: false,
 };

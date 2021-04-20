@@ -1,4 +1,5 @@
 import React from 'react';
+import * as yup from 'yup';
 import { Lottie } from '@crello/react-lottie';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
@@ -16,6 +17,22 @@ const formStates = {
   ERROR: 'ERROR',
 };
 
+const contactSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('Digite seu nome')
+    .min(3, 'Preencha com seu nome'),
+  email: yup
+    .string()
+    .required('Digite um e-mail válido')
+    .email('Digite um e-mail válido'),
+  message: yup
+    .string()
+    .required('Digite sua mensagem')
+    .min(8, 'Preencha ao menos 8 caracteres'),
+
+});
+
 export default function FormContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
@@ -23,7 +40,7 @@ export default function FormContent() {
   const initialValues = {
     name: '',
     email: '',
-    mensagem: '',
+    message: '',
   };
 
   const form = useform({
@@ -31,26 +48,31 @@ export default function FormContent() {
     onSubmit: (userInfo) => {
       setIsFormSubmited(true);
       contactService.contact({
-        name: userInfo.nome,
+        name: userInfo.name,
         email: userInfo.email,
-        message: userInfo.mensagem,
+        message: userInfo.message,
       })
         .then(() => {
           setSubmissionStatus(formStates.DONE);
-          // setUserInfo({ nome: '', email: '', mensagem: '' });
+          // setUserInfo({ name: '', email: '', message: '' });
         })
         .catch(() => {
           setSubmissionStatus(formStates.ERROR);
         });
     },
-
+    async validateSchema(userInfo) {
+      return contactSchema.validate(userInfo, {
+        abortEarly: false,
+      });
+    },
   });
+
   function emailIsInvalid() {
     return form.userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.userInfo.email);
   }
 
   // eslint-disable-next-line max-len
-  const isFormInvalid = form.userInfo.email.length === 0 || form.userInfo.nome.length === 0 || form.userInfo.mensagem.length === 0;
+  const isFormInvalid = form.userInfo.email.length === 0 || form.userInfo.name.length === 0 || form.userInfo.message.length === 0;
   return (
     <form
       id="formCadastro"
@@ -77,11 +99,15 @@ export default function FormContent() {
           Seu Nome
         </Text>
         <TextField
-          placeholder="Nome"
-          name="nome"
-          value={form.userInfo.nome}
-          onChange={form.handleChange}
           paddingBottom="5px"
+          placeholder="Nome"
+          name="name"
+          value={form.userInfo.name}
+          error={form.errors.name}
+          isTouched={form.touched.name}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+
         />
       </div>
       <div>
@@ -94,11 +120,15 @@ export default function FormContent() {
           Seu E-mail
         </Text>
         <TextField
+          paddingBottom="5px"
           placeholder="caio@example.com"
           name="email"
           value={form.userInfo.email}
+          error={form.errors.email}
+          isTouched={form.touched.email}
           onChange={form.handleChange}
-          paddingBottom="5px"
+          onBlur={form.handleBlur}
+
         />
         { emailIsInvalid() && (
         <Text
@@ -121,11 +151,15 @@ export default function FormContent() {
           Sua Mensagem
         </Text>
         <TextField
-          placeholder="Mensagem"
-          name="mensagem"
-          value={form.userInfo.mensagem}
-          onChange={form.handleChange}
           paddingBottom="50px"
+          placeholder="Mensagem"
+          name="message"
+          value={form.userInfo.message}
+          error={form.errors.message}
+          isTouched={form.touched.message}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+
         />
       </div>
       <Text
@@ -141,7 +175,7 @@ export default function FormContent() {
 
         <Button
           type="submit"
-          disabled={isFormInvalid || emailIsInvalid()}
+          disabled={form.isFormDisabled || isFormInvalid || emailIsInvalid()}
           variant="tertiary.light"
         >
           <Text
@@ -177,6 +211,9 @@ export default function FormContent() {
           />
         </Box>
       )}
+      <pre>
+        {JSON.stringify(form.touched, null, 4)}
+      </pre>
     </form>
   );
 }
