@@ -67,12 +67,8 @@ export default function FormContent() {
     },
   });
 
-  function emailIsInvalid() {
-    return form.userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.userInfo.email);
-  }
-
   // eslint-disable-next-line max-len
-  const isFormInvalid = form.userInfo.email.length === 0 || form.userInfo.name.length === 0 || form.userInfo.message.length === 0;
+
   return (
     <form
       id="formCadastro"
@@ -130,7 +126,7 @@ export default function FormContent() {
           onBlur={form.handleBlur}
 
         />
-        { emailIsInvalid() && (
+        { form.emailIsInvalid() && (
         <Text
           variant="smallestException"
           tag="p"
@@ -175,7 +171,7 @@ export default function FormContent() {
 
         <Button
           type="submit"
-          disabled={form.isFormDisabled || isFormInvalid || emailIsInvalid()}
+          disabled={form.isFormDisabled || form.isFormInvalid || form.emailIsInvalid()}
           variant="tertiary.light"
         >
           <Text

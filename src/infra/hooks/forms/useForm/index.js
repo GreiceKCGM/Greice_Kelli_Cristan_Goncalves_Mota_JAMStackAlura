@@ -27,6 +27,9 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
       });
   }, [userInfo]);
 
+  const isFormInvalid = userInfo.email.length === 0
+  || userInfo.name.length === 0 || userInfo.message.length === 0;
+
   return {
     userInfo,
     handleSubmit(event) {
@@ -42,6 +45,7 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
         [fieldName]: value,
       }));
     },
+    isFormInvalid,
     isFormDisabled,
     errors,
     touched,
@@ -52,6 +56,9 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
         ...touched,
         [fieldName]: true,
       });
+    },
+    emailIsInvalid() {
+      return userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInfo.email);
     },
   };
 }
