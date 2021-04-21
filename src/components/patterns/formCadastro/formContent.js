@@ -33,6 +33,30 @@ const contactSchema = yup.object().shape({
 
 });
 
+const FormAnimation = ({ message, animation }) => (
+  <Box
+    display="flex"
+    flexDirection="column"
+    alignItems="center"
+    justifyContent="center"
+  >
+    <Lottie
+      width="150px"
+      height="150px"
+      className="lottie"
+      config={{ animationData: animation, loop: false, autoplay: true }}
+    />
+    <Text
+      variant="titleXS"
+      tag="p"
+      color="tertiary.main"
+      marginBottom="6px"
+    >
+      { message }
+    </Text>
+  </Box>
+);
+
 export default function FormContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
@@ -47,6 +71,7 @@ export default function FormContent() {
     initialValues,
     onSubmit: (userInfo) => {
       setIsFormSubmited(true);
+      setSubmissionStatus(formStates.LOADING);
       contactService.contact({
         name: userInfo.name,
         email: userInfo.email,
@@ -54,7 +79,6 @@ export default function FormContent() {
       })
         .then(() => {
           setSubmissionStatus(formStates.DONE);
-          // setUserInfo({ name: '', email: '', message: '' });
         })
         .catch(() => {
           setSubmissionStatus(formStates.ERROR);
@@ -119,6 +143,8 @@ export default function FormContent() {
           paddingBottom="5px"
           placeholder="caio@example.com"
           name="email"
+          id="email"
+          type="email"
           value={form.userInfo.email}
           error={form.errors.email}
           isTouched={form.touched.email}
@@ -167,8 +193,6 @@ export default function FormContent() {
           md: 'center',
         }}
       >
-        ENVIAR
-
         <Button
           type="submit"
           disabled={form.isFormDisabled || form.isFormInvalid || form.emailIsInvalid()}
@@ -177,35 +201,27 @@ export default function FormContent() {
           <Text
             color="tertiary.main"
           >
-            {'>'}
+            Enviar
           </Text>
         </Button>
       </Text>
+      {isFormSubmited && submissionStatus === formStates.LOADING && (
+        <FormAnimation
+          animation={errorAnimation}
+          message="..."
+        />
+      )}
       {isFormSubmited && submissionStatus === formStates.DONE && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie"
-            config={{ animationData: successAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
+        <FormAnimation
+          animation={successAnimation}
+          message="Mensagem enviada com sucesso!"
+        />
       )}
       {isFormSubmited && submissionStatus === formStates.ERROR && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie"
-            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
+        <FormAnimation
+          animation={errorAnimation}
+          message="Mensagem não enviada, tente novamente!"
+        />
       )}
       <pre>
         {JSON.stringify(form.touched, null, 4)}
