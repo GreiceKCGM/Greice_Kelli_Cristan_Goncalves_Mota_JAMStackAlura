@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as yup from 'yup';
-import successAnimation from './animations/success.json';
-import errorAnimation from './animations/error.json';
-import loadingAnimation from './animations/loading.json';
 import { ButtonWrapper } from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Text from '../../foundations/text';
@@ -180,22 +177,9 @@ export default function FormContent({ onSubmit }) {
           </Text>
         </ButtonWrapper>
       </Text>
-      {isFormSubmited && submissionStatus === formStates.LOADING && (
+      {isFormSubmited && submissionStatus !== formStates.DEFAULT && (
         <FormAnimation
-          animation={loadingAnimation}
-          message="..."
-        />
-      )}
-      {isFormSubmited && submissionStatus === formStates.DONE && (
-        <FormAnimation
-          animation={successAnimation}
-          message="Mensagem enviada com sucesso!"
-        />
-      )}
-      {isFormSubmited && submissionStatus === formStates.ERROR && (
-        <FormAnimation
-          animation={errorAnimation}
-          message="Mensagem não enviada, tente novamente!"
+          animationType={submissionStatus}
         />
       )}
       {/* <pre>
