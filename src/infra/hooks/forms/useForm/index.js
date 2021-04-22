@@ -64,5 +64,8 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
     emailIsInvalid() {
       return userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInfo.email);
     },
+    handleReset() {
+      setUserInfo(initialValues);
+    },
   };
 }

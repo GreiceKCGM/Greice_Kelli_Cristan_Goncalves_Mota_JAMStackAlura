@@ -69,6 +69,15 @@ export default function FormContent({ onSubmit }) {
     },
   });
 
+  function resetForm() {
+    if (submissionStatus !== formStates.ERROR) {
+      form.handleReset();
+    }
+
+    setSubmissionStatus(formStates.DEFAULT);
+    setIsFormSubmited(false);
+  }
+
   // eslint-disable-next-line max-len
 
   return (
@@ -186,6 +195,7 @@ export default function FormContent({ onSubmit }) {
           animationType={submissionStatus}
         />
       )}
+      {/* w */}
       {/* <pre>
         {JSON.stringify(form.touched, null, 4)}
       </pre> */}
