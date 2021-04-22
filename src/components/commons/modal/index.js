@@ -117,7 +117,7 @@ function Modal({ isOpen, onClose, children }) {
                   buttonClose(event);
                 }}
               >
-                x
+                <img src="/images/close.svg" alt="Fechar" />
               </Button>
             </Box>
             { children({ 'data-modal-safe-area': 'true' }) }
