@@ -100,6 +100,12 @@ function Modal({ isOpen, onClose, children }) {
 
               <Button
                 style={{
+                  // position: 'absolute',
+                  // top: 20,
+                  // right: 20,
+                  // height: 50,
+                  // width: 50,
+                  // borderRadius: 50,
                   width: 40,
                   height: 40,
                   color: 'black',
