@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
+import propToStyle from '../../../theme/utils/propToStyle/propToStyled';
 import { TextStyleVariantsMap } from '../../foundations/text';
 
 const Button = styled.button`
@@ -41,6 +42,50 @@ const Button = styled.button`
     cursor: not-allowed;
     opacity: .2;
   }
+
+`;
+
+export const ButtonWrapper = styled.button`
+    width: 200px;
+    height: 48px;
+    border: 0;
+    cursor: pointer;
+    padding: 12px 26px;
+    font-weight: bold;
+    opacity: 1;
+    border-radius: 8px;
+    background-color:${({ theme }) => theme.colors.secondary.main.color};
+
+    transition: opacity ${({ theme }) => theme.transition};
+    border-radius: ${({ theme }) => theme.borderRadius};
+
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
+
+    ${breakpointsMedia({
+    xs: css`
+        /*All devices*/
+        ${TextStyleVariantsMap.smallestException}
+    `,
+    md: css`
+        /* From md breakpoint*/
+        ${TextStyleVariantsMap.paragraph1}
+    `,
+  })}
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+  ${({ fullWidth }) => fullWidth && css`
+  width: 100%
+  `};
+
+    ${propToStyle('margin')}
+    ${propToStyle('display')}
+
 
 `;
 

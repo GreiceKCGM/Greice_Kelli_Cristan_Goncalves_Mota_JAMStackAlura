@@ -42,7 +42,6 @@ export default function TextField({
   paddingBottom,
   error,
   isTouched,
-  type,
   ...props
 }) {
   const harErrors = Boolean(error);
@@ -51,7 +50,7 @@ export default function TextField({
   return (
     <InputWrapper>
       <Input
-        type={type}
+        type="text"
         placeholder={placeholder}
         name={name}
         onChange={onChange}
@@ -75,7 +74,6 @@ export default function TextField({
 }
 
 TextField.propTypes = {
-  type: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   error: PropTypes.string,
@@ -86,7 +84,6 @@ TextField.propTypes = {
 };
 
 TextField.defaultProps = {
-  type: 'text',
   paddingBottom: 'inherit',
   error: '',
   isTouched: false,

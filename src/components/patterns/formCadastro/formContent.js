@@ -1,14 +1,14 @@
 import React from 'react';
 import * as yup from 'yup';
-import { Lottie } from '@crello/react-lottie';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
-import Button from '../../commons/button/button';
+import loadingAnimation from './animations/loading.json';
+import { ButtonWrapper } from '../../commons/button/button';
 import TextField from '../../forms/textField';
-import Box from '../../foundations/layout/box';
 import Text from '../../foundations/text';
 import useform from '../../../infra/hooks/forms/useForm';
 import { contactService } from '../../../services/contact/contactService';
+import { FormAnimation } from './animation';
 
 const formStates = {
   DEFAULT: 'DEFAULT',
@@ -32,30 +32,6 @@ const contactSchema = yup.object().shape({
     .min(8, 'Preencha ao menos 8 caracteres'),
 
 });
-
-const FormAnimation = ({ message, animation }) => (
-  <Box
-    display="flex"
-    flexDirection="column"
-    alignItems="center"
-    justifyContent="center"
-  >
-    <Lottie
-      width="150px"
-      height="150px"
-      className="lottie"
-      config={{ animationData: animation, loop: false, autoplay: true }}
-    />
-    <Text
-      variant="titleXS"
-      tag="p"
-      color="tertiary.main"
-      marginBottom="6px"
-    >
-      { message }
-    </Text>
-  </Box>
-);
 
 export default function FormContent() {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
@@ -99,7 +75,7 @@ export default function FormContent() {
       onSubmit={form.handleSubmit}
     >
       <Text
-        variant="title"
+        variant="titleXS"
         tag="h3"
         color="tertiary.main"
         textAlign="center"
@@ -143,8 +119,6 @@ export default function FormContent() {
           paddingBottom="5px"
           placeholder="caio@example.com"
           name="email"
-          id="email"
-          type="email"
           value={form.userInfo.email}
           error={form.errors.email}
           isTouched={form.touched.email}
@@ -193,21 +167,21 @@ export default function FormContent() {
           md: 'center',
         }}
       >
-        <Button
+        <ButtonWrapper
           type="submit"
           disabled={form.isFormDisabled || form.isFormInvalid || form.emailIsInvalid()}
           variant="tertiary.light"
         >
           <Text
-            color="tertiary.main"
+            color="black"
           >
             Enviar
           </Text>
-        </Button>
+        </ButtonWrapper>
       </Text>
       {isFormSubmited && submissionStatus === formStates.LOADING && (
         <FormAnimation
-          animation={errorAnimation}
+          animation={loadingAnimation}
           message="..."
         />
       )}
