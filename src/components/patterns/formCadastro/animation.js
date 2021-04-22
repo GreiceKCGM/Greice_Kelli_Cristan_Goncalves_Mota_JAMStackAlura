@@ -41,7 +41,7 @@ export const FormAnimation = ({ animationType }) => {
         config={{ animationData, loop: false, autoplay: true }}
       />
       <Text
-        variant="titleXS"
+        variant="paragraph1"
         tag="p"
         color="tertiary.main"
         marginBottom="6px"

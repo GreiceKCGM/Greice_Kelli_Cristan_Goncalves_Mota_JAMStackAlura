@@ -25,11 +25,15 @@ export const ButtonClose = styled.button`
     ${breakpointsMedia({
     xs: css`
 
-        ${TextStyleVariantsMap.paragraph1}
+      ${TextStyleVariantsMap.paragraph1}
+      width: 20px;
+      height: 20px;
     `,
     md: css`
 
-        ${TextStyleVariantsMap.title}
+      ${TextStyleVariantsMap.title}
+      width: 30px;
+      height: 30px;
     `,
   })}
 
