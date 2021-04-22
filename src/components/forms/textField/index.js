@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import Text from '../../foundations/text';
 import propToStyle from '../../../theme/utils/propToStyle/propToStyled';
@@ -19,6 +19,13 @@ const Input = styled(Text)`
 
   outline: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
+   ${({ theme, isFieldInvalid }) => isFieldInvalid && css`
+    border-color: ${theme.colors.error.main.color};
+    & + span {
+      color: ${theme.colors.error.main.color};
+      font-size: 12px;
+    }
+  `}
 `;
 
 Input.defaultProps = {
@@ -33,7 +40,13 @@ export default function TextField({
   onChange,
   value,
   paddingBottom,
+  error,
+  isTouched,
+  ...props
 }) {
+  const harErrors = Boolean(error);
+  const isFieldInvalid = harErrors && isTouched;
+
   return (
     <InputWrapper>
       <Input
@@ -42,8 +55,20 @@ export default function TextField({
         name={name}
         onChange={onChange}
         value={value}
+        isFieldInvalid={isFieldInvalid}
         paddingBottom={paddingBottom}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
       />
+      {isFieldInvalid && (
+        <Text
+          variant="smallestException"
+          color="error.main"
+          role="alert"
+        >
+          {error}
+        </Text>
+      )}
     </InputWrapper>
   );
 }
@@ -51,6 +76,8 @@ export default function TextField({
 TextField.propTypes = {
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  error: PropTypes.string,
+  isTouched: PropTypes.bool,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
   paddingBottom: PropTypes.string,
@@ -58,4 +85,6 @@ TextField.propTypes = {
 
 TextField.defaultProps = {
   paddingBottom: 'inherit',
+  error: '',
+  isTouched: false,
 };

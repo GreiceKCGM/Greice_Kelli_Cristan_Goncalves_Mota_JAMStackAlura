@@ -35,7 +35,7 @@ HeaderWrapper.RightSide = styled.div`
     transition: 200ms ease-in-out;
     ${breakpointsMedia({
     xs: css`
-      font-size: 14px;
+      ${TextStyleVariantsMap.paragraph2}
     `,
     md: css`
       ${TextStyleVariantsMap.paragraph1}

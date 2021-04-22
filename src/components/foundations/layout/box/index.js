@@ -21,6 +21,8 @@ const Box = styled.div`
     ${propToStyle('listStyle')}
     ${propToStyle('fontSize')}
     ${propToStyle('position')}
+    ${propToStyle('alignItems')}
+
 `;
 
 export default Box;

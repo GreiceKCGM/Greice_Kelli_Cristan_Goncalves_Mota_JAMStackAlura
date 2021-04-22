@@ -1,69 +1,93 @@
 import React from 'react';
-import { Lottie } from '@crello/react-lottie';
-import successAnimation from './animations/success.json';
-import errorAnimation from './animations/error.json';
-import Button from '../../commons/button/button';
+import PropTypes from 'prop-types';
+import * as yup from 'yup';
+import { ButtonWrapper } from '../../commons/button/button';
 import TextField from '../../forms/textField';
-import Box from '../../foundations/layout/box';
 import Text from '../../foundations/text';
 import useform from '../../../infra/hooks/forms/useForm';
 import { contactService } from '../../../services/contact/contactService';
+import { FormAnimation } from './animation';
 
-const formStates = {
+export const formStates = {
   DEFAULT: 'DEFAULT',
   LOADING: 'LOADING',
   DONE: 'DONE',
   ERROR: 'ERROR',
 };
 
-export default function FormContent() {
+const contactSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required('Digite seu nome')
+    .min(3, 'Preencha com seu nome'),
+  email: yup
+    .string()
+    .required('Digite um e-mail válido')
+    .email('Digite um e-mail válido'),
+  message: yup
+    .string()
+    .required('Digite sua mensagem')
+    .min(8, 'Preencha ao menos 8 caracteres'),
+
+});
+
+export default function FormContent({ onSubmit }) {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
 
   const initialValues = {
     name: '',
     email: '',
-    mensagem: '',
+    message: '',
   };
 
-  // const userDTO = {
-  //   name: userInfo.nome,
-  //   email: userInfo.email,
-  //   message: userInfo.mensagem,
-  // };
+  function submissionDone(form) {
+    setSubmissionStatus(formStates.DONE);
+
+    setTimeout(() => {
+      setIsFormSubmited(false);
+      form.handleReset();
+      setSubmissionStatus(formStates.DEFAULT);
+    }, 2000);
+  }
 
   const form = useform({
     initialValues,
     onSubmit: (userInfo) => {
       setIsFormSubmited(true);
+      form.setIsFormDisabled(true);
+      setSubmissionStatus(formStates.LOADING);
       contactService.contact({
-        name: userInfo.nome,
+        name: userInfo.name,
         email: userInfo.email,
-        message: userInfo.mensagem,
+        message: userInfo.message,
       })
         .then(() => {
-          setSubmissionStatus(formStates.DONE);
-          // setUserInfo({ nome: '', email: '', mensagem: '' });
+          submissionDone(form);
         })
         .catch(() => {
           setSubmissionStatus(formStates.ERROR);
+        })
+        .finally(() => {
+          form.setIsFormDisabled(false);
         });
     },
-
+    async validateSchema(userInfo) {
+      return contactSchema.validate(userInfo, {
+        abortEarly: false,
+      });
+    },
   });
-  function emailIsInvalid() {
-    return form.userInfo.email.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.userInfo.email);
-  }
 
   // eslint-disable-next-line max-len
-  const isFormInvalid = form.userInfo.email.length === 0 || form.userInfo.nome.length === 0 || form.userInfo.mensagem.length === 0;
+
   return (
     <form
       id="formCadastro"
-      onSubmit={form.handleSubmit}
+      onSubmit={onSubmit || form.handleSubmit}
     >
       <Text
-        variant="title"
+        variant="titleXS"
         tag="h3"
         color="tertiary.main"
         textAlign="center"
@@ -83,11 +107,15 @@ export default function FormContent() {
           Seu Nome
         </Text>
         <TextField
-          placeholder="Nome"
-          name="nome"
-          value={form.userInfo.nome}
-          onChange={form.handleChange}
           paddingBottom="5px"
+          placeholder="Nome"
+          name="name"
+          value={form.userInfo.name}
+          error={form.errors.name}
+          isTouched={form.touched.name}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+
         />
       </div>
       <div>
@@ -100,17 +128,21 @@ export default function FormContent() {
           Seu E-mail
         </Text>
         <TextField
+          paddingBottom="5px"
           placeholder="caio@example.com"
           name="email"
           value={form.userInfo.email}
+          error={form.errors.email}
+          isTouched={form.touched.email}
           onChange={form.handleChange}
-          paddingBottom="5px"
+          onBlur={form.handleBlur}
+
         />
-        { emailIsInvalid() && (
+        { form.emailIsInvalid() && (
         <Text
           variant="smallestException"
           tag="p"
-          color="tertiary.main"
+          color="error.main"
           marginBottom="24px"
         >
           E-mail inválido!
@@ -127,11 +159,15 @@ export default function FormContent() {
           Sua Mensagem
         </Text>
         <TextField
-          placeholder="Mensagem"
-          name="mensagem"
-          value={form.userInfo.mensagem}
-          onChange={form.handleChange}
           paddingBottom="50px"
+          placeholder="Mensagem"
+          name="message"
+          value={form.userInfo.message}
+          error={form.errors.message}
+          isTouched={form.touched.message}
+          onChange={form.handleChange}
+          onBlur={form.handleBlur}
+
         />
       </div>
       <Text
@@ -143,46 +179,35 @@ export default function FormContent() {
           md: 'center',
         }}
       >
-        ENVIAR
-
-        <Button
+        <ButtonWrapper
           type="submit"
-          disabled={isFormInvalid || emailIsInvalid()}
+          disabled={form.isFormDisabled || form.isFormInvalid || form.emailIsInvalid()}
           variant="tertiary.light"
         >
           <Text
-            color="tertiary.main"
+            color="black"
           >
-            {'>'}
+            Enviar
           </Text>
-        </Button>
+        </ButtonWrapper>
       </Text>
-      {isFormSubmited && submissionStatus === formStates.DONE && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie"
-            config={{ animationData: successAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
+      {isFormSubmited && submissionStatus !== formStates.DEFAULT && (
+        <FormAnimation
+          animationType={submissionStatus}
+        />
       )}
-      {isFormSubmited && submissionStatus === formStates.ERROR && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie"
-            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
-      )}
+      {/* w */}
+      {/* <pre>
+        {JSON.stringify(form.touched, null, 4)}
+      </pre> */}
     </form>
   );
 }
+
+FormContent.defaultProps = {
+  onSubmit: undefined,
+};
+
+FormContent.propTypes = {
+  onSubmit: PropTypes.func,
+};
