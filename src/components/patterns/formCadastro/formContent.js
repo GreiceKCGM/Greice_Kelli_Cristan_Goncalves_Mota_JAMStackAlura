@@ -45,6 +45,7 @@ export default function FormContent({ onSubmit }) {
     initialValues,
     onSubmit: (userInfo) => {
       setIsFormSubmited(true);
+      form.setIsFormDisabled(true);
       setSubmissionStatus(formStates.LOADING);
       contactService.contact({
         name: userInfo.name,
@@ -56,6 +57,9 @@ export default function FormContent({ onSubmit }) {
         })
         .catch(() => {
           setSubmissionStatus(formStates.ERROR);
+        })
+        .finally(() => {
+          form.setIsFormDisabled(false);
         });
     },
     async validateSchema(userInfo) {
@@ -128,7 +132,7 @@ export default function FormContent({ onSubmit }) {
         <Text
           variant="smallestException"
           tag="p"
-          color="tertiary.main"
+          color="error.main"
           marginBottom="24px"
         >
           E-mail inválido!

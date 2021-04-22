@@ -23,7 +23,7 @@ const Input = styled(Text)`
     border-color: ${theme.colors.error.main.color};
     & + span {
       color: ${theme.colors.error.main.color};
-      font-size: 11px;
+      font-size: 12px;
     }
   `}
 `;
