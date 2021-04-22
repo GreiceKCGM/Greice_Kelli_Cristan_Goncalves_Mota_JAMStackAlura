@@ -1,65 +1,66 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
-import Text from '../../foundations/text';
+// import Text from '../../foundations/text';
 import { CardTitle, CardText, CardImage } from './styles';
 
-const CardTitleHighlighted = styled.div`
+// const CardTitleHighlighted = styled.div`
 
-  font-family: Fira Sans Condensed;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-  /* display: flex;
-  justify-content: center; */
-  align-items: center;
-  height: 50px;
-  border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  flex-direction: column;
+//   font-family: Fira Sans Condensed;
+//   font-weight: bold;
+//   font-size: 24px;
+//   text-align: center;
+//   align-items: center;
+//   height: 50px;
+//   border: 1px solid ${({ theme }) => theme.colors.borders.main.color};
+//   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+//   border-radius: 5px;
+//   flex-direction: column;
+//   height: 31px;
+//   position: absolute;
+//   top: 15px;
+//   left: 10px;
+//   box-sizing: border-box;
+//   z-index:1;
+//   background: #ffffff;
+//   ${breakpointsMedia({
+//     md: css`
+//     `,
+//     xs: css`
+//       left: 100px;
 
-  /* width: 147px; */
-  height: 31px;
-  position: absolute;
+//     `,
+//   })}
 
-  top: 15px;
-  left: 10px;
-  /* transform: translateY(-10px);
-  transform: translateX(-40px); */
-  box-sizing: border-box;
-  z-index:1;
-  background: #ffffff;
-
-`;
+// `;
 
 const CardHighlightedStyle = styled.div`
 
   /* width: auto; */
+  flex: 1;
+  min-width: 100%;
+  max-width: 100%;
   height: auto;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-
-   border-radius: 5px;
-  /* border: 1px solid #e9c46a; */
+  border-radius: 5px;
   margin-top: 18px;
-  /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); */
   margin-bottom: 24px;
   transform: scale(1);
-  /* border: 1px solid ${({ theme }) => theme.colors.borders.main.color}; */
+
 
   ${breakpointsMedia({
     md: css`
-      width: 90%;
-      /* max-width: 1040px; */
-      display: flex;
+      /* min-width: 33.3%; */
       align-items: center;
       justify-content: center;
       flex-direction: row;
 
+    `,
+    xs: css`
+      align-items: center;
 
     `,
   })}
@@ -149,7 +150,7 @@ const CardHighlightedStyle = styled.div`
 function CardHighlighted({ children }) {
   return (
     <CardHighlightedStyle>
-      <CardTitleHighlighted>
+      {/* <CardTitleHighlighted>
         <Text
           textAlign="center"
           color="tertiary.main"
@@ -157,7 +158,7 @@ function CardHighlighted({ children }) {
         >
           DESTAQUES
         </Text>
-      </CardTitleHighlighted>
+      </CardTitleHighlighted> */}
       {children}
     </CardHighlightedStyle>
   );

@@ -17,7 +17,7 @@ const WrapperProjects = styled.div`
     flex-wrap: wrap;
     align-items: center;
     list-style-type: none;
-    padding-left:21px;
+    padding-left:10px;
     padding-right:21px
 
   }
@@ -73,7 +73,7 @@ export default function Projets() {
         <Grid.Col
           as="li"
           listStyle="none"
-          paddingLeft="3px"
+          paddingLeft="13px"
           paddingRight="3px"
           order={{ xs: 1, md: 2 }}
         >
