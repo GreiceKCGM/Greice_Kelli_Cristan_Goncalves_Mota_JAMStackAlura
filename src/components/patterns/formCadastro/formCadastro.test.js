@@ -26,7 +26,7 @@ describe('<FormContent />', () => {
 
       expect(submitButton).toBeDisabled();
 
-      const inputName = screen.getByPlaceholderText(/nome/i);
+      const inputName = screen.getByPlaceholderText('Nome');
       user.type(inputName, 'Felizberto');
       await waitFor(() => expect(inputName).toHaveValue('Felizberto'));
 
@@ -34,7 +34,7 @@ describe('<FormContent />', () => {
       user.type(inputEmail, 'caio@example.com');
       await waitFor(() => expect(inputEmail).toHaveValue('caio@example.com'));
 
-      const inputMessage = screen.getByPlaceholderText(/mensagem/i);
+      const inputMessage = screen.getByPlaceholderText('Mensagem');
       user.type(inputMessage, 'Entrar em Contato');
       await waitFor(() => expect(inputMessage).toHaveValue('Entrar em Contato'));
 
@@ -42,8 +42,23 @@ describe('<FormContent />', () => {
 
       user.click(screen.getByRole('button'));
 
-    //   screen.debug();
+      screen.debug();
+
       expect(onSubmit).toHaveBeenCalledTimes(1);
+    });
+
+    describe('when the form fields are incorrect', () => {
+      test('displays the respective errors', async () => {
+        render(<FormContent onSubmit={onSubmit} />);
+
+        const inputEmail = screen.getByPlaceholderText('caio@example.com');
+        inputEmail.focus();
+        inputEmail.blur();
+
+        await waitFor(() => screen.getByRole('alert'));
+
+        expect(screen.getByRole('alert')).toHaveTextContent('Digite um e-mail válido');
+      });
     });
   });
 });

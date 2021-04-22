@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import * as yup from 'yup';
 import successAnimation from './animations/success.json';
 import errorAnimation from './animations/error.json';
@@ -10,7 +11,7 @@ import useform from '../../../infra/hooks/forms/useForm';
 import { contactService } from '../../../services/contact/contactService';
 import { FormAnimation } from './animation';
 
-const formStates = {
+export const formStates = {
   DEFAULT: 'DEFAULT',
   LOADING: 'LOADING',
   DONE: 'DONE',
@@ -72,7 +73,7 @@ export default function FormContent({ onSubmit }) {
   return (
     <form
       id="formCadastro"
-      onSubmit={form.handleSubmit}
+      onSubmit={onSubmit || form.handleSubmit}
     >
       <Text
         variant="titleXS"
@@ -197,9 +198,17 @@ export default function FormContent({ onSubmit }) {
           message="Mensagem não enviada, tente novamente!"
         />
       )}
-      <pre>
+      {/* <pre>
         {JSON.stringify(form.touched, null, 4)}
-      </pre>
+      </pre> */}
     </form>
   );
 }
+
+FormContent.defaultProps = {
+  onSubmit: undefined,
+};
+
+FormContent.propTypes = {
+  onSubmit: PropTypes.func,
+};
