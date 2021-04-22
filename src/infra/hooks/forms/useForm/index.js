@@ -7,24 +7,27 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
   const [errors, setErrors] = React.useState({});
   const [touched, setTouchedField] = React.useState({});
 
+  async function validateuserInfo(currentUserInfo) {
+    try {
+      await validateSchema(currentUserInfo);
+      setIsFormDisabled(false);
+      setErrors({});
+    } catch (err) {
+      const formattedErros = err.inner.reduce((errorObjectAcc, currentError) => {
+        const fieldName = currentError.path;
+        const errorMessage = currentError.message;
+        return {
+          ...errorObjectAcc,
+          [fieldName]: errorMessage,
+        };
+      }, {});
+      setErrors(formattedErros);
+      setIsFormDisabled(true);
+    }
+  }
+
   React.useEffect(() => {
-    validateSchema(userInfo)
-      .then(() => {
-        setIsFormDisabled(false);
-        setErrors({});
-      })
-      .catch((err) => {
-        const formattedErros = err.inner.reduce((errorObjectAcc, currentError) => {
-          const fieldName = currentError.path;
-          const errorMessage = currentError.message;
-          return {
-            ...errorObjectAcc,
-            [fieldName]: errorMessage,
-          };
-        }, {});
-        setErrors(formattedErros);
-        setIsFormDisabled(true);
-      });
+    validateuserInfo(userInfo);
   }, [userInfo]);
 
   const isFormInvalid = userInfo.email.length === 0

@@ -33,7 +33,7 @@ const contactSchema = yup.object().shape({
 
 });
 
-export default function FormContent() {
+export default function FormContent({ onSubmit }) {
   const [isFormSubmited, setIsFormSubmited] = React.useState(false);
   const [submissionStatus, setSubmissionStatus] = React.useState(formStates.DEFAULT);
 
