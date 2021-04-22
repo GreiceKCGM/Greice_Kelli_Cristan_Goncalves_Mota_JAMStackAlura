@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { createGlobalStyle, css } from 'styled-components';
 import { motion } from 'framer-motion';
-import Button from '../button/button';
+import { ButtonClose } from '../button/button';
 import Box from '../../foundations/layout/box';
 import Grid from '../../foundations/layout/grid';
 
@@ -98,27 +98,14 @@ function Modal({ isOpen, onClose, children }) {
               alignSelf="flex-end"
             >
 
-              <Button
-                style={{
-                  // position: 'absolute',
-                  // top: 20,
-                  // right: 20,
-                  // height: 50,
-                  // width: 50,
-                  // borderRadius: 50,
-                  width: 40,
-                  height: 40,
-                  color: 'black',
-                  borderRadius: 40,
-                  marginTop: 15,
-                }}
+              <ButtonClose
                 cursor="pointer"
                 onClick={(event) => {
                   buttonClose(event);
                 }}
               >
                 <img src="/images/close.svg" alt="Fechar" />
-              </Button>
+              </ButtonClose>
             </Box>
             { children({ 'data-modal-safe-area': 'true' }) }
 

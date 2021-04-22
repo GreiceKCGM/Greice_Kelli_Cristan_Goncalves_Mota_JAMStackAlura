@@ -3,6 +3,43 @@ import breakpointsMedia from '../../../theme/utils/breakpointsMedia';
 import propToStyle from '../../../theme/utils/propToStyle/propToStyled';
 import { TextStyleVariantsMap } from '../../foundations/text';
 
+export const ButtonClose = styled.button`
+  margin-top: 15px;
+
+  img{
+    ${TextStyleVariantsMap.title}
+      width: 30px;
+      height: 30px;
+      border-radius: 50px;
+      margin-top: 5px;
+
+
+
+  position:relative;
+  cursor: pointer;
+  &:hover,
+    &:focus {
+      opacity: .5;
+    }
+
+    ${breakpointsMedia({
+    xs: css`
+
+        ${TextStyleVariantsMap.paragraph1}
+    `,
+    md: css`
+
+        ${TextStyleVariantsMap.title}
+    `,
+  })}
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .2;
+  }
+}
+`;
+
 const Button = styled.button`
     ${TextStyleVariantsMap.title}
     margin-bottom:10px;
