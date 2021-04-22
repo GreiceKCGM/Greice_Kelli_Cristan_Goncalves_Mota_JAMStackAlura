@@ -66,6 +66,7 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
     },
     handleReset() {
       setUserInfo(initialValues);
+      setTouchedField({});
     },
   };
 }

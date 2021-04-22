@@ -41,6 +41,16 @@ export default function FormContent({ onSubmit }) {
     message: '',
   };
 
+  function submissionDone(form) {
+    setSubmissionStatus(formStates.DONE);
+
+    setTimeout(() => {
+      setIsFormSubmited(false);
+      form.handleReset();
+      setSubmissionStatus(formStates.DEFAULT);
+    }, 2000);
+  }
+
   const form = useform({
     initialValues,
     onSubmit: (userInfo) => {
@@ -53,7 +63,7 @@ export default function FormContent({ onSubmit }) {
         message: userInfo.message,
       })
         .then(() => {
-          setSubmissionStatus(formStates.DONE);
+          submissionDone(form);
         })
         .catch(() => {
           setSubmissionStatus(formStates.ERROR);
@@ -68,15 +78,6 @@ export default function FormContent({ onSubmit }) {
       });
     },
   });
-
-  function resetForm() {
-    if (submissionStatus !== formStates.ERROR) {
-      form.handleReset();
-    }
-
-    setSubmissionStatus(formStates.DEFAULT);
-    setIsFormSubmited(false);
-  }
 
   // eslint-disable-next-line max-len
 
