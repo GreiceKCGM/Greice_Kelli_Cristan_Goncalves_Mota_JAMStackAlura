@@ -21,8 +21,9 @@ async function HttpClient(url, { headers, body, ...options }) {
 }
 
 export const contactService = {
-  async contact({ name, email, message }) {
-    return HttpClient('https://contact-form-api-jamstack.herokuapp.com/message', {
+  async contact({ name, email, message },
+    HttpClientModule = HttpClient) {
+    return HttpClientModule('https://contact-form-api-jamstack.herokuapp.com/message', {
       method: 'POST',
       body: {
         name,
