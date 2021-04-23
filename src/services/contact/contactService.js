@@ -12,10 +12,6 @@ export const contactService = {
 
       },
     })
-      .then((respostaConvertida) => {
-        // eslint-disable-next-line no-console
-        console.log(respostaConvertida);
-        return respostaConvertida;
-      });
+      .then((respostaConvertida) => respostaConvertida);
   },
 };
