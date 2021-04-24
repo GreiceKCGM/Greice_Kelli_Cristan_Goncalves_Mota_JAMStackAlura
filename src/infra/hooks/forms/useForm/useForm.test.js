@@ -50,7 +50,6 @@ describe('useForm()', () => {
         expect(result.current.errors).toEqual({});
       });
     });
-    // teste de erro do email
 
     describe('when the field is selected', () => {
       test('it becomes touched', () => {
