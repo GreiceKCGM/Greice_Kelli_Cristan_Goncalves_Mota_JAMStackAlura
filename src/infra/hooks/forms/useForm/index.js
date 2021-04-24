@@ -1,6 +1,17 @@
 import React from 'react';
 
-export default function useform({ initialValues, onSubmit, validateSchema }) {
+function formatErrors(errorInner = []) {
+  return errorInner.reduce((errorObjectAcc, currentError) => {
+    const fieldName = currentError.path;
+    const errorMessage = currentError.message;
+    return {
+      ...errorObjectAcc,
+      [fieldName]: errorMessage,
+    };
+  }, {});
+}
+
+export function useForm({ initialValues, onSubmit, validateSchema }) {
   const [userInfo, setUserInfo] = React.useState(initialValues);
 
   const [isFormDisabled, setIsFormDisabled] = React.useState(true);
@@ -13,14 +24,7 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
       setIsFormDisabled(false);
       setErrors({});
     } catch (err) {
-      const formattedErros = err.inner.reduce((errorObjectAcc, currentError) => {
-        const fieldName = currentError.path;
-        const errorMessage = currentError.message;
-        return {
-          ...errorObjectAcc,
-          [fieldName]: errorMessage,
-        };
-      }, {});
+      const formattedErros = formatErrors(err.inner);
       setErrors(formattedErros);
       setIsFormDisabled(true);
     }
@@ -30,8 +34,8 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
     validateuserInfo(userInfo);
   }, [userInfo]);
 
-  const isFormInvalid = userInfo.email.length === 0
-  || userInfo.name.length === 0 || userInfo.message.length === 0;
+  // const isFormInvalid = userInfo.email.length === 0
+  // || userInfo.name.length === 0 || userInfo.message.length === 0;
 
   return {
     userInfo,
@@ -48,7 +52,7 @@ export default function useform({ initialValues, onSubmit, validateSchema }) {
         [fieldName]: value,
       }));
     },
-    isFormInvalid,
+    // isFormInvalid,
     isFormDisabled,
     setIsFormDisabled,
     errors,

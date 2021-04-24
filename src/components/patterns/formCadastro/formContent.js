@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import { ButtonWrapper } from '../../commons/button/button';
 import TextField from '../../forms/textField';
 import Text from '../../foundations/text';
-import useform from '../../../infra/hooks/forms/useForm';
+import { useForm } from '../../../infra/hooks/forms/useForm';
 import { contactService } from '../../../services/contact/contactService';
 import { FormAnimation } from './animation';
 
@@ -51,7 +51,7 @@ export default function FormContent({ onSubmit }) {
     }, 2000);
   }
 
-  const form = useform({
+  const form = useForm({
     initialValues,
     onSubmit: (userInfo) => {
       setIsFormSubmited(true);
@@ -181,7 +181,7 @@ export default function FormContent({ onSubmit }) {
       >
         <ButtonWrapper
           type="submit"
-          disabled={form.isFormDisabled || form.isFormInvalid || form.emailIsInvalid()}
+          disabled={form.isFormDisabled || form.emailIsInvalid()}
           variant="tertiary.light"
         >
           <Text
