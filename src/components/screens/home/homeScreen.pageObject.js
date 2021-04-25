@@ -12,7 +12,7 @@ export default class HomeScreenPageObject {
   }
 
   fillTheContactForms({ name, email, message }) {
-    this.cy.get('input[name="nome"]').type(name);
+    this.cy.get('input[name="name"]').type(name);
     this.cy.get('input[name="email"]').type(email);
     this.cy.get('input[name="mensagem"]').type(message);
 
